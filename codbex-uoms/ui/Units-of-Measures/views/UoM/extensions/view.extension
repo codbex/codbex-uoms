@@ -1,0 +1,5 @@
+{
+	"description": "UoM view",
+	"extensionPoint": "launchpad-codbex-Units-of-Measures-view",
+	"module": "codbex-uoms/ui/Units-of-Measures/views/UoM/extensions/view.js"
+}

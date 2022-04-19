@@ -1,0 +1,4 @@
+{
+	"description": "Extension Point for the codbex-uoms Menu Providers",
+	"name": "launchpad-codbex-uoms-menu"
+}

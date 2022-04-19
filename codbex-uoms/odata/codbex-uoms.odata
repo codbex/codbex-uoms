@@ -1,0 +1,89 @@
+{
+    "namespace": "codbex",
+    "entities": [
+        {
+            "name": "Dimension",
+            "alias": "Dimension",
+            "table": "CODBEX_DIMENSION",
+            "properties": [
+                {
+                    "name": "Id",
+                    "column": "DIMENSION_ID"
+                },
+                {
+                    "name": "Name",
+                    "column": "DIMENSION_NAME",
+                    "nullable": true
+                },
+                {
+                    "name": "BaseUnit",
+                    "column": "DIMENSION_BASE_UNIT",
+                    "nullable": true
+                }
+            ],
+            "navigations": [
+                {
+                    "name": "UoM",
+                    "association": "DimensionUoM"
+                }
+            ]
+        },
+        {
+            "name": "UoM",
+            "alias": "UoM",
+            "table": "CODBEX_UOM",
+            "properties": [
+                {
+                    "name": "Id",
+                    "column": "UOM_ID"
+                },
+                {
+                    "name": "Name",
+                    "column": "UOM_NAME",
+                    "nullable": true
+                },
+                {
+                    "name": "Unit",
+                    "column": "UOM_UNIT",
+                    "nullable": true
+                },
+                {
+                    "name": "DimensionId",
+                    "column": "UOM_DIMENSIONID",
+                    "nullable": true
+                },
+                {
+                    "name": "Numerator",
+                    "column": "UOM_NUMERATOR",
+                    "nullable": true
+                },
+                {
+                    "name": "Denominator",
+                    "column": "UOM_DENOMINATOR",
+                    "nullable": true
+                },
+                {
+                    "name": "Rounding",
+                    "column": "UOM_ROUNDING",
+                    "nullable": true
+                }
+            ],
+            "navigations": []
+        }
+    ],
+    "associations": [
+        {
+            "name": "DimensionUoM",
+            "from": {
+                "entity": "Dimension",
+                "property": "Id",
+                "multiplicity": "1"
+            },
+            "to": {
+                "entity": "UoM",
+                "property": "DimensionId",
+                "multiplicity": "*"
+            }
+        }
+    ]
+}

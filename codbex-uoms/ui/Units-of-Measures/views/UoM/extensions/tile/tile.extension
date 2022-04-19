@@ -1,0 +1,5 @@
+{
+	"description": "Units-of-Measures tiles",
+	"extensionPoint": "launchpad-codbex-tiles",
+	"module": "codbex-uoms/ui/Units-of-Measures/views/UoM/extensions/tile/tile.js"
+}
