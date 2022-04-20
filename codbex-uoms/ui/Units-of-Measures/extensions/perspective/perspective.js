@@ -13,6 +13,6 @@ exports.getPerspective = function(relativePath) {
 		name: "Units-of-Measures",
 		image: "cubes",
 		link: relativePath + "services/v4/web/codbex-uoms/ui/Units-of-Measures/index.html",
-		order: 890,
+		order: 970,
 	};
 };

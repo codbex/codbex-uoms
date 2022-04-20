@@ -60,7 +60,7 @@
                 "name": "Dimension",
                 "perspectiveIcon": "cubes",
                 "perspectiveName": "Units-of-Measures",
-                "perspectiveOrder": "890",
+                "perspectiveOrder": "970",
                 "title": "Dimension",
                 "tooltip": "Dimension",
                 "type": "PRIMARY"
@@ -189,7 +189,7 @@
                 "name": "UoM",
                 "perspectiveIcon": "cubes",
                 "perspectiveName": "Units-of-Measures",
-                "perspectiveOrder": "890",
+                "perspectiveOrder": "970",
                 "title": "Unit of Measures",
                 "tooltip": "Unit of Measures",
                 "type": "PRIMARY"

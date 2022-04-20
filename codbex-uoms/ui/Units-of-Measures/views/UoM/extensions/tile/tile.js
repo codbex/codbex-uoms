@@ -23,6 +23,6 @@ exports.getTile = function(relativePath) {
 		icon: "cubes",
 		location: relativePath + "services/v4/web/codbex-uoms/ui/Units-of-Measures/index.html",
 		count: count,
-		order: "890"
+		order: "970"
 	};
 };
