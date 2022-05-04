@@ -1,0 +1,5 @@
+{
+	"description": "Dimension view",
+	"extensionPoint": "launchpad-codbex-Units-of-Measures-view",
+	"module": "codbex-uoms/gen/ui/Units-of-Measures/views/Dimension/extensions/view.js"
+}

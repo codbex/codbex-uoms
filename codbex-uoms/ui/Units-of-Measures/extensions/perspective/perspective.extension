@@ -1,5 +1,0 @@
-{
-	"description": "Units-of-Measures perspective",
-	"extensionPoint": "launchpad-codbex-perspective",
-	"module": "codbex-uoms/ui/Units-of-Measures/extensions/perspective/perspective.js"
-}
