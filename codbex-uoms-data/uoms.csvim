@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "table": "CODBEX_DIMENSION",
+      "schema": "PUBLIC",
+      "file": "/codbex-uoms-data/dimensions.csv",
+      "header": true,
+      "useHeaderNames": true,
+      "delimField": ",",
+      "delimEnclosing": "\"",
+      "distinguishEmptyFromNull": true
+    },
+    {
+      "table": "CODBEX_UOM",
+      "schema": "PUBLIC",
+      "file": "/codbex-uoms-data/uoms.csv",
+      "header": true,
+      "useHeaderNames": true,
+      "delimField": ",",
+      "delimEnclosing": "\"",
+      "distinguishEmptyFromNull": true
+    }
+  ]
+}
