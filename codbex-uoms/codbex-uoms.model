@@ -49,8 +49,9 @@
                         "widgetType": "TEXTBOX"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_DIMENSION",
-                "dataName": "CODBEX_DIMENSION",
+                "caption": "Manage entity Dimension",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_DIMENSION\"",
+                "dataName": "DIMENSION",
                 "dataQuery": "",
                 "icon": "cube",
                 "layoutType": "MANAGE",
@@ -58,9 +59,10 @@
                 "menuKey": "dimension",
                 "menuLabel": "Dimension",
                 "name": "Dimension",
-                "perspectiveIcon": "cubes",
-                "perspectiveName": "Units-of-Measures",
-                "perspectiveOrder": "970",
+                "navigationPath": "/Home",
+                "perspectiveIcon": "/services/web/resources/unicons/arrows-resize-v.svg",
+                "perspectiveName": "dimensions",
+                "perspectiveOrder": "200",
                 "title": "Dimension",
                 "tooltip": "Dimension",
                 "type": "PRIMARY"
@@ -130,7 +132,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "UoM_Dimension",
                         "relationshipEntityName": "Dimension",
-                        "relationshipEntityPerspectiveName": "Units-of-Measures"
+                        "relationshipEntityPerspectiveName": "dimensions"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -178,8 +180,9 @@
                         "widgetType": "TEXTBOX"
                     }
                 ],
-                "dataCount": "SELECT COUNT(*) AS COUNT FROM CODBEX_UOM",
-                "dataName": "CODBEX_UOM",
+                "caption": "Manage entity UoM",
+                "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_UOM\"",
+                "dataName": "UOM",
                 "dataQuery": "",
                 "icon": "cubes",
                 "layoutType": "MANAGE",
@@ -187,13 +190,29 @@
                 "menuKey": "uom",
                 "menuLabel": "UoM",
                 "name": "UoM",
-                "perspectiveIcon": "cubes",
-                "perspectiveName": "Units-of-Measures",
-                "perspectiveOrder": "970",
+                "navigationPath": "/Home",
+                "perspectiveIcon": "/services/web/resources/unicons/bus.svg",
+                "perspectiveName": "unitofmeasures",
+                "perspectiveOrder": "201",
                 "title": "Unit of Measures",
                 "tooltip": "Unit of Measures",
                 "type": "PRIMARY"
             }
-        ]
+        ],
+        "perspectives": [
+            {
+                "name": "dimensions",
+                "label": "Dimensions",
+                "icon": "/services/web/resources/unicons/arrows-resize-v.svg",
+                "order": "200"
+            },
+            {
+                "name": "unitofmeasures",
+                "label": "Unit of Measures",
+                "icon": "/services/web/resources/unicons/bus.svg",
+                "order": "201"
+            }
+        ],
+        "navigations": []
     }
 }

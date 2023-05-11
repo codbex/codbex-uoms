@@ -1,5 +1,0 @@
-{
-	"expression": "0 0 0 1 * ? *",
-	"handler": "codbex-uoms/gen/feed/Units-of-Measures/DimensionFeedSynchronizer.js",
-	"description": "DimensionFeedSynchronizer Job"
-}
