@@ -7,24 +7,17 @@
   "projectName": "codbex-uoms",
   "workspaceName": "workspace",
   "filePath": "codbex-uoms.model",
+  "templateId": "template-application-angular/template/template.js",
   "perspectives": {
-    "dimensions": {
+    "UnitsOfMeasures": {
       "views": [
-        "Dimension"
-      ],
-      "name": "dimensions",
-      "label": "dimensions",
-      "order": "200",
-      "icon": "/services/web/resources/unicons/arrows-resize-v.svg"
-    },
-    "unitofmeasures": {
-      "views": [
+        "Dimension",
         "UoM"
       ],
-      "name": "unitofmeasures",
-      "label": "unitofmeasures",
-      "order": "201",
-      "icon": "/services/web/resources/unicons/bus.svg"
+      "name": "UnitsOfMeasures",
+      "label": "UnitsOfMeasures",
+      "order": "980",
+      "icon": "/services/web/resources/unicons/arrows-resize-v.svg"
     }
   },
   "models": [
@@ -101,8 +94,8 @@
       "name": "Dimension",
       "navigationPath": "/Home",
       "perspectiveIcon": "/services/web/resources/unicons/arrows-resize-v.svg",
-      "perspectiveName": "dimensions",
-      "perspectiveOrder": "200",
+      "perspectiveName": "UnitsOfMeasures",
+      "perspectiveOrder": "980",
       "title": "Dimension",
       "tooltip": "Dimension",
       "type": "PRIMARY",
@@ -189,7 +182,7 @@
           "widgetType": "DROPDOWN",
           "relationshipName": "UoM_Dimension",
           "relationshipEntityName": "Dimension",
-          "relationshipEntityPerspectiveName": "dimensions",
+          "relationshipEntityPerspectiveName": "UnitsOfMeasures",
           "dataNotNull": false,
           "widgetLabel": "Dimension",
           "inputRule": ""
@@ -260,9 +253,9 @@
       "menuLabel": "UoM",
       "name": "UoM",
       "navigationPath": "/Home",
-      "perspectiveIcon": "/services/web/resources/unicons/bus.svg",
-      "perspectiveName": "unitofmeasures",
-      "perspectiveOrder": "201",
+      "perspectiveIcon": "/services/web/resources/unicons/arrows-resize-v.svg",
+      "perspectiveName": "UnitsOfMeasures",
+      "perspectiveOrder": "980",
       "title": "Unit of Measures",
       "tooltip": "Unit of Measures",
       "type": "PRIMARY",

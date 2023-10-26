@@ -61,8 +61,8 @@
                 "name": "Dimension",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/arrows-resize-v.svg",
-                "perspectiveName": "dimensions",
-                "perspectiveOrder": "200",
+                "perspectiveName": "UnitsOfMeasures",
+                "perspectiveOrder": "980",
                 "title": "Dimension",
                 "tooltip": "Dimension",
                 "type": "PRIMARY"
@@ -132,7 +132,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "UoM_Dimension",
                         "relationshipEntityName": "Dimension",
-                        "relationshipEntityPerspectiveName": "dimensions"
+                        "relationshipEntityPerspectiveName": "UnitsOfMeasures"
                     },
                     {
                         "calculatedPropertyExpression": "",
@@ -191,9 +191,9 @@
                 "menuLabel": "UoM",
                 "name": "UoM",
                 "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/bus.svg",
-                "perspectiveName": "unitofmeasures",
-                "perspectiveOrder": "201",
+                "perspectiveIcon": "/services/web/resources/unicons/arrows-resize-v.svg",
+                "perspectiveName": "UnitsOfMeasures",
+                "perspectiveOrder": "980",
                 "title": "Unit of Measures",
                 "tooltip": "Unit of Measures",
                 "type": "PRIMARY"
@@ -201,16 +201,10 @@
         ],
         "perspectives": [
             {
-                "name": "dimensions",
-                "label": "Dimensions",
+                "name": "UnitsOfMeasures",
+                "label": "Units of Measures",
                 "icon": "/services/web/resources/unicons/arrows-resize-v.svg",
-                "order": "200"
-            },
-            {
-                "name": "unitofmeasures",
-                "label": "Unit of Measures",
-                "icon": "/services/web/resources/unicons/bus.svg",
-                "order": "201"
+                "order": "980"
             }
         ],
         "navigations": []

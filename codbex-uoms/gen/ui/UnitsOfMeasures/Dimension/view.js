@@ -4,12 +4,12 @@
  * Do not modify the content as it may be re-generated again.
  */
 const viewData = {
-    id: "codbex-uoms-home-launchpad",
-    label: "Home Launchpad",
+    id: "Dimension",
+    label: "Dimension",
     factory: "frame",
     region: "center",
-    link: "/services/web/codbex-uoms/gen/ui/launchpad/Home/index.html",
-    isLaunchpad: true,
+    link: "/services/web/codbex-uoms/gen/ui/UnitsOfMeasures/Dimension/index.html",
+    perspectiveName: "UnitsOfMeasures"
 };
 
 if (typeof exports !== 'undefined') {
