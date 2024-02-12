@@ -1,0 +1,5 @@
+{
+    "module": "codbex-uoms/gen/ui/custom-action-dialog/view.js",
+    "extensionPoint": "codbex-uoms-dialog-window",
+    "description": "codbex-uoms - Custom Action Dialog Window"
+}

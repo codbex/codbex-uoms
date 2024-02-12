@@ -1,5 +1,5 @@
 {
-  "tablePrefix": "CODBEX",
+  "tablePrefix": "CODBEX_",
   "brand": "codbex",
   "brandUrl": "https://codbex.com",
   "title": "Units of Measures Management Module",
@@ -39,6 +39,8 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Id",
+          "dataTypeJava": "int",
+          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -57,6 +59,8 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Name",
+          "dataTypeJava": "string",
+          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
@@ -77,13 +81,15 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "BaseUnit",
+          "dataTypeJava": "string",
+          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
         }
       ],
       "caption": "Manage entity Dimension",
-      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"CODBEX_DIMENSION\"",
+      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"CODBEX__DIMENSION\"",
       "dataName": "DIMENSION",
       "dataQuery": "",
       "icon": "cube",
@@ -122,6 +128,8 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Id",
+          "dataTypeJava": "int",
+          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -140,6 +148,8 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Name",
+          "dataTypeJava": "string",
+          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
@@ -160,6 +170,8 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Unit",
+          "dataTypeJava": "string",
+          "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
@@ -185,6 +197,8 @@
           "relationshipEntityPerspectiveName": "UnitsOfMeasures",
           "dataNotNull": false,
           "widgetLabel": "Dimension",
+          "dataTypeJava": "int",
+          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -203,6 +217,8 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Numerator",
+          "dataTypeJava": "int",
+          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -221,6 +237,8 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Denominator",
+          "dataTypeJava": "int",
+          "dataTypeTypescript": "number",
           "inputRule": ""
         },
         {
@@ -239,11 +257,13 @@
           "widgetType": "TEXTBOX",
           "dataNotNull": false,
           "widgetLabel": "Rounding",
+          "dataTypeJava": "int",
+          "dataTypeTypescript": "number",
           "inputRule": ""
         }
       ],
       "caption": "Manage entity UoM",
-      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"CODBEX_UOM\"",
+      "dataCount": "SELECT COUNT(*) AS COUNT FROM \"CODBEX__UOM\"",
       "dataName": "UOM",
       "dataQuery": "",
       "icon": "cubes",

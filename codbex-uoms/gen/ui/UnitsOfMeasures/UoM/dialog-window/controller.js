@@ -3,7 +3,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		messageHubProvider.eventIdPrefix = 'codbex-uoms.UnitsOfMeasures.UoM';
 	}])
 	.config(["entityApiProvider", function (entityApiProvider) {
-		entityApiProvider.baseUrl = "/services/js/codbex-uoms/gen/api/UnitsOfMeasures/UoM.js";
+		entityApiProvider.baseUrl = "/services/ts/codbex-uoms/gen/api/UnitsOfMeasures/UoMService.ts";
 	}])
 	.controller('PageController', ['$scope', 'messageHub', 'entityApi', function ($scope, messageHub, entityApi) {
 

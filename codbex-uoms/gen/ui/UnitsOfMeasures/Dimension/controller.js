@@ -3,9 +3,38 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		messageHubProvider.eventIdPrefix = 'codbex-uoms.UnitsOfMeasures.Dimension';
 	}])
 	.config(["entityApiProvider", function (entityApiProvider) {
-		entityApiProvider.baseUrl = "/services/js/codbex-uoms/gen/api/UnitsOfMeasures/Dimension.js";
+		entityApiProvider.baseUrl = "/services/ts/codbex-uoms/gen/api/UnitsOfMeasures/DimensionService.ts";
 	}])
-	.controller('PageController', ['$scope', 'messageHub', 'entityApi', function ($scope, messageHub, entityApi) {
+	.controller('PageController', ['$scope', '$http', 'messageHub', 'entityApi', function ($scope, $http, messageHub, entityApi) {
+
+		//-----------------Custom Actions-------------------//
+		$http.get("/services/js/resources-core/services/custom-actions.js?extensionPoint=codbex-uoms-custom-action").then(function (response) {
+			$scope.pageActions = response.data.filter(e => e.perspective === "UnitsOfMeasures" && e.view === "Dimension" && (e.type === "page" || e.type === undefined));
+			$scope.entityActions = response.data.filter(e => e.perspective === "UnitsOfMeasures" && e.view === "Dimension" && e.type === "entity");
+		});
+
+		$scope.triggerPageAction = function (actionId) {
+			for (const next of $scope.pageActions) {
+				if (next.id === actionId) {
+					messageHub.showDialogWindow("codbex-uoms-custom-action", {
+						src: next.link,
+					});
+					break;
+				}
+			}
+		};
+
+		$scope.triggerEntityAction = function (actionId, selectedEntity) {
+			for (const next of $scope.entityActions) {
+				if (next.id === actionId) {
+					messageHub.showDialogWindow("codbex-uoms-custom-action", {
+						src: `${next.link}?id=${selectedEntity.Id}`,
+					});
+					break;
+				}
+			}
+		};
+		//-----------------Custom Actions-------------------//
 
 		function resetPagination() {
 			$scope.dataPage = 1;

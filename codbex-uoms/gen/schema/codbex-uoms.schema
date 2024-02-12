@@ -87,5 +87,6 @@
                 "referencedColumns": "DIMENSION_ID"
             }
         ]
-    }
+    },
+    "datasource": "DefaultDB"
 }
