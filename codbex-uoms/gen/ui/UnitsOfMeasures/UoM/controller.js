@@ -45,17 +45,27 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 
 		//-----------------Events-------------------//
 		messageHub.onDidReceiveMessage("entityCreated", function (msg) {
-			$scope.loadPage($scope.dataPage);
+			$scope.loadPage($scope.dataPage, $scope.filter);
 		});
 
 		messageHub.onDidReceiveMessage("entityUpdated", function (msg) {
-			$scope.loadPage($scope.dataPage);
+			$scope.loadPage($scope.dataPage, $scope.filter);
+		});
+
+		messageHub.onDidReceiveMessage("entitySearch", function (msg) {
+			resetPagination();
+			$scope.filter = msg.data.filter;
+			$scope.filterEntity = msg.data.entity;
+			$scope.loadPage($scope.dataPage, $scope.filter);
 		});
 		//-----------------Events-------------------//
 
-		$scope.loadPage = function (pageNumber) {
+		$scope.loadPage = function (pageNumber, filter) {
+			if (!filter && $scope.filter) {
+				filter = $scope.filter;
+			}
 			$scope.dataPage = pageNumber;
-			entityApi.count().then(function (response) {
+			entityApi.count(filter).then(function (response) {
 				if (response.status != 200) {
 					messageHub.showAlertError("UoM", `Unable to count UoM: '${response.message}'`);
 					return;
@@ -63,16 +73,24 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				$scope.dataCount = response.data;
 				let offset = (pageNumber - 1) * $scope.dataLimit;
 				let limit = $scope.dataLimit;
-				entityApi.list(offset, limit).then(function (response) {
+				let request;
+				if (filter) {
+					filter.$offset = offset;
+					filter.$limit = limit;
+					request = entityApi.search(filter);
+				} else {
+					request = entityApi.list(offset, limit);
+				}
+				request.then(function (response) {
 					if (response.status != 200) {
-						messageHub.showAlertError("UoM", `Unable to list UoM: '${response.message}'`);
+						messageHub.showAlertError("UoM", `Unable to list/filter UoM: '${response.message}'`);
 						return;
 					}
 					$scope.data = response.data;
 				});
 			});
 		};
-		$scope.loadPage($scope.dataPage);
+		$scope.loadPage($scope.dataPage, $scope.filter);
 
 		$scope.selectEntity = function (entity) {
 			$scope.selectedEntity = entity;
@@ -83,6 +101,13 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("UoM-details", {
 				action: "select",
 				entity: entity,
+				optionsDimension: $scope.optionsDimension,
+			});
+		};
+
+		$scope.openFilter = function (entity) {
+			messageHub.showDialogWindow("UoM-filter", {
+				entity: $scope.filterEntity,
 				optionsDimension: $scope.optionsDimension,
 			});
 		};
@@ -126,7 +151,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 							messageHub.showAlertError("UoM", `Unable to delete UoM: '${response.message}'`);
 							return;
 						}
-						$scope.loadPage($scope.dataPage);
+						$scope.loadPage($scope.dataPage, $scope.filter);
 						messageHub.postMessage("clearDetails");
 					});
 				}
@@ -136,7 +161,8 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		//----------------Dropdowns-----------------//
 		$scope.optionsDimension = [];
 
-		$http.get("/services/ts/codbex-uoms/gen/api/UnitsOfMeasures/DimensionService.ts").then(function (response) {
+
+		$http.get("/services/ts/codbex-uoms/gen/api/Dimensions/DimensionService.ts").then(function (response) {
 			$scope.optionsDimension = response.data.map(e => {
 				return {
 					value: e.Id,
@@ -144,6 +170,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				}
 			});
 		});
+
 		$scope.optionsDimensionValue = function (optionKey) {
 			for (let i = 0; i < $scope.optionsDimension.length; i++) {
 				if ($scope.optionsDimension[i].value === optionKey) {

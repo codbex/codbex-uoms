@@ -52,7 +52,7 @@
                     httpRequest.send();
 
                     $scope.layoutModel = {
-                        views: JSON.parse(httpRequest.responseText).filter(e => !e.isLaunchpad && e.perspectiveName === "UnitsOfMeasures").map(e => e.id)
+                        views: JSON.parse(httpRequest.responseText).filter(e => !e.isLaunchpad && e.perspectiveName === "Dimensions").map(e => e.id)
                     };
 
                 }]);

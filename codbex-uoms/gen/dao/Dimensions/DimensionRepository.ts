@@ -173,11 +173,11 @@ export class DimensionRepository {
         });
     }
 
-    public count(): number {
-        return this.dao.count();
+    public count(options?: DimensionEntityOptions): number {
+        return this.dao.count(options);
     }
 
-    public customDataCount(): number {
+    public customDataCount(options?: DimensionEntityOptions): number {
         const resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX__DIMENSION"');
         if (resultSet !== null && resultSet[0] !== null) {
             if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
@@ -190,7 +190,7 @@ export class DimensionRepository {
     }
 
     private async triggerEvent(data: DimensionEntityEvent) {
-        const triggerExtensions = await extensions.loadExtensionModules("codbex-uoms/UnitsOfMeasures/Dimension", ["trigger"]);
+        const triggerExtensions = await extensions.loadExtensionModules("codbex-uoms/Dimensions/Dimension", ["trigger"]);
         triggerExtensions.forEach(triggerExtension => {
             try {
                 triggerExtension.trigger(data);
@@ -198,6 +198,6 @@ export class DimensionRepository {
                 console.error(error);
             }            
         });
-        producer.queue("codbex-uoms/UnitsOfMeasures/Dimension").send(JSON.stringify(data));
+        producer.topic("codbex-uoms/Dimensions/Dimension").send(JSON.stringify(data));
     }
 }

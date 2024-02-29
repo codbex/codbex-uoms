@@ -5,13 +5,13 @@
  */
 exports.getTile = function () {
     return {
-        group: "UnitsOfMeasures",
+        group: "Dimensions",
         name: "Dimension",
         caption: "Manage entity Dimension",
         tooltip: "Dimension",
         // icon: "file-o",
-        location: "/services/web/codbex-uoms/gen/ui/UnitsOfMeasures/index.html",
+        location: "/services/web/codbex-uoms/gen/ui/Dimensions/index.html",
         order: "100",
-        groupOrder: "980"
+        groupOrder: "990"
     };
 };

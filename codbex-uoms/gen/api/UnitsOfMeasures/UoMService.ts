@@ -42,6 +42,24 @@ class UoMService {
         }
     }
 
+    @Post("/count")
+    public countWithFilter(filter: any) {
+        try {
+            return this.repository.count(filter);
+        } catch (error: any) {
+            this.handleError(error);
+        }
+    }
+
+    @Post("/search")
+    public search(filter: any) {
+        try {
+            return this.repository.findAll(filter);
+        } catch (error: any) {
+            this.handleError(error);
+        }
+    }
+
     @Get("/:id")
     public getById(_: any, ctx: any) {
         try {

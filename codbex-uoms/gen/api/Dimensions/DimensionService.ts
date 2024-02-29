@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Put, Delete, response } from "sdk/http"
-import { DimensionRepository, DimensionEntityOptions } from "../../dao/UnitsOfMeasures/DimensionRepository";
+import { DimensionRepository, DimensionEntityOptions } from "../../dao/Dimensions/DimensionRepository";
 import { HttpUtils } from "../utils/HttpUtils";
 
 @Controller
@@ -25,7 +25,7 @@ class DimensionService {
     public create(entity: any) {
         try {
             entity.Id = this.repository.create(entity);
-            response.setHeader("Content-Location", "/services/ts/codbex-uoms/gen/api/UnitsOfMeasures/DimensionService.ts/" + entity.Id);
+            response.setHeader("Content-Location", "/services/ts/codbex-uoms/gen/api/Dimensions/DimensionService.ts/" + entity.Id);
             response.setStatus(response.CREATED);
             return entity;
         } catch (error: any) {
@@ -37,6 +37,24 @@ class DimensionService {
     public count() {
         try {
             return this.repository.count();
+        } catch (error: any) {
+            this.handleError(error);
+        }
+    }
+
+    @Post("/count")
+    public countWithFilter(filter: any) {
+        try {
+            return this.repository.count(filter);
+        } catch (error: any) {
+            this.handleError(error);
+        }
+    }
+
+    @Post("/search")
+    public search(filter: any) {
+        try {
+            return this.repository.findAll(filter);
         } catch (error: any) {
             this.handleError(error);
         }

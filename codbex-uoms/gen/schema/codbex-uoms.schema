@@ -16,12 +16,16 @@
                     {
                         "type": "VARCHAR",
                         "length": 20,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "DIMENSION_NAME"
                     },
                     {
                         "type": "VARCHAR",
                         "length": 20,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "DIMENSION_BASEUNIT"
                     }
@@ -41,37 +45,49 @@
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 255,
+                        "length": 100,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "UOM_NAME"
                     },
                     {
                         "type": "VARCHAR",
                         "length": 20,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "UOM_UNIT"
                     },
                     {
                         "type": "INTEGER",
                         "length": 0,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "UOM_DIMENSION"
                     },
                     {
                         "type": "INTEGER",
                         "length": 0,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "UOM_NUMERATOR"
                     },
                     {
                         "type": "INTEGER",
                         "length": 0,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "UOM_DENOMINATOR"
                     },
                     {
                         "type": "INTEGER",
                         "length": 0,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "UOM_ROUNDING"
                     }

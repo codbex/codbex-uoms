@@ -4,14 +4,16 @@
  * Do not modify the content as it may be re-generated again.
  */
 const viewData = {
-    id: "Dimension-details",
+    id: "Dimension",
     label: "Dimension",
-    link: "/services/web/codbex-uoms/gen/ui/UnitsOfMeasures/Dimension/dialog-window/index.html",
-    perspectiveName: "UnitsOfMeasures"
+    factory: "frame",
+    region: "center",
+    link: "/services/web/codbex-uoms/gen/ui/Dimensions/Dimension/index.html",
+    perspectiveName: "Dimensions"
 };
 
 if (typeof exports !== 'undefined') {
-    exports.getDialogWindow = function () {
+    exports.getView = function () {
         return viewData;
     }
 }
