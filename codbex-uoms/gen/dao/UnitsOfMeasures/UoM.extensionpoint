@@ -1,1 +1,4 @@
-{"location":"codbex-uoms/gen/dao/UnitsOfMeasures/UoM.extensionpoint","name":"codbex-uoms/UnitsOfMeasures/UoM","description":"Extension Point for codbex-uoms UnitsOfMeasures UoM"}
+{
+    "name": "codbex-uoms-UnitsOfMeasures-UoM",
+    "description": "Extension Point for the codbex-uoms-UnitsOfMeasures-UoM entity"
+}

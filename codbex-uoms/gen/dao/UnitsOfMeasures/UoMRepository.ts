@@ -4,10 +4,10 @@ import { extensions } from "sdk/extensions";
 import { dao as daoApi } from "sdk/db";
 
 export interface UoMEntity {
-    readonly Id: number;
+    readonly Id: string;
     Name?: string;
-    Unit?: string;
-    Dimension?: number;
+    Code?: string;
+    Dimension?: string;
     Numerator?: number;
     Denominator?: number;
     Rounding?: number;
@@ -15,78 +15,78 @@ export interface UoMEntity {
 
 export interface UoMCreateEntity {
     readonly Name?: string;
-    readonly Unit?: string;
-    readonly Dimension?: number;
+    readonly Code?: string;
+    readonly Dimension?: string;
     readonly Numerator?: number;
     readonly Denominator?: number;
     readonly Rounding?: number;
 }
 
 export interface UoMUpdateEntity extends UoMCreateEntity {
-    readonly Id: number;
+    readonly Id: string;
 }
 
 export interface UoMEntityOptions {
     $filter?: {
         equals?: {
-            Id?: number | number[];
+            Id?: string | string[];
             Name?: string | string[];
-            Unit?: string | string[];
-            Dimension?: number | number[];
+            Code?: string | string[];
+            Dimension?: string | string[];
             Numerator?: number | number[];
             Denominator?: number | number[];
             Rounding?: number | number[];
         };
         notEquals?: {
-            Id?: number | number[];
+            Id?: string | string[];
             Name?: string | string[];
-            Unit?: string | string[];
-            Dimension?: number | number[];
+            Code?: string | string[];
+            Dimension?: string | string[];
             Numerator?: number | number[];
             Denominator?: number | number[];
             Rounding?: number | number[];
         };
         contains?: {
-            Id?: number;
+            Id?: string;
             Name?: string;
-            Unit?: string;
-            Dimension?: number;
+            Code?: string;
+            Dimension?: string;
             Numerator?: number;
             Denominator?: number;
             Rounding?: number;
         };
         greaterThan?: {
-            Id?: number;
+            Id?: string;
             Name?: string;
-            Unit?: string;
-            Dimension?: number;
+            Code?: string;
+            Dimension?: string;
             Numerator?: number;
             Denominator?: number;
             Rounding?: number;
         };
         greaterThanOrEqual?: {
-            Id?: number;
+            Id?: string;
             Name?: string;
-            Unit?: string;
-            Dimension?: number;
+            Code?: string;
+            Dimension?: string;
             Numerator?: number;
             Denominator?: number;
             Rounding?: number;
         };
         lessThan?: {
-            Id?: number;
+            Id?: string;
             Name?: string;
-            Unit?: string;
-            Dimension?: number;
+            Code?: string;
+            Dimension?: string;
             Numerator?: number;
             Denominator?: number;
             Rounding?: number;
         };
         lessThanOrEqual?: {
-            Id?: number;
+            Id?: string;
             Name?: string;
-            Unit?: string;
-            Dimension?: number;
+            Code?: string;
+            Dimension?: string;
             Numerator?: number;
             Denominator?: number;
             Rounding?: number;
@@ -106,7 +106,7 @@ interface UoMEntityEvent {
     readonly key: {
         name: string;
         column: string;
-        value: number;
+        value: string;
     }
 }
 
@@ -118,7 +118,7 @@ export class UoMRepository {
             {
                 name: "Id",
                 column: "UOM_ID",
-                type: "INTEGER",
+                type: "VARCHAR",
                 id: true,
                 autoIncrement: true,
             },
@@ -128,24 +128,24 @@ export class UoMRepository {
                 type: "VARCHAR",
             },
             {
-                name: "Unit",
-                column: "UOM_UNIT",
+                name: "Code",
+                column: "UOM_CODE",
                 type: "VARCHAR",
             },
             {
                 name: "Dimension",
                 column: "UOM_DIMENSION",
-                type: "INTEGER",
+                type: "VARCHAR",
             },
             {
                 name: "Numerator",
                 column: "UOM_NUMERATOR",
-                type: "INTEGER",
+                type: "BIGINT",
             },
             {
                 name: "Denominator",
                 column: "UOM_DENOMINATOR",
-                type: "INTEGER",
+                type: "BIGINT",
             },
             {
                 name: "Rounding",
@@ -165,12 +165,12 @@ export class UoMRepository {
         return this.dao.list(options);
     }
 
-    public findById(id: number): UoMEntity | undefined {
+    public findById(id: string): UoMEntity | undefined {
         const entity = this.dao.find(id);
         return entity ?? undefined;
     }
 
-    public create(entity: UoMCreateEntity): number {
+    public create(entity: UoMCreateEntity): string {
         const id = this.dao.insert(entity);
         this.triggerEvent({
             operation: "create",
@@ -199,7 +199,7 @@ export class UoMRepository {
         });
     }
 
-    public upsert(entity: UoMCreateEntity | UoMUpdateEntity): number {
+    public upsert(entity: UoMCreateEntity | UoMUpdateEntity): string {
         const id = (entity as UoMUpdateEntity).Id;
         if (!id) {
             return this.create(entity);
@@ -214,7 +214,7 @@ export class UoMRepository {
         }
     }
 
-    public deleteById(id: number): void {
+    public deleteById(id: string): void {
         const entity = this.dao.find(id);
         this.dao.remove(id);
         this.triggerEvent({
@@ -233,7 +233,7 @@ export class UoMRepository {
         return this.dao.count(options);
     }
 
-    public customDataCount(options?: UoMEntityOptions): number {
+    public customDataCount(): number {
         const resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX__UOM"');
         if (resultSet !== null && resultSet[0] !== null) {
             if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
@@ -246,7 +246,7 @@ export class UoMRepository {
     }
 
     private async triggerEvent(data: UoMEntityEvent) {
-        const triggerExtensions = await extensions.loadExtensionModules("codbex-uoms/UnitsOfMeasures/UoM", ["trigger"]);
+        const triggerExtensions = await extensions.loadExtensionModules("codbex-uoms-UnitsOfMeasures-UoM", ["trigger"]);
         triggerExtensions.forEach(triggerExtension => {
             try {
                 triggerExtension.trigger(data);
@@ -254,6 +254,6 @@ export class UoMRepository {
                 console.error(error);
             }            
         });
-        producer.topic("codbex-uoms/UnitsOfMeasures/UoM").send(JSON.stringify(data));
+        producer.topic("codbex-uoms-UnitsOfMeasures-UoM").send(JSON.stringify(data));
     }
 }

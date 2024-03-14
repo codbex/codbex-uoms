@@ -6,10 +6,12 @@
                 "type": "TABLE",
                 "columns": [
                     {
-                        "type": "INTEGER",
-                        "length": 0,
+                        "type": "VARCHAR",
+                        "length": 20,
                         "primaryKey": true,
                         "identity": true,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "DIMENSION_ID"
                     },
@@ -20,14 +22,6 @@
                         "scale": "NaN",
                         "nullable": true,
                         "name": "DIMENSION_NAME"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 20,
-                        "precision": "NaN",
-                        "scale": "NaN",
-                        "nullable": true,
-                        "name": "DIMENSION_BASEUNIT"
                     }
                 ]
             },
@@ -36,10 +30,12 @@
                 "type": "TABLE",
                 "columns": [
                     {
-                        "type": "INTEGER",
-                        "length": 0,
+                        "type": "VARCHAR",
+                        "length": 20,
                         "primaryKey": true,
                         "identity": true,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "UOM_ID"
                     },
@@ -54,21 +50,17 @@
                     {
                         "type": "VARCHAR",
                         "length": 20,
-                        "precision": "NaN",
-                        "scale": "NaN",
                         "nullable": true,
-                        "name": "UOM_UNIT"
+                        "name": "UOM_CODE"
                     },
                     {
-                        "type": "INTEGER",
-                        "length": 0,
-                        "precision": "NaN",
-                        "scale": "NaN",
+                        "type": "VARCHAR",
+                        "length": 20,
                         "nullable": true,
                         "name": "UOM_DIMENSION"
                     },
                     {
-                        "type": "INTEGER",
+                        "type": "BIGINT",
                         "length": 0,
                         "precision": "NaN",
                         "scale": "NaN",
@@ -76,7 +68,7 @@
                         "name": "UOM_NUMERATOR"
                     },
                     {
-                        "type": "INTEGER",
+                        "type": "BIGINT",
                         "length": 0,
                         "precision": "NaN",
                         "scale": "NaN",

@@ -7,7 +7,7 @@ const viewData = {
     id: "UoM-details",
     label: "UoM",
     link: "/services/web/codbex-uoms/gen/ui/UnitsOfMeasures/UoM/dialog-window/index.html",
-    perspectiveName: "UnitsOfMeasures"
+    perspectiveName: "UnitsOfMeasures",
 };
 
 if (typeof exports !== 'undefined') {

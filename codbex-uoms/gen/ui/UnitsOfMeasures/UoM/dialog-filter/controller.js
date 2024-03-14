@@ -19,7 +19,6 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				$scope.entity = params.entity ?? {};
 				$scope.selectedMainEntityKey = params.selectedMainEntityKey;
 				$scope.selectedMainEntityId = params.selectedMainEntityId;
-				$scope.optionsDimension = params.optionsDimension;
 			}
 		}
 
@@ -44,16 +43,16 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				},
 			};
 			if (entity.Id) {
-				filter.$filter.equals.Id = entity.Id;
+				filter.$filter.contains.Id = entity.Id;
 			}
 			if (entity.Name) {
 				filter.$filter.contains.Name = entity.Name;
 			}
-			if (entity.Unit) {
-				filter.$filter.contains.Unit = entity.Unit;
+			if (entity.Code) {
+				filter.$filter.contains.Code = entity.Code;
 			}
 			if (entity.Dimension) {
-				filter.$filter.equals.Dimension = entity.Dimension;
+				filter.$filter.contains.Dimension = entity.Dimension;
 			}
 			if (entity.Numerator) {
 				filter.$filter.equals.Numerator = entity.Numerator;

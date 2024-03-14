@@ -45,29 +45,7 @@
 	                                type="text"
 	                                placeholder="Enter Name">
 	                            </fd-input>
-	                            <fd-form-message dg-type="error">Incorrect Input</fd-form-message>
-	                        </fd-form-input-message-group>
-	                    </div>
-                    </fd-form-item>
-                    <fd-form-item class="fd-row">
-                    	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idBaseUnit" dg-required="false" dg-colon="true">BaseUnit</fd-form-label>
-                        </div>
-                        <div class="fd-col fd-col-md--4 fd-col--6">
-	                        <fd-form-input-message-group dg-inactive="{{ forms.details['BaseUnit'].$valid }}">
-	                            <fd-input id="idBaseUnit"
-	                                name="BaseUnit"
-	                                state="{{ forms.details['BaseUnit'].$valid ? '' : 'error' }}"
-									ng-required="false"
-	                                ng-model="entity.BaseUnit"
-	                                ng-readonly="action === 'select'"
-	                                ng-minlength="0.0 || 0"
-	                                ng-maxlength="20.0 || -1"
-	                                dg-input-rules="{ patterns: [''] }"
-	                                type="text"
-	                                placeholder="Enter BaseUnit">
-	                            </fd-input>
-	                            <fd-form-message dg-type="error">Incorrect Input</fd-form-message>
+	                            <fd-form-message dg-type="error">The value doesn't match the required pattern ''</fd-form-message>
 	                        </fd-form-input-message-group>
 	                    </div>
                     </fd-form-item>

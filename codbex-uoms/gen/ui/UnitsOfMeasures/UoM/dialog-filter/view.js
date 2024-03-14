@@ -7,7 +7,7 @@ const viewData = {
     id: "UoM-filter",
     label: "UoM Filter",
     link: "/services/web/codbex-uoms/gen/ui/UnitsOfMeasures/UoM/dialog-filter/index.html",
-    perspectiveName: "UnitsOfMeasures"
+    perspectiveName: "UnitsOfMeasures",
 };
 
 if (typeof exports !== 'undefined') {

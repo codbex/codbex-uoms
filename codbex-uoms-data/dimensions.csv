@@ -1,9 +1,51 @@
-DIMENSION_ID,DIMENSION_NAME,DIMENSION_BASEUNIT
-1,Length,m
-2,Mass,kg
-3,Time,s
-4,Area,m2
-5,Volume,m3
-6,Quantity,EA
-7,Energy,J
-8,Proportion,%
+DIMENSION_ID,DIMENSION_NAME
+NODMNSN,(no dimensions)
+ACCEL,Acceleration
+ACBAC,Acid/Base capacity
+SURFAC,Area
+CONDUC,Conductivity
+DENSI,Density
+STEXKZ,Dust explosion ratio
+VISDYN,Dynamic viscosity
+RESIST,Elec. Resistance
+ECURR,Electr. Current
+VOLTAG,Electr. Tension
+CAPACI,Electr. capacity
+ENERGY,Energy
+FORCE,Force
+FREQU,Frequency
+THCOND,Heat Conductivity
+HYDROL,Hydrolysis rate
+SURINV,Inverse area
+VISKIN,Kinematic viscosity
+LENGTH,Length
+LIGHT,Luminous intensity
+MAGNFD,Magnet. field dens.
+MASS,Mass
+MASSBD,Mass coverage
+MASFLO,Mass flow
+MAPER,Mass per Energy
+MPROPO,Mass proportion
+MOENER,Molar energy
+MOLMAS,Mole mass
+MOLQU,Mole quantity
+TKONZ,Particle concentrat.
+PERMEA,Permeability
+POINTS,Points
+POWER,Power
+PRESS,Pressure
+PROPOR,Proportion
+TEMPRT,Rate of temp. change
+SPREST,Sp. Elec. Resistance
+SPHCAP,Spec. Heat Capacity
+SPAEQU,Spec. equivalent
+SPARAD,Spec.act.radioac.sub
+SPENER,Specific energy
+SPEED,Speed
+SURFTE,Surface tension
+TEMP,Temperature
+TIME,Time
+EVARA,Vaporization Speed
+VOLUME,Volume
+VPROPO,Volume proportion
+VOLFLO,Volume rate of flow

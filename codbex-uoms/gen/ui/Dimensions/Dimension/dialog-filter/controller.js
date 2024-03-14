@@ -43,13 +43,10 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				},
 			};
 			if (entity.Id) {
-				filter.$filter.equals.Id = entity.Id;
+				filter.$filter.contains.Id = entity.Id;
 			}
 			if (entity.Name) {
 				filter.$filter.contains.Name = entity.Name;
-			}
-			if (entity.BaseUnit) {
-				filter.$filter.contains.BaseUnit = entity.BaseUnit;
 			}
 			messageHub.postMessage("entitySearch", {
 				entity: entity,

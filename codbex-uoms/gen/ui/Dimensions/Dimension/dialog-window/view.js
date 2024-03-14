@@ -7,7 +7,7 @@ const viewData = {
     id: "Dimension-details",
     label: "Dimension",
     link: "/services/web/codbex-uoms/gen/ui/Dimensions/Dimension/dialog-window/index.html",
-    perspectiveName: "Dimensions"
+    perspectiveName: "Dimensions",
 };
 
 if (typeof exports !== 'undefined') {

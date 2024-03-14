@@ -9,7 +9,7 @@ const viewData = {
     factory: "frame",
     region: "center",
     link: "/services/web/codbex-uoms/gen/ui/UnitsOfMeasures/UoM/index.html",
-    perspectiveName: "UnitsOfMeasures"
+    perspectiveName: "UnitsOfMeasures",
 };
 
 if (typeof exports !== 'undefined') {

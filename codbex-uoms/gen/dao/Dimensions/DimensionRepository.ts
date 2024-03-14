@@ -4,56 +4,47 @@ import { extensions } from "sdk/extensions";
 import { dao as daoApi } from "sdk/db";
 
 export interface DimensionEntity {
-    readonly Id: number;
+    readonly Id: string;
     Name?: string;
-    BaseUnit?: string;
 }
 
 export interface DimensionCreateEntity {
     readonly Name?: string;
-    readonly BaseUnit?: string;
 }
 
 export interface DimensionUpdateEntity extends DimensionCreateEntity {
-    readonly Id: number;
+    readonly Id: string;
 }
 
 export interface DimensionEntityOptions {
     $filter?: {
         equals?: {
-            Id?: number | number[];
+            Id?: string | string[];
             Name?: string | string[];
-            BaseUnit?: string | string[];
         };
         notEquals?: {
-            Id?: number | number[];
+            Id?: string | string[];
             Name?: string | string[];
-            BaseUnit?: string | string[];
         };
         contains?: {
-            Id?: number;
+            Id?: string;
             Name?: string;
-            BaseUnit?: string;
         };
         greaterThan?: {
-            Id?: number;
+            Id?: string;
             Name?: string;
-            BaseUnit?: string;
         };
         greaterThanOrEqual?: {
-            Id?: number;
+            Id?: string;
             Name?: string;
-            BaseUnit?: string;
         };
         lessThan?: {
-            Id?: number;
+            Id?: string;
             Name?: string;
-            BaseUnit?: string;
         };
         lessThanOrEqual?: {
-            Id?: number;
+            Id?: string;
             Name?: string;
-            BaseUnit?: string;
         };
     },
     $select?: (keyof DimensionEntity)[],
@@ -70,7 +61,7 @@ interface DimensionEntityEvent {
     readonly key: {
         name: string;
         column: string;
-        value: number;
+        value: string;
     }
 }
 
@@ -82,18 +73,13 @@ export class DimensionRepository {
             {
                 name: "Id",
                 column: "DIMENSION_ID",
-                type: "INTEGER",
+                type: "VARCHAR",
                 id: true,
                 autoIncrement: true,
             },
             {
                 name: "Name",
                 column: "DIMENSION_NAME",
-                type: "VARCHAR",
-            },
-            {
-                name: "BaseUnit",
-                column: "DIMENSION_BASEUNIT",
                 type: "VARCHAR",
             }
         ]
@@ -109,12 +95,12 @@ export class DimensionRepository {
         return this.dao.list(options);
     }
 
-    public findById(id: number): DimensionEntity | undefined {
+    public findById(id: string): DimensionEntity | undefined {
         const entity = this.dao.find(id);
         return entity ?? undefined;
     }
 
-    public create(entity: DimensionCreateEntity): number {
+    public create(entity: DimensionCreateEntity): string {
         const id = this.dao.insert(entity);
         this.triggerEvent({
             operation: "create",
@@ -143,7 +129,7 @@ export class DimensionRepository {
         });
     }
 
-    public upsert(entity: DimensionCreateEntity | DimensionUpdateEntity): number {
+    public upsert(entity: DimensionCreateEntity | DimensionUpdateEntity): string {
         const id = (entity as DimensionUpdateEntity).Id;
         if (!id) {
             return this.create(entity);
@@ -158,7 +144,7 @@ export class DimensionRepository {
         }
     }
 
-    public deleteById(id: number): void {
+    public deleteById(id: string): void {
         const entity = this.dao.find(id);
         this.dao.remove(id);
         this.triggerEvent({
@@ -177,7 +163,7 @@ export class DimensionRepository {
         return this.dao.count(options);
     }
 
-    public customDataCount(options?: DimensionEntityOptions): number {
+    public customDataCount(): number {
         const resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX__DIMENSION"');
         if (resultSet !== null && resultSet[0] !== null) {
             if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
@@ -190,7 +176,7 @@ export class DimensionRepository {
     }
 
     private async triggerEvent(data: DimensionEntityEvent) {
-        const triggerExtensions = await extensions.loadExtensionModules("codbex-uoms/Dimensions/Dimension", ["trigger"]);
+        const triggerExtensions = await extensions.loadExtensionModules("codbex-uoms-Dimensions-Dimension", ["trigger"]);
         triggerExtensions.forEach(triggerExtension => {
             try {
                 triggerExtension.trigger(data);
@@ -198,6 +184,6 @@ export class DimensionRepository {
                 console.error(error);
             }            
         });
-        producer.topic("codbex-uoms/Dimensions/Dimension").send(JSON.stringify(data));
+        producer.topic("codbex-uoms-Dimensions-Dimension").send(JSON.stringify(data));
     }
 }

@@ -12,6 +12,6 @@ exports.getTile = function () {
         // icon: "file-o",
         location: "/services/web/codbex-uoms/gen/ui/UnitsOfMeasures/index.html",
         order: "100",
-        groupOrder: "980"
+        groupOrder: "980",
     };
 };

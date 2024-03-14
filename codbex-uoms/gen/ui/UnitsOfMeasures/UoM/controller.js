@@ -101,14 +101,12 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("UoM-details", {
 				action: "select",
 				entity: entity,
-				optionsDimension: $scope.optionsDimension,
 			});
 		};
 
 		$scope.openFilter = function (entity) {
 			messageHub.showDialogWindow("UoM-filter", {
 				entity: $scope.filterEntity,
-				optionsDimension: $scope.optionsDimension,
 			});
 		};
 
@@ -117,7 +115,6 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("UoM-details", {
 				action: "create",
 				entity: {},
-				optionsDimension: $scope.optionsDimension,
 			}, null, false);
 		};
 
@@ -125,7 +122,6 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.showDialogWindow("UoM-details", {
 				action: "update",
 				entity: entity,
-				optionsDimension: $scope.optionsDimension,
 			}, null, false);
 		};
 
@@ -157,28 +153,5 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				}
 			});
 		};
-
-		//----------------Dropdowns-----------------//
-		$scope.optionsDimension = [];
-
-
-		$http.get("/services/ts/codbex-uoms/gen/api/Dimensions/DimensionService.ts").then(function (response) {
-			$scope.optionsDimension = response.data.map(e => {
-				return {
-					value: e.Id,
-					text: e.Name
-				}
-			});
-		});
-
-		$scope.optionsDimensionValue = function (optionKey) {
-			for (let i = 0; i < $scope.optionsDimension.length; i++) {
-				if ($scope.optionsDimension[i].value === optionKey) {
-					return $scope.optionsDimension[i].text;
-				}
-			}
-			return null;
-		};
-		//----------------Dropdowns-----------------//
 
 	}]);
