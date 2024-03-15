@@ -2,24 +2,29 @@ import { query } from "sdk/db";
 import { producer } from "sdk/messaging";
 import { extensions } from "sdk/extensions";
 import { dao as daoApi } from "sdk/db";
+import { EntityUtils } from "../utils/EntityUtils";
 
 export interface UoMEntity {
     readonly Id: string;
     Name?: string;
-    Code?: string;
+    ISO?: string;
+    SAP?: string;
     Dimension?: string;
     Numerator?: number;
     Denominator?: number;
     Rounding?: number;
+    Base?: boolean;
 }
 
 export interface UoMCreateEntity {
     readonly Name?: string;
-    readonly Code?: string;
+    readonly ISO?: string;
+    readonly SAP?: string;
     readonly Dimension?: string;
     readonly Numerator?: number;
     readonly Denominator?: number;
     readonly Rounding?: number;
+    readonly Base?: boolean;
 }
 
 export interface UoMUpdateEntity extends UoMCreateEntity {
@@ -31,65 +36,79 @@ export interface UoMEntityOptions {
         equals?: {
             Id?: string | string[];
             Name?: string | string[];
-            Code?: string | string[];
+            ISO?: string | string[];
+            SAP?: string | string[];
             Dimension?: string | string[];
             Numerator?: number | number[];
             Denominator?: number | number[];
             Rounding?: number | number[];
+            Base?: boolean | boolean[];
         };
         notEquals?: {
             Id?: string | string[];
             Name?: string | string[];
-            Code?: string | string[];
+            ISO?: string | string[];
+            SAP?: string | string[];
             Dimension?: string | string[];
             Numerator?: number | number[];
             Denominator?: number | number[];
             Rounding?: number | number[];
+            Base?: boolean | boolean[];
         };
         contains?: {
             Id?: string;
             Name?: string;
-            Code?: string;
+            ISO?: string;
+            SAP?: string;
             Dimension?: string;
             Numerator?: number;
             Denominator?: number;
             Rounding?: number;
+            Base?: boolean;
         };
         greaterThan?: {
             Id?: string;
             Name?: string;
-            Code?: string;
+            ISO?: string;
+            SAP?: string;
             Dimension?: string;
             Numerator?: number;
             Denominator?: number;
             Rounding?: number;
+            Base?: boolean;
         };
         greaterThanOrEqual?: {
             Id?: string;
             Name?: string;
-            Code?: string;
+            ISO?: string;
+            SAP?: string;
             Dimension?: string;
             Numerator?: number;
             Denominator?: number;
             Rounding?: number;
+            Base?: boolean;
         };
         lessThan?: {
             Id?: string;
             Name?: string;
-            Code?: string;
+            ISO?: string;
+            SAP?: string;
             Dimension?: string;
             Numerator?: number;
             Denominator?: number;
             Rounding?: number;
+            Base?: boolean;
         };
         lessThanOrEqual?: {
             Id?: string;
             Name?: string;
-            Code?: string;
+            ISO?: string;
+            SAP?: string;
             Dimension?: string;
             Numerator?: number;
             Denominator?: number;
             Rounding?: number;
+            Base?: boolean;
         };
     },
     $select?: (keyof UoMEntity)[],
@@ -128,8 +147,13 @@ export class UoMRepository {
                 type: "VARCHAR",
             },
             {
-                name: "Code",
-                column: "UOM_CODE",
+                name: "ISO",
+                column: "UOM_ISO",
+                type: "VARCHAR",
+            },
+            {
+                name: "SAP",
+                column: "UOM_SAP",
                 type: "VARCHAR",
             },
             {
@@ -151,6 +175,11 @@ export class UoMRepository {
                 name: "Rounding",
                 column: "UOM_ROUNDING",
                 type: "INTEGER",
+            },
+            {
+                name: "Base",
+                column: "UOM_BASE",
+                type: "BOOLEAN",
             }
         ]
     };
@@ -162,15 +191,20 @@ export class UoMRepository {
     }
 
     public findAll(options?: UoMEntityOptions): UoMEntity[] {
-        return this.dao.list(options);
+        return this.dao.list(options).map((e: UoMEntity) => {
+            EntityUtils.setBoolean(e, "Base");
+            return e;
+        });
     }
 
     public findById(id: string): UoMEntity | undefined {
         const entity = this.dao.find(id);
+        EntityUtils.setBoolean(entity, "Base");
         return entity ?? undefined;
     }
 
     public create(entity: UoMCreateEntity): string {
+        EntityUtils.setBoolean(entity, "Base");
         const id = this.dao.insert(entity);
         this.triggerEvent({
             operation: "create",
@@ -186,6 +220,7 @@ export class UoMRepository {
     }
 
     public update(entity: UoMUpdateEntity): void {
+        EntityUtils.setBoolean(entity, "Base");
         this.dao.update(entity);
         this.triggerEvent({
             operation: "update",

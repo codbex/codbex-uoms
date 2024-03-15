@@ -1,247 +1,184 @@
-UOM_ID,UOM_NAME,UOM_CODE,UOM_DIMENSION,UOM_NUMERATOR,UOM_DENOMINATOR,UOM_ROUNDING
-LE,Activity unit ( AU ),C62,NODMNSN,1,1,0
-BAG,Bag ( Bag ),BG,NODMNSN,1,1,0
-BOT,Bottle ( Bt. ),BO,NODMNSN,1,1,0
-BU,Bushel ( BU ),BU,NODMNSN,1,1,0
-KAN,Canister ( Can ),CA,NODMNSN,1,1,0
-KAR,Carton ( Car ),CT,NODMNSN,1,1,0
-CS,Case ( Case ),CS,NODMNSN,1,1,0
-KI,Crate ( Crate ),BX,NODMNSN,1,1,0
-DEG,Degree ( deg ),DD,NODMNSN,1,1,0
-DZ,Dozen ( dz ),DZN,NODMNSN,1,1,0
-DR,Drum ( Dr ),DR,NODMNSN,1,1,0
-EML,Enzyme Units / Milliliter ( EU/ml ),EML,NODMNSN,1,1,0
-G/T,Gram Active Ingredient/To ( gai/To ),G/T,NODMNSN,1,1,0
-GAU,Gram Gold ( GAU ),GAU,NODMNSN,1,1,0
-GAG,Gram Silver ( GAG ),GAG,NODMNSN,1,1,0
-GW,Gram act. ingrd. ( gai ),A90,NODMNSN,1,1,0
-GRO,Gross ( gro ),GRO,NODMNSN,1,1,0
-PCT,Group proportion ( PrC ),PCT,NODMNSN,1,1,0
-IU,International Unit ( IU ),IU,NODMNSN,1,1,0
-KGW,Kilogram act. ingrd. ( kgai ),KGW,NODMNSN,1,1,0
-MBL,MBL ( MBL ),MIL,NODMNSN,1,1,0
-MLW,Milliliter act. ingr. ( mlai ),MLW,NODMNSN,1,1,0
-YTM,Moisture (Tonnes) ( YTM ),YTM,NODMNSN,1,1,0
-PRS,Number of Persons ( PRS ),IE,NODMNSN,1,1,0
-PC,Pieces ( PC ),PC,NODMNSN,1,1,0
-PAK,Pack ( PAK ),PK,NODMNSN,1,1,0
-PAA,Pair ( PAIR ),PR,NODMNSN,1,1,0
-PAL,Pallet ( PAL ),PF,NODMNSN,1,1,0
-ST,Pieces (EA) ( EA ),PCE,NODMNSN,1,1,0
-PCE,Pieces ( PCE ),PCE,NODMNSN,1,1,0
-ROL,Role ( ROL ),RO,NODMNSN,1,1,0
-SCM,SCM ( SCM ),SCM,NODMNSN,1,1,0
-TH,Thousands ( thou ),MIL,NODMNSN,1,1,0
-TCU,Ton Copper ( TCU ),TCU,NODMNSN,1,1,0
-TAS,Tonne Arsenic ( TAS ),TAS,NODMNSN,1,1,0
-YTA,Tonne Ash ( YTA ),YTA,NODMNSN,1,1,0
-YTD,Tonne Dry ( YTDr ),YTD,NODMNSN,1,1,0
-TOZ,Troy OncesTonne ( Toz ),TOZ,NODMNSN,1,1,0
-TOT,Troy Oz / Tonne ( Tot ),TOT,NODMNSN,1,1,0
-VAL,Value-only material ( val ),VAL,NODMNSN,1,1,0
-EA,Each (ST) ( ST ),EA,NODMNSN,1,1,0
-G/L,Gram act.ingrd / liter ( gai/l ),G/L,NODMNSN,1,1,0
-KWK,Kg act.ingrd. / kg ( kai/kg ),KWK,NODMNSN,1,1,0
-MS2,Meter/second squared ( m/s2 ),MSK,ACCEL,1,1,0
-V02,Millimol per liter ( mMol/l ),C36,ACBAC,1000,,0
-C36,Mol per cubic meter ( mol/m3 ),C36,ACBAC,1,1000,0
-C38,Mol per liter ( Mol/l ),C38,ACBAC,1,1,0
-ACR,Acre ( acre ),ACR,SURFAC,4046860,1000,0
-HAR,Hectare ( Hectar ),HAR,SURFAC,10000,1,0
-YD2,Square Yard ( yd2 ),YDK,SURFAC,836126983,10000000000,0
-CM2,Square centimeter ( cm2 ),CMK,SURFAC,1,10000,0
-FT2,Square foot ( ft2 ),FTK,SURFAC,9290304,100000000,0
-IN2,Square inch ( Inch2 ),INK,SURFAC,6451612903,10000000000000,0
-KM2,Square kilometer ( km2 ),KMK,SURFAC,1000000,1,0
-M2,Square meter ( m2 ),MTK,SURFAC,1,1,0
-MI2,Square mile ( Mile2 ),MIK,SURFAC,2589988,1,0
-MM2,Square millimeter ( mm2 ),MMK,SURFAC,1,1000000,0
-V01,Microsiemens per centimeter ( µS/cm ),G42,CONDUC,1,1000000,0
-D10,Siemens per meter ( S/m ),D10,CONDUC,1,1,0
-A93,Gram/Cubic meter ( g/m3 ),A93,DENSI,1,1,0
-RHO,Gram/cubic centimeter ( g/cm3 ),23,DENSI,1000000,1,0
-GLI,Gram/liter ( g/l ),GL,DENSI,1000,1,0
-KGB,Kilogram/US Barrel ( kg/bbl ),KGB,DENSI,62898107704321,10000000000,0
-B34,Kilogram/cubic decimeter ( kg/dm3 ),B34,DENSI,1000000,1,0
-KGV,Kilogram/cubic meter ( kg/m3 ),KMQ,DENSI,1000,1,0
-GQ,Microgram/cubic meter ( µg/m3 ),GQ,DENSI,1,1000000,0
-UGL,Microgram/liter ( µg/l ),H29,DENSI,1,1000,0
-MGQ,Milligram/cubic meter ( mg/m3 ),GP,DENSI,1,1000,0
-MGL,Milligram/liter ( mg/l ),M1,DENSI,1,1,0
-D41,Ton/Cubic meter ( t/m3 ),D41,DENSI,1000000,1,0
-LBG,US Pound/US Gallon ( lb/gal ),GE,DENSI,1601846,100,0
-MBZ,Meterbar/second ( m.b_/s ),MBZ,STEXKZ,1,1,0
-MPZ,Meterpascal/second ( m.Pa/s ),MPZ,STEXKZ,100000,1,0
-MPS,Millipascal seconds ( mPa.s ),C24,VISDYN,1,1000,0
-PAS,Pascal second ( Pas ),C65,VISDYN,1,1,0
-A87,Gigaohm ( GOhm ),A87,RESIST,1000000000,1,0
-KOH,Kiloohm ( kOhm ),B49,RESIST,1000,1,0
-B75,Megohm ( MOhm ),B75,RESIST,1000000,1,0
-OHM,Ohm ( Ohm ),OHM,RESIST,1,1,0
-A,Ampere ( A ),AMP,ECURR,1,1,0
-KA,Kiloampere ( kA ),B22,ECURR,1000,1,0
-B84,Microampere ( µA ),B84,ECURR,1,1000000,0
-MA,Milliampere ( mA ),4K,ECURR,1,1000,0
-C39,Nanoampere ( nA ),C39,ECURR,1,1000000000,0
-KV,Kilovolt ( kV ),KVT,VOLTAG,1000,1,0
-B78,Megavolt ( MV ),B78,VOLTAG,1000000,1,0
-MV,Millivolt ( mV ),2Z,VOLTAG,1,1000,0
-V,Volt ( V ),VLT,VOLTAG,1,1,0
-F,Farad ( F ),FAR,CAPACI,1,1,0
-4O,Microfarad ( µF ),4O,CAPACI,1,1000000,0
-C10,Millifarad ( mF ),C10,CAPACI,1,1000,0
-C41,Nanofarad ( nF ),C41,CAPACI,1,1000000000,0
-4T,Pikofarad ( pF ),4T,CAPACI,1,1000000000000,0
-GJ,Gigajoule ( GJ ),GV,ENERGY,1000000000,1,0
-J,Joule ( J ),JOU,ENERGY,1,1,0
-KJ,Kilojoule ( kJ ),KJO,ENERGY,1000,1,0
-KWH,Kilowatt hours ( kwh ),KWH,ENERGY,3600000,1,0
-MEJ,Megajoule ( MJ ),3B,ENERGY,1000000,1,0
-MWH,Megawatt hour ( MWh ),MWH,ENERGY,3600000000,1,0
-MJ,Millijoule ( mJ ),C15,ENERGY,1,1000,0
-CAL,Kilocalories ( KCAL ),3B,ENERGY,41868,10,0
-B47,Kilonewton ( ND ),B47,FORCE,1000,1,0
-B73,Meganewton ( MN ),B73,FORCE,1000000,1,0
-N,Newton ( N ),NEW,FORCE,1,1,0
-PMI,1/minute ( 1/min ),PMI,FREQU,1666667,100000000,0
-HZ,Hertz (1/second) ( Hz ),HTZ,FREQU,1,1,0
-KHZ,Kilohertz ( kHz ),KHZ,FREQU,1000,1,0
-MHZ,Megahertz ( MHz ),MHZ,FREQU,1000000,1,0
-RPM,RPM ( RPM ),RPM,FREQU,1666667,100000000,0
-WMK,Heat Conductivity ( W/mk ),D53,THCOND,1,1,0
-LMS,Liter/Molsecond ( l/m_.s ),LMS,HYDROL,1,1,0
-M2I,1 / square meter ( 1/M2 ),M2I,SURINV,1,1,0
-M2S,Square meter/second ( m2/s ),S4,VISKIN,1,1,0
-22S,Square millimeter/second ( mm2/s ),C17,VISKIN,1,1000000,0
-CM,Centimeter ( cm ),CMT,LENGTH,1,100,0
-DM,Decimeter ( dm ),DMT,LENGTH,1,10,0
-FT,Foot ( Foot ),FOT,LENGTH,3048,10000,0
-IN,Inch,INH,LENGTH,254,10000,0
-M,Kilometer ( km ),KMT,LENGTH,1000,1,0
-M,Meter ( m ),M,LENGTH,1,1,0
-MIM,Micrometer ( µm ),4H,LENGTH,1,1000000,0
-MI,Mile ( mile ),SMI,LENGTH,1609344,1000,0
-MM,Millimeter ( mm ),MMT,LENGTH,1,1000,0
-NAM,Nanometer ( nm ),C45,LENGTH,1,1000000000,0
-YD,Yards ( yd ),YRD,LENGTH,9144,10000,0
-CD,Candela ( cd ),CDL,LIGHT,1,1,0
-MTE,Millitesla ( mT ),C29,MAGNFD,1,1000,0
-TES,Tesla ( D ),D33,MAGNFD,1,1,0
-G,Gram ( g ),GRM,MASS,1,1,0
-KT,Kilotonne ( kt ),KTN,MASS,1000000000,1,0
-MG,Milligram ( mg ),MGM,MASS,1,1000,0
-OZ,Ounce ( oz ),ONZ,MASS,28349523125,1000000000,0
-TO,Tonne ( t ),TNE,MASS,1000000,1,0
-LB,US pound ( lb ),LBR,MASS,45359237,100000,0
-TON,US ton ( ton ),STN,MASS,9071847,10,0
-KG,Kg ( KG ),KGM,MASS,1000,1,0
-GM2,Gram/square meter ( g/m2 ),GM,MASSBD,1,1,0
-KGF,Kilogram/Square meter ( kg/m2 ),28,MASSBD,1000,1,0
-MGF,Milligram/Square centimeter ( mg/cm2 ),H63,MASSBD,1,1000000,0
-KGS,Kilogram/second ( kg/s ),KGS,MASFLO,1000,1,0
-KGJ,Kilogram/Joule ( kg/J ),KGJ,MAPER,1000,1,0
-GHG,Gram/hectogram ( g/hg ),GHG,MPROPO,1000000,1,0
-GKG,Gram/kilogram ( g/kg ),GKG,MPROPO,1000,1,0
-KGK,Kilogram/Kilogram ( kg/kg ),M29,MPROPO,1,1,0
-MGK,Milligram/kilogram ( mg/kg ),NA,MPROPO,1000000,0,0
-TT,Tonne/Tonne ( t/t ),TT,MPROPO,1,1,0
-JMO,Joule/Mol ( J/mol ),B15,MOENER,1,1,0
-KJM,Kilojoule/Mol ( KJ/mol ),B44,MOENER,1000,1,0
-GM,Gram/Mol ( g/mol ),,MOLMAS,1,1,0
-KML,Kilogram/Kilogram Mole ( kg/kgm ),KML,MOLMAS,1,1,0
-KGM,Kilogram/Mol ( kg/mol ),,MOLMAS,1000,1,0
-B45,Kilomol ( kmol ),B45,MOLQU,1000,1,0
-MMO,Millimol ( mmol ),C18,MOLQU,1,1000,0
-MOL,Mol ( mol ),C34,MOLQU,1,1,0
-TC3,1/cubic centimeter ( 1/cm3 ),TC3,TKONZ,1000000,1,0
-TM3,1/cubic meter ( 1/m3 ),,TKONZ,1,1,0
-PMR,Permeation Rate SI ( kg/m2s ),PMR,PERMEA,1,1,0
-P,Points ( P ),P,POINTS,1,1,0
-KVA,Kilovoltampere ( kVA ),KVA,POWER,1000,1,0
-KW,Kilowatt ( KW ),KWT,POWER,1000,1,0
-MVA,Megavoltampere ( MVA ),MVA,POWER,1000000,1,0
-MGW,Megawatt ( VA ),MAW,POWER,1000000,1,0
-MW,Milliwatt ( mW ),C31,POWER,1,1000,0
-D46,Voltampere ( VAM ),D46,POWER,1,1,0
-W,Watt ( W ),WTT,POWER,1,1,0
-HPA,Hectopascal ( hPa ),A97,PRESS,1,1000,0
-JM3,Joule/Cubic Meter ( J/m3 ),JM3,PRESS,0,0,0
-KPA,Kilopascal ( kPa ),KPA,PRESS,1,100,0
-MPA,Megapascal ( MPa ),MPA,PRESS,10,1,0
-MBA,Millibar ( mbar ),MBR,PRESS,1,1000,0
-C56,Newton/Square millimeter ( N/mm2 ),C56,PRESS,10,1,0
-PA,Pascal ( Pa ),PAL,PRESS,1,100000,0
-BAR,Bar ( bar ),BAR,PRESS,1,1,0
-1,One ( One ),C62,PROPOR,1,1,0
-PPB,Parts per billion ( ppb ),PPB,PROPOR,1,1000000000,0
-PPM,Parts per million ( ppm ),59,PROPOR,1,1000000,0
-PPT,Parts per trillion ( ppt ),PPT,PROPOR,1,1000000000000,0
-%O,Per mille ( %O ),%O,PROPOR,1,1000,0
-%,Percentage ( % ),P1,PROPOR,1,100,0
-KMN,Kelvin/Minute ( K/min ),F11,TEMPRT,60,1,0
-KMS,Kelvin/Second ( K/s ),F12,TEMPRT,1,1,0
-OM,Spec. Elec. Resistance ( Ohmm ),C61,SPREST,1,1,0
-JKK,Spec. Heat Capacity ( J/kgK ),B11,SPHCAP,1,1,0
-MOK,Mol/kilogram ( mol/kg ),C19,SPAEQU,1,1,0
-BQK,Becquerel/kilogram ( Bq/kg ),A18,SPARAD,1,1,0
-KBK,Kilobecquerel/kilogram ( kBq/kg ),B25,SPARAD,1000,1,0
-BTL,British Thermal Unit/US Pound ( Btu/lb ),BTL,SPENER,0,0,0
-GJT,Gigajoule/US Tonne ( GJ/ton ),GJT,SPENER,0,0,0
-JKG,Joule/Kilogram ( J/kg ),JKG,SPENER,1,1,0
-KJK,Kilojoule/kilogram ( KJ/kg ),KJK,SPENER,1000,1,0
-CMH,Centimeter/hour ( cm/h ),,SPEED,277778,100000000000,0
-2M,Centimeter/second ( cm/s ),2M,SPEED,1,100,0
-KMH,Kilometer/hour ( km/h ),KMH,SPEED,277778,1000000,0
-MTS,Meter/Hour ( m/h ),X03,SPEED,277778,1000000000,0
-2X,Meter/Minute ( m/min ),2X,SPEED,1666667,100000000,0
-M/S,Meter/second ( m/s ),MTS,SPEED,1,1,0
-MMH,Millimeter/hour ( mm/h ),H67,SPEED,277778,1000000000000,0
-MMS,Millimeter/second ( mm/s ),C16,SPEED,1,1000,0
-MMA,Millimeter/year ( mm/a ),H66,SPEED,317,10000000000000,0
-MNM,Millinewton/meter ( mN/m ),C22,SURFTE,1,1000,0
-NM,Newton/meter ( N/m ),4P,SURFTE,1,1,0
-GC,Degrees Celsius ( °C ),CEL,TEMP,27415,100,0
-FA,Fahrenheit ( °F ),FAH,TEMP,2559278,10000,0
-K,Kelvin ( K ),KEL,TEMP,1,1,0
-TAG,Days ( Days ),DAY,TIME,86400,1,0
-H,Hour ( h ),HUR,TIME,3600,1,0
-MIS,Microsecond ( µs ),B98,TIME,1,1000000,0
-MS,Millisecond ( ms ),C26,TIME,1,1000,0
-MIN,Minute ( min ),MIN,TIME,60,1,0
-MON,Months ( Months ),MON,TIME,2629700,1,0
-NS,Nanosecond ( ns ),C47,TIME,1,1000000000,0
-PS,Picosecond ( ps ),H70,TIME,1,1000000000000,0
-S,Second ( s ),SEC,TIME,1,1,0
-WCH,Weeks ( Weeks ),WEE,TIME,604800,1,0
-JHR,Years ( yr ),ANN,TIME,31556950,1,0
-WTL,Vaporization Speed ( kg/sm2 ),WTL,EVARA,1,1,0
-CTL,Centiliter ( Cl ),CTL,VOLUME,1,100,0
-CCM,Cubic centimeter ( cm3 ),CMQ,VOLUME,1,1000,0
-CDM,Cubic decimeter ( dm3 ),DMQ,VOLUME,1,1,0
-FT3,Cubic foot ( ft3 ),FTQ,VOLUME,28316846,1000000,0
-IN3,Cubic inch ( Inch3 ),INQ,VOLUME,16387,1000000,0
-M3,Cubic meter ( m3 ),MTQ,VOLUME,1000,1,0
-MMQ,Cubic millimeter ( mm3 ),MMQ,VOLUME,1,1000000,0
-YD3,Cubic yard ( yd3 ),YDQ,VOLUME,764554857,1000000,0
-OZA,Fluid Ounce US ( foz US ),OZA,VOLUME,29573,1000000,0
-HL,Hectoliter ( hl ),HLT,VOLUME,100,1,0
-L,Liter ( l ),LTR,VOLUME,1,1,0
-4G,Microliter ( µl ),4G,VOLUME,1,1000000,0
-ML,Milliliter ( ml ),MLT,VOLUME,1,1000,0
-PT,Pint US liquid ( pt US ),PT,VOLUME,55061,100000,0
-QT,Quart US liquid ( qt US ),QTL,VOLUME,110122,100000,0
-GLL,US gallon ( gal US ),GLL,VOLUME,440488,100000,0
-KMK,Cubic meter/Cubic meter ( m3/m3 ),X02,VPROPO,1,1,0
-MLK,Milliliter/cubic meter ( ml/m3 ),MLK,VPROPO,1,1000000,0
-V%,Percent volume ( %(V) ),PV,VPROPO,1,100,0
-V%O,Permille volume ( %O(V) ),VPO,VPROPO,1,1000,0
-VPB,Volume parts per billion ( ppb(V) ),VPB,VPROPO,1,1000000000,0
-VPM,Volume parts per million ( ppm(V) ),VPM,VPROPO,1,1000000,0
-VPT,Volume parts per trillion ( ppt(V) ),VPT,VPROPO,1,1000000000000,0
-C3S,Cubic centimeter/second ( cm3/s ),2J,VOLFLO,1,1000000,0
-MQH,Cubic meter/Hour ( m3/h ),MQH,VOLFLO,277778,1000000000,0
-M3D,Cubic meter/day ( m3/d ),G52,VOLFLO,6666672,1000000000,0
-M3S,Cubic meter/second ( m3/s ),MQS,VOLFLO,1,1,0
-GPH,Gallons per hour (US) ( GPH US ),G50,VOLFLO,10515,10000000000,0
-LPH,Liter per hour ( L/hr ),LPH,VOLFLO,2778,10000000000,0
-L2,Liter/Minute ( l/min ),L2,VOLFLO,1667,100000000,0
+UOM_ID,UOM_NAME,UOM_ISO,UOM_SAP,UOM_DIMENSION,UOM_NUMERATOR,UOM_DENOMINATOR,UOM_ROUNDING,UOM_BASE
+BG,Bag ( Bag ),BG,BAG,NODMNSN,1,1,0,false
+BO,Bottle ( Bt. ),BO,BOT,NODMNSN,1,1,0,false
+BUA,Bushel ( BUA ),BUA,BU,NODMNSN,1,1,0,false
+CA,Canister ( Can ),CA,KAN,NODMNSN,1,1,0,false
+CT,Carton ( Car ),CT,KAR,NODMNSN,1,1,0,false
+CS,Case ( Case ),CS,CS,NODMNSN,1,1,0,false
+BX,Crate ( Crate ),BX,KI,NODMNSN,1,1,0,false
+DD,Degree ( deg ),DD,DEG,NODMNSN,1,1,0,false
+DPC,Dozen ( dz ),DPC,DZ,NODMNSN,1,1,0,false
+DR,Drum ( Dr ),DR,DR,NODMNSN,1,1,0,false
+GRO,Gross ( gro ),GRO,GRO,NODMNSN,1,1,0,false
+NIU,International Unit ( NIU ),NIU,IU,NODMNSN,1,1,0,false
+IE,Number of Persons ( PRS ),IE,PRS,NODMNSN,1,1,0,false
+NMP,Pack ( NMP ),NMP,PAK,NODMNSN,1,1,0,false
+NPR,Pair ( NPR ),NPR,PAA,NODMNSN,1,1,0,false
+PF,Pallet ( PAL ),PF,PAL,NODMNSN,1,1,0,false
+C62,Pieces ( C62 ),C62,PCE,NODMNSN,1,1,0,false
+NRL,Role ( NRL ),NRL,ROL,NODMNSN,1,1,0,false
+MIL,Thousands ( thou ),MIL,TH,NODMNSN,1,1,0,false
+APZ,Troy OncesTonne ( APZ ),APZ,TOZ,NODMNSN,1,1,0,false
+EA,Each (ST) ( ST ),EA,EA,NODMNSN,1,1,0,false
+MSK,Meter/second squared ( m/s2 ),MSK,MS2,ACCEL,1,1,0,true
+C36,Mol per cubic meter ( mol/m3 ),C36,C36,ACBAC,1,1000,0,false
+C38,Mol per liter ( Mol/l ),C38,C38,ACBAC,1,1,0,true
+ACR,Acre ( acre ),ACR,ACR,SURFAC,4046860,1000,0,false
+HAR,Hectare ( Hectar ),HAR,HAR,SURFAC,10000,1,0,false
+YDK,Square Yard ( yd2 ),YDK,YD2,SURFAC,836126983,10000000000,0,false
+CMK,Square centimeter ( cm2 ),CMK,CM2,SURFAC,1,10000,0,false
+FTK,Square foot ( ft2 ),FTK,FT2,SURFAC,9290304,100000000,0,false
+INK,Square inch ( Inch2 ),INK,IN2,SURFAC,6451612903,10000000000000,0,false
+KMK,Square kilometer ( km2 ),KMK,KM2,SURFAC,1000000,1,0,false
+MTK,Square meter ( m2 ),MTK,M2,SURFAC,1,1,0,true
+MIK,Square mile ( Mile2 ),MIK,MI2,SURFAC,2589988,1,0,false
+MMK,Square millimeter ( mm2 ),MMK,MM2,SURFAC,1,1000000,0,false
+D10,Siemens per meter ( S/m ),D10,D10,CONDUC,1,1,0,true
+A93,Gram/Cubic meter ( g/m3 ),A93,A93,DENSI,1,1,0,true
+23,Gram/cubic centimeter ( g/cm3 ),23,RHO,DENSI,1000000,1,0,false
+GL,Gram/liter ( g/l ),GL,GLI,DENSI,1000,1,0,false
+B34,Kilogram/cubic decimeter ( kg/dm3 ),B34,B34,DENSI,1000000,1,0,false
+KMQ,Kilogram/cubic meter ( kg/m3 ),KMQ,KGV,DENSI,1000,1,0,false
+GQ,Microgram/cubic meter ( µg/m3 ),GQ,GQ,DENSI,1,1000000,0,false
+GP,Milligram/cubic meter ( mg/m3 ),GP,MGQ,DENSI,1,1000,0,false
+M1,Milligram/liter ( mg/l ),M1,MGL,DENSI,1,1,0,false
+D41,Ton/Cubic meter ( t/m3 ),D41,D41,DENSI,1000000,1,0,false
+GE,US Pound/US Gallon ( lb/gal ),GE,LBG,DENSI,1601846,100,0,false
+C24,Millipascal seconds ( mPa.s ),C24,MPS,VISDYN,1,1000,0,false
+C65,Pascal second ( Pas ),C65,PAS,VISDYN,1,1,0,true
+A87,Gigaohm ( GOhm ),A87,A87,RESIST,1000000000,1,0,false
+B49,Kiloohm ( kOhm ),B49,KOH,RESIST,1000,1,0,false
+B75,Megohm ( MOhm ),B75,B75,RESIST,1000000,1,0,false
+OHM,Ohm ( Ohm ),OHM,OHM,RESIST,1,1,0,true
+AMP,Ampere ( A ),AMP,A,ECURR,1,1,0,true
+B22,Kiloampere ( kA ),B22,KA,ECURR,1000,1,0,false
+B84,Microampere ( µA ),B84,B84,ECURR,1,1000000,0,false
+4K,Milliampere ( mA ),4K,MA,ECURR,1,1000,0,false
+C39,Nanoampere ( nA ),C39,C39,ECURR,1,1000000000,0,false
+KVT,Kilovolt ( kV ),KVT,KV,VOLTAG,1000,1,0,false
+B78,Megavolt ( MV ),B78,B78,VOLTAG,1000000,1,0,false
+2Z,Millivolt ( mV ),2Z,MV,VOLTAG,1,1000,0,false
+VLT,Volt ( V ),VLT,V,VOLTAG,1,1,0,true
+FAR,Farad ( F ),FAR,F,CAPACI,1,1,0,true
+4O,Microfarad ( µF ),4O,4O,CAPACI,1,1000000,0,false
+C10,Millifarad ( mF ),C10,C10,CAPACI,1,1000,0,false
+C41,Nanofarad ( nF ),C41,C41,CAPACI,1,1000000000,0,false
+4T,Pikofarad ( pF ),4T,4T,CAPACI,1,1000000000000,0,false
+GV,Gigajoule ( GJ ),GV,GJ,ENERGY,1000000000,1,0,false
+JOU,Joule ( J ),JOU,J,ENERGY,1,1,0,true
+KJO,Kilojoule ( kJ ),KJO,KJ,ENERGY,1000,1,0,false
+KWH,Kilowatt hours ( kwh ),KWH,KWH,ENERGY,3600000,1,0,false
+3B,Megajoule ( MJ ),3B,MEJ,ENERGY,1000000,1,0,false
+MWH,Megawatt hour ( MWh ),MWH,MWH,ENERGY,3600000000,1,0,false
+C15,Millijoule ( mJ ),C15,MJ,ENERGY,1,1000,0,false
+E14,Kilocalories ( KCAL ),E14,CAL,ENERGY,41868,10,0,false
+B47,Kilonewton ( ND ),B47,B47,FORCE,1000,1,0,false
+B73,Meganewton ( MN ),B73,B73,FORCE,1000000,1,0,false
+NEW,Newton ( N ),NEW,N,FORCE,1,1,0,true
+HTZ,Hertz (1/second) ( Hz ),HTZ,HZ,FREQU,1,1,0,true
+KHZ,Kilohertz ( kHz ),KHZ,KHZ,FREQU,1000,1,0,false
+MHZ,Megahertz ( MHz ),MHZ,MHZ,FREQU,1000000,1,0,false
+RPM,Revolutions per minute ( r/min ),RPM,RPM,FREQU,1666667,100000000,0,false
+D53,Heat Conductivity ( W/mk ),D53,WMK,THCOND,1,1,0,true
+S4,Square meter/second ( m2/s ),S4,M2S,VISKIN,1,1,0,true
+C17,Square millimeter/second ( mm2/s ),C17,22S,VISKIN,1,1000000,0,false
+CMT,Centimeter ( cm ),CMT,CM,LENGTH,1,100,0,false
+DMT,Decimeter ( dm ),DMT,DM,LENGTH,1,10,0,false
+FOT,Foot ( Foot ),FOT,FT,LENGTH,3048,10000,0,false
+INH,Inch,INH,IN,LENGTH,254,10000,0,false
+KMT,Kilometer ( km ),KMT,KM,LENGTH,1000,1,0,false
+MTR,Meter ( m ),MTR,M,LENGTH,1,1,0,true
+4H,Micrometer ( µm ),4H,MIM,LENGTH,1,1000000,0,false
+SMI,Mile ( mile ),SMI,MI,LENGTH,1609344,1000,0,false
+MMT,Millimeter ( mm ),MMT,MM,LENGTH,1,1000,0,false
+C45,Nanometer ( nm ),C45,NAM,LENGTH,1,1000000000,0,false
+YRD,Yards ( yd ),YRD,YD,LENGTH,9144,10000,0,false
+CDL,Candela ( cd ),CDL,CD,LIGHT,1,1,0,true
+C29,Millitesla ( mT ),C29,MTE,MAGNFD,1,1000,0,false
+D33,Tesla ( D ),D33,TES,MAGNFD,1,1,0,true
+GRM,Gram ( g ),GRM,G,MASS,1,1,0,true
+KTN,Kilotonne ( kt ),KTN,KT,MASS,1000000000,1,0,false
+MGM,Milligram ( mg ),MGM,MG,MASS,1,1000,0,false
+ONZ,Ounce ( oz ),ONZ,OZ,MASS,28349523125,1000000000,0,false
+TNE,Tonne ( t ),TNE,TO,MASS,1000000,1,0,false
+LBR,US pound ( lb ),LBR,LB,MASS,45359237,100000,0,false
+STN,US ton ( ton ),STN,TON,MASS,9071847,10,0,false
+KGM,Kg ( KG ),KGM,KG,MASS,1000,1,0,false
+GM,Gram/square meter ( g/m2 ),GM,GM2,MASSBD,1,1,0,true
+28,Kilogram/Square meter ( kg/m2 ),28,KGF,MASSBD,1000,1,0,false
+KGS,Kilogram/second ( kg/s ),KGS,KGS,MASFLO,1000,1,0,false
+B15,Joule/Mol ( J/mol ),B15,JMO,MOENER,1,1,0,true
+B44,Kilojoule/Mol ( KJ/mol ),B44,KJM,MOENER,1000,1,0,false
+A94,Gram/Mol ( g/mol ),A94,GM,MOLMAS,1,1,0,true
+D74,Kilogram/Mol ( kg/mol ),D74,KGM,MOLMAS,1000,1,0,false
+B45,Kilomol ( kmol ),B45,B45,MOLQU,1000,1,0,false
+C18,Millimol ( mmol ),C18,MMO,MOLQU,1,1000,0,false
+C34,Mol ( mol ),C34,MOL,MOLQU,1,1,0,true
+KVA,Kilovoltampere ( kVA ),KVA,KVA,POWER,1000,1,0,false
+KWT,Kilowatt ( KW ),KWT,KW,POWER,1000,1,0,false
+MVA,Megavoltampere ( MVA ),MVA,MVA,POWER,1000000,1,0,false
+MAW,Megawatt ( VA ),MAW,MGW,POWER,1000000,1,0,false
+C31,Milliwatt ( mW ),C31,MW,POWER,1,1000,0,false
+D46,Voltampere ( VAM ),D46,D46,POWER,1,1,0,false
+WTT,Watt ( W ),WTT,W,POWER,1,1,0,false
+A97,Hectopascal ( hPa ),A97,HPA,PRESS,1,1000,0,false
+B8,Joule/Cubic Meter ( J/m3 ),B8,JM3,PRESS,1,100000,0,false
+KPA,Kilopascal ( kPa ),KPA,KPA,PRESS,1,100,0,false
+MPA,Megapascal ( MPa ),MPA,MPA,PRESS,10,1,0,false
+MBR,Millibar ( mbar ),MBR,MBA,PRESS,1,1000,0,false
+C56,Newton/Square millimeter ( N/mm2 ),C56,C56,PRESS,10,1,0,false
+PAL,Pascal ( Pa ),PAL,PA,PRESS,1,100000,0,false
+BAR,Bar ( bar ),BAR,BAR,PRESS,1,1,0,true
+61,Parts per billion ( ppb ),61,PPB,PROPOR,1,1000000000,0,false
+59,Parts per million ( ppm ),59,PPM,PROPOR,1,1000000,0,false
+NX,Parts per thousand ( ppt ),NX,PPT,PROPOR,1,1000,0,false
+P1,Percentage ( % ),P1,P1,PROPOR,1,100,0,false
+C61,Specific Electrical Resistance ( Ohmm ),C61,OM,SPREST,1,1,0,true
+B11,Specific Heat Capacity ( J/kgK ),B11,JKK,SPHCAP,1,1,0,true
+C19,Mol/kilogram ( mol/kg ),C19,MOK,SPAEQU,1,1,0,true
+A18,Becquerel/kilogram ( Bq/kg ),A18,BQK,SPARAD,1,1,0,false
+B25,Kilobecquerel/kilogram ( kBq/kg ),B25,KBK,SPARAD,1000,1,0,false
+J2,Joule/Kilogram ( J/kg ),J2,JKG,SPENER,1,1,0,true
+B42,Kilojoule/kilogram ( KJ/kg ),B42,KJK,SPENER,1000,1,0,false
+2M,Centimeter/second ( cm/s ),2M,2M,SPEED,1,100,0,false
+KMH,Kilometer/hour ( km/h ),KMH,KMH,SPEED,277778,1000000,0,false
+2X,Meter/Minute ( m/min ),2X,2X,SPEED,1666667,100000000,0,false
+MTS,Meter/second ( m/s ),MTS,M/S,SPEED,1,1,0,true
+C16,Millimeter/second ( mm/s ),C16,MMS,SPEED,1,1000,0,false
+C22,Millinewton/meter ( mN/m ),C22,MNM,SURFTE,1,1000,0,false
+4P,Newton/meter ( N/m ),4P,NM,SURFTE,1,1,0,true
+CEL,Degrees Celsius ( °C ),CEL,GC,TEMP,27415,100,0,false
+FAH,Fahrenheit ( °F ),FAH,FA,TEMP,2559278,10000,0,false
+KEL,Kelvin ( K ),KEL,K,TEMP,1,1,0,true
+DAY,Days ( Days ),DAY,TAG,TIME,86400,1,0,false
+HUR,Hour ( h ),HUR,H,TIME,3600,1,0,false
+B98,Microsecond ( µs ),B98,MIS,TIME,1,1000000,0,false
+C26,Millisecond ( ms ),C26,MS,TIME,1,1000,0,false
+MIN,Minute ( min ),MIN,MIN,TIME,60,1,0,false
+MON,Months ( Months ),MON,MON,TIME,2629700,1,0,false
+C47,Nanosecond ( ns ),C47,NS,TIME,1,1000000000,0,false
+SEC,Second ( s ),SEC,S,TIME,1,1,0,true
+WEE,Weeks ( Weeks ),WEE,WCH,TIME,604800,1,0,false
+ANN,Years ( yr ),ANN,JHR,TIME,31556950,1,0,false
+CLT,Centiliter ( Cl ),CLT,CTL,VOLUME,1,100,0,false
+CMQ,Cubic centimeter ( cm3 ),CMQ,CCM,VOLUME,1,1000,0,false
+DMQ,Cubic decimeter ( dm3 ),DMQ,CDM,VOLUME,1,1,0,false
+FTQ,Cubic foot ( ft3 ),FTQ,FT3,VOLUME,28316846,1000000000,0,false
+INQ,Cubic inch ( Inch3 ),INQ,IN3,VOLUME,16387,1000000000,0,false
+MTQ,Cubic meter ( m3 ),MTQ,M3,VOLUME,1,1,0,true
+MMQ,Cubic millimeter ( mm3 ),MMQ,MMQ,VOLUME,1,1000000000,0,false
+YDQ,Cubic yard ( yd3 ),YDQ,YD3,VOLUME,764554857,1000000000,0,false
+OZA,Fluid Ounce US ( foz US ),OZA,OZA,VOLUME,29573,1000000000,0,false
+HLT,Hectoliter ( hl ),HLT,HL,VOLUME,1,10,0,false
+LTR,Liter ( l ),LTR,L,VOLUME,1,1000,0,false
+4G,Microliter ( µl ),4G,4G,VOLUME,1,1000000000,0,false
+MLT,Milliliter ( ml ),MLT,ML,VOLUME,1,1000000,0,false
+PT,Pint US liquid ( pt US ),PT,PT,VOLUME,55061,100000000,0,false
+QTL,Quart US liquid ( qt US ),QTL,QT,VOLUME,110122,100000000,0,false
+GLL,US gallon ( gal US ),GLL,GLL,VOLUME,440488,100000000,0,false
+2J,Cubic centimeter/second ( cm3/s ),2J,C3S,VOLFLO,1,1000000,0,false
+MQH,Cubic meter/Hour ( m3/h ),MQH,MQH,VOLFLO,277778,1000000000,0,false
+G52,Cubic meter/day ( m3/d ),G52,M3D,VOLFLO,6666672,1000000000,0,false
+MQS,Cubic meter/second ( m3/s ),MQS,M3S,VOLFLO,1,1,0,true
+E32,Liter per hour ( L/hr ),E32,LPH,VOLFLO,2778,10000000000,0,false
+L2,Liter/Minute ( l/min ),L2,L2,VOLFLO,1667,100000000,0,false

@@ -17,7 +17,7 @@
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 20,
+                        "length": 100,
                         "precision": "NaN",
                         "scale": "NaN",
                         "nullable": true,
@@ -50,8 +50,16 @@
                     {
                         "type": "VARCHAR",
                         "length": 20,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
-                        "name": "UOM_CODE"
+                        "name": "UOM_ISO"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 20,
+                        "nullable": true,
+                        "name": "UOM_SAP"
                     },
                     {
                         "type": "VARCHAR",
@@ -82,6 +90,14 @@
                         "scale": "NaN",
                         "nullable": true,
                         "name": "UOM_ROUNDING"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "length": 20,
+                        "precision": "NaN",
+                        "scale": "NaN",
+                        "nullable": true,
+                        "name": "UOM_BASE"
                     }
                 ]
             },

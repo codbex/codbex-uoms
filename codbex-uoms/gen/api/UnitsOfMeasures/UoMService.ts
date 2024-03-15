@@ -125,8 +125,11 @@ class UoMService {
         if (entity.Name?.length > 100) {
             throw new ValidationError(`The 'Name' exceeds the maximum length of [100] characters`);
         }
-        if (entity.Code?.length > 20) {
-            throw new ValidationError(`The 'Code' exceeds the maximum length of [20] characters`);
+        if (entity.ISO?.length > 20) {
+            throw new ValidationError(`The 'ISO' exceeds the maximum length of [20] characters`);
+        }
+        if (entity.SAP?.length > 20) {
+            throw new ValidationError(`The 'SAP' exceeds the maximum length of [20] characters`);
         }
         if (entity.Dimension?.length > 20) {
             throw new ValidationError(`The 'Dimension' exceeds the maximum length of [20] characters`);

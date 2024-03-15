@@ -1,51 +1,40 @@
 DIMENSION_ID,DIMENSION_NAME
-NODMNSN,(no dimensions)
+NODMNSN,(no dimension)
 ACCEL,Acceleration
-ACBAC,Acid/Base capacity
+ACBAC,Acid/Base Capacity
 SURFAC,Area
 CONDUC,Conductivity
 DENSI,Density
-STEXKZ,Dust explosion ratio
 VISDYN,Dynamic viscosity
-RESIST,Elec. Resistance
-ECURR,Electr. Current
-VOLTAG,Electr. Tension
-CAPACI,Electr. capacity
+RESIST,Electrical Resistance
+ECURR,Electrical Current
+VOLTAG,Electrical Tension
+CAPACI,Electrical Capacity
 ENERGY,Energy
 FORCE,Force
 FREQU,Frequency
 THCOND,Heat Conductivity
-HYDROL,Hydrolysis rate
-SURINV,Inverse area
-VISKIN,Kinematic viscosity
+VISKIN,Kinematic Viscosity
 LENGTH,Length
-LIGHT,Luminous intensity
-MAGNFD,Magnet. field dens.
+LIGHT,Luminous Intensity
+MAGNFD,Magnetic Field Density
 MASS,Mass
-MASSBD,Mass coverage
-MASFLO,Mass flow
-MAPER,Mass per Energy
-MPROPO,Mass proportion
-MOENER,Molar energy
-MOLMAS,Mole mass
-MOLQU,Mole quantity
-TKONZ,Particle concentrat.
-PERMEA,Permeability
-POINTS,Points
+MASSBD,Mass Coverage
+MASFLO,Mass Flow
+MOENER,Molar Energy
+MOLMAS,Mole Mass
+MOLQU,Mole Quantity
 POWER,Power
 PRESS,Pressure
 PROPOR,Proportion
-TEMPRT,Rate of temp. change
-SPREST,Sp. Elec. Resistance
-SPHCAP,Spec. Heat Capacity
-SPAEQU,Spec. equivalent
-SPARAD,Spec.act.radioac.sub
-SPENER,Specific energy
+SPREST,Specific Electrical Resistance
+SPHCAP,Specific Heat Capacity
+SPAEQU,Specific Equivalent
+SPARAD,Specific Activity of Radioactive Substances
+SPENER,Specific Energy
 SPEED,Speed
-SURFTE,Surface tension
+SURFTE,Surface Tension
 TEMP,Temperature
 TIME,Time
-EVARA,Vaporization Speed
 VOLUME,Volume
-VPROPO,Volume proportion
-VOLFLO,Volume rate of flow
+VOLFLO,Volume Rate of Flow

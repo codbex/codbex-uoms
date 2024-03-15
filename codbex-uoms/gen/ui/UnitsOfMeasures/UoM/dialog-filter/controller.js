@@ -48,8 +48,11 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			if (entity.Name) {
 				filter.$filter.contains.Name = entity.Name;
 			}
-			if (entity.Code) {
-				filter.$filter.contains.Code = entity.Code;
+			if (entity.ISO) {
+				filter.$filter.contains.ISO = entity.ISO;
+			}
+			if (entity.SAP) {
+				filter.$filter.contains.SAP = entity.SAP;
 			}
 			if (entity.Dimension) {
 				filter.$filter.contains.Dimension = entity.Dimension;
@@ -62,6 +65,9 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			}
 			if (entity.Rounding) {
 				filter.$filter.equals.Rounding = entity.Rounding;
+			}
+			if (entity.Base) {
+				filter.$filter.equals.Base = entity.Base;
 			}
 			messageHub.postMessage("entitySearch", {
 				entity: entity,
