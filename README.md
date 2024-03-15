@@ -18,6 +18,10 @@ UoMs Management Application
 
 ![management](images/uoms-dimension-management.png)
 
+#### Converter
+
+	http://host:port/services/ts/codbex-uoms/api/converter.ts/CMT/DMT/50
+
 ### Infrastructure
 
 #### Build
