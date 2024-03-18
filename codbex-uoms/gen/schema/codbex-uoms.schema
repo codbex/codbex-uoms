@@ -63,7 +63,9 @@
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 20,
+                        "length": 50,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "nullable": true,
                         "name": "UOM_DIMENSION"
                     },

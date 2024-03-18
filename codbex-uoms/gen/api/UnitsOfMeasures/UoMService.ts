@@ -131,8 +131,8 @@ class UoMService {
         if (entity.SAP?.length > 20) {
             throw new ValidationError(`The 'SAP' exceeds the maximum length of [20] characters`);
         }
-        if (entity.Dimension?.length > 20) {
-            throw new ValidationError(`The 'Dimension' exceeds the maximum length of [20] characters`);
+        if (entity.Dimension?.length > 50) {
+            throw new ValidationError(`The 'Dimension' exceeds the maximum length of [50] characters`);
         }
         for (const next of validationModules) {
             next.validate(entity);
