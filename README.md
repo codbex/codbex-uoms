@@ -1,5 +1,5 @@
 # codbex-uoms
-UoMs Management Application
+UoMs Management Module
 
 ### Model
 
