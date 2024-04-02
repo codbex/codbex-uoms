@@ -43,7 +43,10 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				},
 			};
 			if (entity.Id) {
-				filter.$filter.contains.Id = entity.Id;
+				filter.$filter.equals.Id = entity.Id;
+			}
+			if (entity.SAP) {
+				filter.$filter.contains.SAP = entity.SAP;
 			}
 			if (entity.Name) {
 				filter.$filter.contains.Name = entity.Name;

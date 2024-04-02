@@ -5,7 +5,7 @@ import { dao as daoApi } from "sdk/db";
 import { EntityUtils } from "../utils/EntityUtils";
 
 export interface UoMEntity {
-    readonly Id: string;
+    readonly Id: number;
     Name?: string;
     ISO?: string;
     SAP?: string;
@@ -28,13 +28,13 @@ export interface UoMCreateEntity {
 }
 
 export interface UoMUpdateEntity extends UoMCreateEntity {
-    readonly Id: string;
+    readonly Id: number;
 }
 
 export interface UoMEntityOptions {
     $filter?: {
         equals?: {
-            Id?: string | string[];
+            Id?: number | number[];
             Name?: string | string[];
             ISO?: string | string[];
             SAP?: string | string[];
@@ -45,7 +45,7 @@ export interface UoMEntityOptions {
             Base?: boolean | boolean[];
         };
         notEquals?: {
-            Id?: string | string[];
+            Id?: number | number[];
             Name?: string | string[];
             ISO?: string | string[];
             SAP?: string | string[];
@@ -56,7 +56,7 @@ export interface UoMEntityOptions {
             Base?: boolean | boolean[];
         };
         contains?: {
-            Id?: string;
+            Id?: number;
             Name?: string;
             ISO?: string;
             SAP?: string;
@@ -67,7 +67,7 @@ export interface UoMEntityOptions {
             Base?: boolean;
         };
         greaterThan?: {
-            Id?: string;
+            Id?: number;
             Name?: string;
             ISO?: string;
             SAP?: string;
@@ -78,7 +78,7 @@ export interface UoMEntityOptions {
             Base?: boolean;
         };
         greaterThanOrEqual?: {
-            Id?: string;
+            Id?: number;
             Name?: string;
             ISO?: string;
             SAP?: string;
@@ -89,7 +89,7 @@ export interface UoMEntityOptions {
             Base?: boolean;
         };
         lessThan?: {
-            Id?: string;
+            Id?: number;
             Name?: string;
             ISO?: string;
             SAP?: string;
@@ -100,7 +100,7 @@ export interface UoMEntityOptions {
             Base?: boolean;
         };
         lessThanOrEqual?: {
-            Id?: string;
+            Id?: number;
             Name?: string;
             ISO?: string;
             SAP?: string;
@@ -125,7 +125,7 @@ interface UoMEntityEvent {
     readonly key: {
         name: string;
         column: string;
-        value: string;
+        value: number;
     }
 }
 
@@ -137,7 +137,7 @@ export class UoMRepository {
             {
                 name: "Id",
                 column: "UOM_ID",
-                type: "VARCHAR",
+                type: "INTEGER",
                 id: true,
                 autoIncrement: true,
             },
@@ -186,7 +186,7 @@ export class UoMRepository {
 
     private readonly dao;
 
-    constructor(dataSource?: string) {
+    constructor(dataSource = "DefaultDB") {
         this.dao = daoApi.create(UoMRepository.DEFINITION, null, dataSource);
     }
 
@@ -197,13 +197,13 @@ export class UoMRepository {
         });
     }
 
-    public findById(id: string): UoMEntity | undefined {
+    public findById(id: number): UoMEntity | undefined {
         const entity = this.dao.find(id);
         EntityUtils.setBoolean(entity, "Base");
         return entity ?? undefined;
     }
 
-    public create(entity: UoMCreateEntity): string {
+    public create(entity: UoMCreateEntity): number {
         EntityUtils.setBoolean(entity, "Base");
         const id = this.dao.insert(entity);
         this.triggerEvent({
@@ -234,7 +234,7 @@ export class UoMRepository {
         });
     }
 
-    public upsert(entity: UoMCreateEntity | UoMUpdateEntity): string {
+    public upsert(entity: UoMCreateEntity | UoMUpdateEntity): number {
         const id = (entity as UoMUpdateEntity).Id;
         if (!id) {
             return this.create(entity);
@@ -249,7 +249,7 @@ export class UoMRepository {
         }
     }
 
-    public deleteById(id: string): void {
+    public deleteById(id: number): void {
         const entity = this.dao.find(id);
         this.dao.remove(id);
         this.triggerEvent({

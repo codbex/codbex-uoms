@@ -1,1 +1,5 @@
-{"module":"codbex-uoms/gen/ui/launchpad/menu-help.js","extensionPoint":"codbex-uoms-menu","description":"codbex-uoms - Application Menu"}
+{
+    "module": "codbex-uoms/gen/ui/launchpad/menu-help.js",
+    "extensionPoint": "codbex-uoms-menu",
+    "description": "codbex-uoms - Application Menu"
+}

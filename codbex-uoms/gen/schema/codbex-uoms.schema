@@ -6,7 +6,7 @@
                 "type": "TABLE",
                 "columns": [
                     {
-                        "type": "VARCHAR",
+                        "type": "INTEGER",
                         "length": 20,
                         "primaryKey": true,
                         "identity": true,
@@ -17,10 +17,17 @@
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 100,
+                        "length": 20,
                         "precision": "NaN",
                         "scale": "NaN",
                         "nullable": true,
+                        "name": "DIMENSION_SAP"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 100,
+                        "precision": "NaN",
+                        "scale": "NaN",
                         "name": "DIMENSION_NAME"
                     }
                 ]
@@ -30,7 +37,7 @@
                 "type": "TABLE",
                 "columns": [
                     {
-                        "type": "VARCHAR",
+                        "type": "INTEGER",
                         "length": 20,
                         "primaryKey": true,
                         "identity": true,

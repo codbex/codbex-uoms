@@ -68,7 +68,7 @@ class UoMService {
     @Get("/:id")
     public getById(_: any, ctx: any) {
         try {
-            const id = ctx.pathParameters.id;
+            const id = parseInt(ctx.pathParameters.id);
             const entity = this.repository.findById(id);
             if (entity) {
                 return entity;
@@ -119,9 +119,6 @@ class UoMService {
     }
 
     private validateEntity(entity: any): void {
-        if (entity.Id?.length > 20) {
-            throw new ValidationError(`The 'Id' exceeds the maximum length of [20] characters`);
-        }
         if (entity.Name?.length > 100) {
             throw new ValidationError(`The 'Name' exceeds the maximum length of [100] characters`);
         }

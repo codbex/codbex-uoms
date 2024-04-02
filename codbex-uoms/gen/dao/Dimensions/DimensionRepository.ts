@@ -4,46 +4,55 @@ import { extensions } from "sdk/extensions";
 import { dao as daoApi } from "sdk/db";
 
 export interface DimensionEntity {
-    readonly Id: string;
-    Name?: string;
+    readonly Id: number;
+    SAP?: string;
+    Name: string;
 }
 
 export interface DimensionCreateEntity {
-    readonly Name?: string;
+    readonly SAP?: string;
+    readonly Name: string;
 }
 
 export interface DimensionUpdateEntity extends DimensionCreateEntity {
-    readonly Id: string;
+    readonly Id: number;
 }
 
 export interface DimensionEntityOptions {
     $filter?: {
         equals?: {
-            Id?: string | string[];
+            Id?: number | number[];
+            SAP?: string | string[];
             Name?: string | string[];
         };
         notEquals?: {
-            Id?: string | string[];
+            Id?: number | number[];
+            SAP?: string | string[];
             Name?: string | string[];
         };
         contains?: {
-            Id?: string;
+            Id?: number;
+            SAP?: string;
             Name?: string;
         };
         greaterThan?: {
-            Id?: string;
+            Id?: number;
+            SAP?: string;
             Name?: string;
         };
         greaterThanOrEqual?: {
-            Id?: string;
+            Id?: number;
+            SAP?: string;
             Name?: string;
         };
         lessThan?: {
-            Id?: string;
+            Id?: number;
+            SAP?: string;
             Name?: string;
         };
         lessThanOrEqual?: {
-            Id?: string;
+            Id?: number;
+            SAP?: string;
             Name?: string;
         };
     },
@@ -61,7 +70,7 @@ interface DimensionEntityEvent {
     readonly key: {
         name: string;
         column: string;
-        value: string;
+        value: number;
     }
 }
 
@@ -73,21 +82,27 @@ export class DimensionRepository {
             {
                 name: "Id",
                 column: "DIMENSION_ID",
-                type: "VARCHAR",
+                type: "INTEGER",
                 id: true,
                 autoIncrement: true,
+            },
+            {
+                name: "SAP",
+                column: "DIMENSION_SAP",
+                type: "VARCHAR",
             },
             {
                 name: "Name",
                 column: "DIMENSION_NAME",
                 type: "VARCHAR",
+                required: true
             }
         ]
     };
 
     private readonly dao;
 
-    constructor(dataSource?: string) {
+    constructor(dataSource = "DefaultDB") {
         this.dao = daoApi.create(DimensionRepository.DEFINITION, null, dataSource);
     }
 
@@ -95,12 +110,12 @@ export class DimensionRepository {
         return this.dao.list(options);
     }
 
-    public findById(id: string): DimensionEntity | undefined {
+    public findById(id: number): DimensionEntity | undefined {
         const entity = this.dao.find(id);
         return entity ?? undefined;
     }
 
-    public create(entity: DimensionCreateEntity): string {
+    public create(entity: DimensionCreateEntity): number {
         const id = this.dao.insert(entity);
         this.triggerEvent({
             operation: "create",
@@ -129,7 +144,7 @@ export class DimensionRepository {
         });
     }
 
-    public upsert(entity: DimensionCreateEntity | DimensionUpdateEntity): string {
+    public upsert(entity: DimensionCreateEntity | DimensionUpdateEntity): number {
         const id = (entity as DimensionUpdateEntity).Id;
         if (!id) {
             return this.create(entity);
@@ -144,7 +159,7 @@ export class DimensionRepository {
         }
     }
 
-    public deleteById(id: string): void {
+    public deleteById(id: number): void {
         const entity = this.dao.find(id);
         this.dao.remove(id);
         this.triggerEvent({
