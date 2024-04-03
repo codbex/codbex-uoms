@@ -179,7 +179,7 @@ export class DimensionRepository {
     }
 
     public customDataCount(): number {
-        const resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX__DIMENSION"');
+        const resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX_DIMENSION"');
         if (resultSet !== null && resultSet[0] !== null) {
             if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
                 return resultSet[0].COUNT;
@@ -197,7 +197,7 @@ export class DimensionRepository {
                 triggerExtension.trigger(data);
             } catch (error) {
                 console.error(error);
-            }            
+            }
         });
         producer.topic("codbex-uoms-Dimensions-Dimension").send(JSON.stringify(data));
     }
