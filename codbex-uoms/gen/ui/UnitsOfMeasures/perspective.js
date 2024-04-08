@@ -4,11 +4,11 @@
  * Do not modify the content as it may be re-generated again.
  */
 const perspectiveData = {
-	id: "UnitsOfMeasures",
-	name: "UnitsOfMeasures",
-	link: "/services/web/codbex-uoms/gen/ui/UnitsOfMeasures/index.html",
-	order: "980",
-	icon: "/services/web/resources/unicons/arrows-resize-v.svg",
+	id: 'UnitsOfMeasures',
+	name: 'UnitsOfMeasures',
+	link: '/services/web/codbex-uoms/gen/ui/UnitsOfMeasures/index.html',
+	order: 980,
+	icon: '/services/web/resources/unicons/arrows-resize-v.svg',
 };
 
 if (typeof exports !== 'undefined') {

@@ -269,7 +269,7 @@ export class UoMRepository {
     }
 
     public customDataCount(): number {
-        const resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX_UOM"');
+        const resultSet = query.execute('SELECT COUNT(*) AS COUNT FROM "CODBEX__UOM"');
         if (resultSet !== null && resultSet[0] !== null) {
             if (resultSet[0].COUNT !== undefined && resultSet[0].COUNT !== null) {
                 return resultSet[0].COUNT;
@@ -287,7 +287,7 @@ export class UoMRepository {
                 triggerExtension.trigger(data);
             } catch (error) {
                 console.error(error);
-            }
+            }            
         });
         producer.topic("codbex-uoms-UnitsOfMeasures-UoM").send(JSON.stringify(data));
     }
