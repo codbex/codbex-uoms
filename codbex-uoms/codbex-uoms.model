@@ -68,7 +68,7 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_DIMENSION\"",
                 "dataName": "DIMENSION",
                 "dataQuery": "",
-                "disableGeneration": "false",
+                "generateReport": "false",
                 "icon": "cube",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -77,12 +77,13 @@
                 "name": "Dimension",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/align-center-h.svg",
+                "perspectiveLabel": "Dimensions",
                 "perspectiveName": "Dimensions",
                 "perspectiveOrder": "990",
                 "perspectiveRole": "",
                 "title": "Dimension",
                 "tooltip": "Dimension",
-                "type": "PRIMARY"
+                "type": "SETTING"
             },
             {
                 "properties": [
@@ -185,7 +186,8 @@
                         "widgetType": "TEXTBOX",
                         "relationshipName": "UoM_Dimension",
                         "relationshipEntityName": "Dimension",
-                        "relationshipEntityPerspectiveName": "Dimensions"
+                        "relationshipEntityPerspectiveName": "Dimensions",
+                        "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
                         "calculatedPropertyExpressionCreate": "",
@@ -272,7 +274,7 @@
                 "dataCount": "SELECT COUNT(*) AS COUNT FROM \"${tablePrefix}_UOM\"",
                 "dataName": "UOM",
                 "dataQuery": "",
-                "disableGeneration": "false",
+                "generateReport": "false",
                 "icon": "cubes",
                 "layoutType": "MANAGE",
                 "menuIndex": "100",
@@ -281,12 +283,13 @@
                 "name": "UoM",
                 "navigationPath": "/Home",
                 "perspectiveIcon": "/services/web/resources/unicons/arrows-resize-v.svg",
+                "perspectiveLabel": "Units of Measures",
                 "perspectiveName": "UnitsOfMeasures",
                 "perspectiveOrder": "980",
                 "perspectiveRole": "",
                 "title": "Unit of Measures",
                 "tooltip": "Unit of Measures",
-                "type": "PRIMARY"
+                "type": "SETTING"
             }
         ],
         "perspectives": [

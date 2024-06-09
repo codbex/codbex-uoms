@@ -150,7 +150,10 @@
 	                    <div class="fd-col fd-col-md--8">
 							<fd-checkbox id="idBase"
 	                            compact="false"
-								ng-model="entity.Base">
+								ng-init="entity.isBaseIndeterminate=true"
+								ng-model="entity.Base"
+								dg-indeterminate="entity.isBaseIndeterminate"
+								ng-click="entity.isBaseIndeterminate=false">
 	                        </fd-checkbox>
                         	<fd-checkbox-label for="idBase">Base</fd-checkbox-label>
                         </div>

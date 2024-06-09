@@ -5,11 +5,12 @@
  */
 exports.getTile = function () {
     return {
-        group: "Dimensions",
+        group: "codbex-uoms",
         name: "Dimension",
         caption: "Manage entity Dimension",
         tooltip: "Dimension",
-        // icon: "file-o",
+        type: "SETTING",
+        icon: "cube",
         location: "/services/web/codbex-uoms/gen/ui/Dimensions/index.html",
         order: "100",
         groupOrder: "990",

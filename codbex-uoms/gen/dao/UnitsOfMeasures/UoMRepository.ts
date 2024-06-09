@@ -129,6 +129,10 @@ interface UoMEntityEvent {
     }
 }
 
+interface UoMUpdateEntityEvent extends UoMEntityEvent {
+    readonly previousEntity: UoMEntity;
+}
+
 export class UoMRepository {
 
     private static readonly DEFINITION = {
@@ -221,11 +225,13 @@ export class UoMRepository {
 
     public update(entity: UoMUpdateEntity): void {
         EntityUtils.setBoolean(entity, "Base");
+        const previousEntity = this.findById(entity.Id);
         this.dao.update(entity);
         this.triggerEvent({
             operation: "update",
             table: "CODBEX_UOM",
             entity: entity,
+            previousEntity: previousEntity,
             key: {
                 name: "Id",
                 column: "UOM_ID",
@@ -280,7 +286,7 @@ export class UoMRepository {
         return 0;
     }
 
-    private async triggerEvent(data: UoMEntityEvent) {
+    private async triggerEvent(data: UoMEntityEvent | UoMUpdateEntityEvent) {
         const triggerExtensions = await extensions.loadExtensionModules("codbex-uoms-UnitsOfMeasures-UoM", ["trigger"]);
         triggerExtensions.forEach(triggerExtension => {
             try {

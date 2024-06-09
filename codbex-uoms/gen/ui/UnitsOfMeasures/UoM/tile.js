@@ -5,11 +5,12 @@
  */
 exports.getTile = function () {
     return {
-        group: "UnitsOfMeasures",
+        group: "codbex-uoms",
         name: "UoM",
         caption: "Manage entity UoM",
         tooltip: "Unit of Measures",
-        // icon: "file-o",
+        type: "SETTING",
+        icon: "cubes",
         location: "/services/web/codbex-uoms/gen/ui/UnitsOfMeasures/index.html",
         order: "100",
         groupOrder: "980",

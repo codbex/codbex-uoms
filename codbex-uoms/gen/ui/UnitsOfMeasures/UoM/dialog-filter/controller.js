@@ -36,7 +36,7 @@ angular.module('page', ["ideUI", "ideView"])
 					}
 				},
 			};
-			if (entity.Id) {
+			if (entity.Id !== undefined) {
 				filter.$filter.equals.Id = entity.Id;
 			}
 			if (entity.Name) {
@@ -51,16 +51,16 @@ angular.module('page', ["ideUI", "ideView"])
 			if (entity.Dimension) {
 				filter.$filter.contains.Dimension = entity.Dimension;
 			}
-			if (entity.Numerator) {
+			if (entity.Numerator !== undefined) {
 				filter.$filter.equals.Numerator = entity.Numerator;
 			}
-			if (entity.Denominator) {
+			if (entity.Denominator !== undefined) {
 				filter.$filter.equals.Denominator = entity.Denominator;
 			}
-			if (entity.Rounding) {
+			if (entity.Rounding !== undefined) {
 				filter.$filter.equals.Rounding = entity.Rounding;
 			}
-			if (entity.Base) {
+			if (entity.Base !== undefined && entity.isBaseIndeterminate === false) {
 				filter.$filter.equals.Base = entity.Base;
 			}
 			messageHub.postMessage("entitySearch", {

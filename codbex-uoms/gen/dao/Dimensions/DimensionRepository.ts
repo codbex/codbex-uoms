@@ -74,6 +74,10 @@ interface DimensionEntityEvent {
     }
 }
 
+interface DimensionUpdateEntityEvent extends DimensionEntityEvent {
+    readonly previousEntity: DimensionEntity;
+}
+
 export class DimensionRepository {
 
     private static readonly DEFINITION = {
@@ -131,11 +135,13 @@ export class DimensionRepository {
     }
 
     public update(entity: DimensionUpdateEntity): void {
+        const previousEntity = this.findById(entity.Id);
         this.dao.update(entity);
         this.triggerEvent({
             operation: "update",
             table: "CODBEX_DIMENSION",
             entity: entity,
+            previousEntity: previousEntity,
             key: {
                 name: "Id",
                 column: "DIMENSION_ID",
@@ -190,7 +196,7 @@ export class DimensionRepository {
         return 0;
     }
 
-    private async triggerEvent(data: DimensionEntityEvent) {
+    private async triggerEvent(data: DimensionEntityEvent | DimensionUpdateEntityEvent) {
         const triggerExtensions = await extensions.loadExtensionModules("codbex-uoms-Dimensions-Dimension", ["trigger"]);
         triggerExtensions.forEach(triggerExtension => {
             try {

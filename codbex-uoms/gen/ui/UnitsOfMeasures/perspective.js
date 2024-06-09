@@ -5,7 +5,7 @@
  */
 const perspectiveData = {
 	id: 'UnitsOfMeasures',
-	name: 'UnitsOfMeasures',
+	name: 'Units of Measures',
 	link: '/services/web/codbex-uoms/gen/ui/UnitsOfMeasures/index.html',
 	order: 980,
 	icon: '/services/web/resources/unicons/arrows-resize-v.svg',
