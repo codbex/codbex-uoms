@@ -1,5 +1,0 @@
-{
-    "module": "codbex-uoms/gen/ui/launchpad/Home/view.js",
-    "extensionPoint": "codbex-uoms-view",
-    "description": "codbex-uoms - Application View"
-}
