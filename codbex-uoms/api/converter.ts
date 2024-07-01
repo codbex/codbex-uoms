@@ -1,6 +1,6 @@
 import { Controller, Get } from "sdk/http"
-import { UoMRepository } from "../gen/dao/UnitsOfMeasures/UoMRepository";
-import { HttpUtils } from "../gen/api/utils/HttpUtils";
+import { UoMRepository } from "../gen/codbex-uoms/dao/UnitsOfMeasures/UoMRepository";
+import { HttpUtils } from "../gen/codbex-uoms/api/utils/HttpUtils";
 
 /**
  * Converts Source UoM to Target UoM the given Value
