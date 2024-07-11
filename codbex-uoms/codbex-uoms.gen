@@ -6,11 +6,11 @@
   "description": "Managing units of measures data",
   "dataSource": "DefaultDB",
   "fileName": "codbex-uoms",
+  "genFolderName": "codbex-uoms",
   "projectName": "codbex-uoms",
   "workspaceName": "workspace",
   "filePath": "codbex-uoms.model",
   "templateId": "template-application-angular/template/template.js",
-  "genFolderName": "codbex-uoms",
   "perspectives": {
     "Dimensions": {
       "views": [
