@@ -1,5 +1,5 @@
 {
     "extensionPoint": "dashboard-navigations",
-    "module": "codbex-uoms/navigations/services/dimensions.js",
+    "module": "codbex-uoms/navigations/dimensions/service.js",
     "description": "Dimensions Navigation"
 }
