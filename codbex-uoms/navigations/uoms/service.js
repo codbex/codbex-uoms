@@ -1,7 +1,7 @@
 const navigationData = {
     id: 'uoms-navigation',
     label: "Units of Mesurements",
-    group: "metadata",
+    group: "reference data",
     order: 100,
     link: "/services/web/codbex-uoms/gen/codbex-uoms/ui/UnitsOfMeasures/index.html?embedded"
 };
