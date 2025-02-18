@@ -5,7 +5,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 	.config(["entityApiProvider", function (entityApiProvider) {
 		entityApiProvider.baseUrl = "/services/ts/codbex-uoms/gen/codbex-uoms/api/UnitsOfMeasures/UoMService.ts";
 	}])
-	.controller('PageController', ['$scope', 'messageHub', 'ViewParameters', 'entityApi', function ($scope, messageHub, ViewParameters, entityApi) {
+	.controller('PageController', ['$scope',  'messageHub', 'ViewParameters', 'entityApi', function ($scope,  messageHub, ViewParameters, entityApi) {
 
 		$scope.entity = {};
 		$scope.forms = {
@@ -54,6 +54,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 				messageHub.showAlertSuccess("UoM", "UoM successfully updated");
 			});
 		};
+
 
 		$scope.cancel = function () {
 			$scope.entity = {};

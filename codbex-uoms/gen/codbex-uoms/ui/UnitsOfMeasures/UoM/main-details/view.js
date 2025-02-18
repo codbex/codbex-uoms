@@ -4,12 +4,12 @@
  * Do not modify the content as it may be re-generated again.
  */
 const viewData = {
-    id: "Dimension",
-    label: "Dimension",
+    id: "UoM-details",
+    label: "UoM",
     factory: "frame",
-    region: "left",
-    link: "/services/web/codbex-uoms/gen/codbex-uoms/ui/Dimensions/Dimension/index.html",
-    perspectiveName: "Dimensions",
+    region: "center",
+    link: "/services/web/codbex-uoms/gen/codbex-uoms/ui/UnitsOfMeasures/UoM/main-details/index.html",
+    perspectiveName: "UnitsOfMeasures",
 };
 
 if (typeof exports !== 'undefined') {
