@@ -7,7 +7,7 @@ const viewData = {
     id: "UoM",
     label: "UoM",
     factory: "frame",
-    region: "center",
+    region: "left",
     link: "/services/web/codbex-uoms/gen/codbex-uoms/ui/UnitsOfMeasures/UoM/index.html",
     perspectiveName: "UnitsOfMeasures",
 };

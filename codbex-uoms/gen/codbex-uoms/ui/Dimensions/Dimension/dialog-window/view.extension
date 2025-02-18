@@ -1,1 +1,1 @@
-{"module":"codbex-uoms/gen/codbex-uoms/ui/Dimensions/Dimension/dialog-window/view.js","extensionPoint":"codbex-uoms-dialog-window","description":"codbex-uoms - Application Dialog Window"}
+{"module":"codbex-uoms/gen/codbex-uoms/ui/Dimensions/Dimension/dialog-window/view.js","extensionPoint":"dialog-window","description":"codbex-uoms - Application Dialog Window"}

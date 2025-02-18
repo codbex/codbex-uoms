@@ -4,11 +4,11 @@
  * Do not modify the content as it may be re-generated again.
  */
 const viewData = {
-    id: "Dimension",
+    id: "Dimension-details",
     label: "Dimension",
     factory: "frame",
-    region: "left",
-    link: "/services/web/codbex-uoms/gen/codbex-uoms/ui/Dimensions/Dimension/index.html",
+    region: "center",
+    link: "/services/web/codbex-uoms/gen/codbex-uoms/ui/Dimensions/Dimension/main-details/index.html",
     perspectiveName: "Dimensions",
 };
 
