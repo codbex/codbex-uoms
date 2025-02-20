@@ -49,16 +49,15 @@
                         "name": "UOM_ISO"
                     },
                     {
+                        "type": "INTEGER",
+                        "nullable": true,
+                        "name": "UOM_DIMENSION"
+                    },
+                    {
                         "type": "VARCHAR",
                         "length": 20,
                         "nullable": true,
                         "name": "UOM_SAP"
-                    },
-                    {
-                        "type": "VARCHAR",
-                        "length": 50,
-                        "nullable": true,
-                        "name": "UOM_DIMENSION"
                     },
                     {
                         "type": "BIGINT",

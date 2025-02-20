@@ -46,11 +46,11 @@ angular.module('page', ["ideUI", "ideView"])
 			if (entity.ISO) {
 				filter.$filter.contains.ISO = entity.ISO;
 			}
+			if (entity.Dimension !== undefined) {
+				filter.$filter.equals.Dimension = entity.Dimension;
+			}
 			if (entity.SAP) {
 				filter.$filter.contains.SAP = entity.SAP;
-			}
-			if (entity.Dimension) {
-				filter.$filter.contains.Dimension = entity.Dimension;
 			}
 			if (entity.Numerator !== undefined) {
 				filter.$filter.equals.Numerator = entity.Numerator;

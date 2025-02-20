@@ -664,7 +664,6 @@ paths:
                       Name: "abcd"
                       ISO: "abcd"
                       SAP: "abcd"
-                      Dimension: "abcd"
                     greaterThan:
                       Id: 0
                     lessThanOrEqual:
@@ -689,7 +688,6 @@ paths:
                       Name: "abcd"
                       ISO: "abcd"
                       SAP: "abcd"
-                      Dimension: "abcd"
               countWithGreaterThan:
                 summary: Count with Greater Than
                 value:
@@ -756,7 +754,6 @@ paths:
                       Name: "abcd"
                       ISO: "abcd"
                       SAP: "abcd"
-                      Dimension: "abcd"
                     greaterThan:
                       Id: 0
                     lessThanOrEqual:
@@ -781,7 +778,6 @@ paths:
                       Name: "abcd"
                       ISO: "abcd"
                       SAP: "abcd"
-                      Dimension: "abcd"
               searchWithGreaterThan:
                 summary: Search with Greater Than
                 value:
@@ -1019,14 +1015,13 @@ components:
           type: string
           minLength: 0
           maxLength: 20
+        Dimension:
+          type: integer
+          format: int32
         SAP:
           type: string
           minLength: 0
           maxLength: 20
-        Dimension:
-          type: string
-          minLength: 0
-          maxLength: 50
         Numerator:
           type: integer
           format: int64
@@ -1077,6 +1072,14 @@ components:
                         format: double
                         minLength: 0
                         maxLength: 20
+                Dimension:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
                 SAP:
                   oneOf:
                     - type: string
@@ -1088,17 +1091,6 @@ components:
                         format: double
                         minLength: 0
                         maxLength: 20
-                Dimension:
-                  oneOf:
-                    - type: string
-                      minLength: 0
-                      maxLength: 50
-                    - type: array
-                      items:
-                        type: string
-                        format: double
-                        minLength: 0
-                        maxLength: 50
                 Numerator:
                   oneOf:
                     - type: integer
@@ -1162,6 +1154,14 @@ components:
                         format: double
                         minLength: 0
                         maxLength: 20
+                Dimension:
+                  oneOf:
+                    - type: integer
+                      format: int32
+                    - type: array
+                      items:
+                        type: integer
+                        format: int32
                 SAP:
                   oneOf:
                     - type: string
@@ -1173,17 +1173,6 @@ components:
                         format: double
                         minLength: 0
                         maxLength: 20
-                Dimension:
-                  oneOf:
-                    - type: string
-                      minLength: 0
-                      maxLength: 50
-                    - type: array
-                      items:
-                        type: string
-                        format: double
-                        minLength: 0
-                        maxLength: 50
                 Numerator:
                   oneOf:
                     - type: integer
@@ -1226,14 +1215,11 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 20
+                Dimension:
                 SAP:
                   type: string
                   minLength: 0
                   maxLength: 20
-                Dimension:
-                  type: string
-                  minLength: 0
-                  maxLength: 50
                 Numerator:
                 Denominator:
                 Rounding:
@@ -1252,14 +1238,13 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 20
+                Dimension:
+                  type: integer
+                  format: int32
                 SAP:
                   type: string
                   minLength: 0
                   maxLength: 20
-                Dimension:
-                  type: string
-                  minLength: 0
-                  maxLength: 50
                 Numerator:
                   type: integer
                   format: int64
@@ -1284,14 +1269,13 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 20
+                Dimension:
+                  type: integer
+                  format: int32
                 SAP:
                   type: string
                   minLength: 0
                   maxLength: 20
-                Dimension:
-                  type: string
-                  minLength: 0
-                  maxLength: 50
                 Numerator:
                   type: integer
                   format: int64
@@ -1316,14 +1300,13 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 20
+                Dimension:
+                  type: integer
+                  format: int32
                 SAP:
                   type: string
                   minLength: 0
                   maxLength: 20
-                Dimension:
-                  type: string
-                  minLength: 0
-                  maxLength: 50
                 Numerator:
                   type: integer
                   format: int64
@@ -1348,14 +1331,13 @@ components:
                   type: string
                   minLength: 0
                   maxLength: 20
+                Dimension:
+                  type: integer
+                  format: int32
                 SAP:
                   type: string
                   minLength: 0
                   maxLength: 20
-                Dimension:
-                  type: string
-                  minLength: 0
-                  maxLength: 50
                 Numerator:
                   type: integer
                   format: int64
@@ -1368,12 +1350,12 @@ components:
                 Base:
         $select:
           type: array
-          example: ["Id", "Name", "ISO", "SAP", "Dimension", "Numerator", "Denominator", "Rounding", "Base"]
+          example: ["Id", "Name", "ISO", "Dimension", "SAP", "Numerator", "Denominator", "Rounding", "Base"]
           items:
             type: string
         $sort:
           - type: string
-            example: "Id,Name,ISO,SAP,Dimension,Numerator,Denominator,Rounding,Base"
+            example: "Id,Name,ISO,Dimension,SAP,Numerator,Denominator,Rounding,Base"
         $order:
           type: string
           enum: ["asc", "desc"]

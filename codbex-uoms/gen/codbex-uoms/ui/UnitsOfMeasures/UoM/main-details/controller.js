@@ -71,6 +71,15 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 
 		$scope.serviceDimension = "/services/ts/codbex-uoms/gen/codbex-uoms/api/Dimensions/DimensionService.ts";
 
+
+		$scope.$watch('entity.Dimension', function (newValue, oldValue) {
+			if (newValue !== undefined && newValue !== null) {
+				entityApi.$http.get($scope.serviceDimension + '/' + newValue).then(function (response) {
+					let valueFrom = response.data.SAP;
+					$scope.entity.SAP = valueFrom;
+				});
+			}
+		});
 		//-----------------Events-------------------//
 
 		$scope.create = function () {

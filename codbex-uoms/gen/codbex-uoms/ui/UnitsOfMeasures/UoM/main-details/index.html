@@ -67,29 +67,6 @@
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<fd-form-label for="idSAP" dg-required="false" dg-colon="true">SAP</fd-form-label>
-                        </div>
-                        <div class="fd-col  fd-col-md--8 ">
-	                        <fd-form-input-message-group dg-inactive="{{ forms.details['SAP'].$valid }}">
-	                            <fd-input id="idSAP"
-	                                name="SAP"
-	                                state="{{ forms.details['SAP'].$valid ? '' : 'error' }}"
-									ng-required="false"
-	                                ng-model="entity.SAP"
-	                                ng-readonly="action === 'select'"
-	                                ng-minlength="0.0 || 0"
-	                                ng-maxlength="20.0 || -1"
-	                                dg-input-rules="{ patterns: [''] }"
-	                                type="text"
-	                                placeholder="Enter SAP">
-	                            </fd-input>
-	                            <fd-form-message dg-type="error">The value doesn't match the required pattern ''</fd-form-message>
-	                        </fd-form-input-message-group>
-	                        <i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
-	                    </div>
-                    </fd-form-item>
-                    <fd-form-item class="fd-row">
-                    	<div class="fd-col fd-col-md--2">
                         	<fd-form-label for="idDimension" dg-required="false" dg-colon="true">Dimension</fd-form-label>
                         </div>
                         <div class="fd-col  fd-col-md--7 ">
@@ -112,6 +89,29 @@
 							</button>
 							<i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
 						</div>
+                    </fd-form-item>
+                    <fd-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<fd-form-label for="idSAP" dg-required="false" dg-colon="true">SAP</fd-form-label>
+                        </div>
+                        <div class="fd-col  fd-col-md--8 ">
+	                        <fd-form-input-message-group dg-inactive="{{ forms.details['SAP'].$valid }}">
+	                            <fd-input id="idSAP"
+	                                name="SAP"
+	                                state="{{ forms.details['SAP'].$valid ? '' : 'error' }}"
+									ng-required="false"
+	                                ng-model="entity.SAP"
+	                                ng-readonly="action === 'select'"
+	                                ng-minlength="0.0 || 0"
+	                                ng-maxlength="20.0 || -1"
+	                                dg-input-rules="{ patterns: [''] }"
+	                                type="text"
+	                                placeholder="Enter SAP">
+	                            </fd-input>
+	                            <fd-form-message dg-type="error">The value doesn't match the required pattern ''</fd-form-message>
+	                        </fd-form-input-message-group>
+	                        <i class="sap-icon--information" role="presentation" onclick="javascript:alert('')"></i>
+	                    </div>
                     </fd-form-item>
                     <fd-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">

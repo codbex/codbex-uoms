@@ -8,8 +8,8 @@ export interface UoMEntity {
     readonly Id: number;
     Name?: string;
     ISO?: string;
+    Dimension?: number;
     SAP?: string;
-    Dimension?: string;
     Numerator?: number;
     Denominator?: number;
     Rounding?: number;
@@ -19,8 +19,8 @@ export interface UoMEntity {
 export interface UoMCreateEntity {
     readonly Name?: string;
     readonly ISO?: string;
+    readonly Dimension?: number;
     readonly SAP?: string;
-    readonly Dimension?: string;
     readonly Numerator?: number;
     readonly Denominator?: number;
     readonly Rounding?: number;
@@ -37,8 +37,8 @@ export interface UoMEntityOptions {
             Id?: number | number[];
             Name?: string | string[];
             ISO?: string | string[];
+            Dimension?: number | number[];
             SAP?: string | string[];
-            Dimension?: string | string[];
             Numerator?: number | number[];
             Denominator?: number | number[];
             Rounding?: number | number[];
@@ -48,8 +48,8 @@ export interface UoMEntityOptions {
             Id?: number | number[];
             Name?: string | string[];
             ISO?: string | string[];
+            Dimension?: number | number[];
             SAP?: string | string[];
-            Dimension?: string | string[];
             Numerator?: number | number[];
             Denominator?: number | number[];
             Rounding?: number | number[];
@@ -59,8 +59,8 @@ export interface UoMEntityOptions {
             Id?: number;
             Name?: string;
             ISO?: string;
+            Dimension?: number;
             SAP?: string;
-            Dimension?: string;
             Numerator?: number;
             Denominator?: number;
             Rounding?: number;
@@ -70,8 +70,8 @@ export interface UoMEntityOptions {
             Id?: number;
             Name?: string;
             ISO?: string;
+            Dimension?: number;
             SAP?: string;
-            Dimension?: string;
             Numerator?: number;
             Denominator?: number;
             Rounding?: number;
@@ -81,8 +81,8 @@ export interface UoMEntityOptions {
             Id?: number;
             Name?: string;
             ISO?: string;
+            Dimension?: number;
             SAP?: string;
-            Dimension?: string;
             Numerator?: number;
             Denominator?: number;
             Rounding?: number;
@@ -92,8 +92,8 @@ export interface UoMEntityOptions {
             Id?: number;
             Name?: string;
             ISO?: string;
+            Dimension?: number;
             SAP?: string;
-            Dimension?: string;
             Numerator?: number;
             Denominator?: number;
             Rounding?: number;
@@ -103,8 +103,8 @@ export interface UoMEntityOptions {
             Id?: number;
             Name?: string;
             ISO?: string;
+            Dimension?: number;
             SAP?: string;
-            Dimension?: string;
             Numerator?: number;
             Denominator?: number;
             Rounding?: number;
@@ -156,13 +156,13 @@ export class UoMRepository {
                 type: "VARCHAR",
             },
             {
-                name: "SAP",
-                column: "UOM_SAP",
-                type: "VARCHAR",
-            },
-            {
                 name: "Dimension",
                 column: "UOM_DIMENSION",
+                type: "INTEGER",
+            },
+            {
+                name: "SAP",
+                column: "UOM_SAP",
                 type: "VARCHAR",
             },
             {
