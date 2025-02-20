@@ -14,6 +14,6 @@ exports.getTile = function () {
         icon: "cube",
         location: "/services/web/codbex-uoms/gen/codbex-uoms/ui/Dimensions/index.html",
         order: "100",
-        groupOrder: "990",
+        groupOrder: "990"
     };
-};
+}

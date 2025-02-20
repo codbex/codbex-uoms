@@ -5,7 +5,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 	.config(["entityApiProvider", function (entityApiProvider) {
 		entityApiProvider.baseUrl = "/services/ts/codbex-uoms/gen/codbex-uoms/api/UnitsOfMeasures/UoMService.ts";
 	}])
-	.controller('PageController', ['$scope', 'messageHub', 'entityApi', 'Extensions', function ($scope, messageHub, entityApi, Extensions) {
+	.controller('PageController', ['$scope', '$http', 'messageHub', 'entityApi', 'Extensions', function ($scope, $http, messageHub, entityApi, Extensions) {
 
 		$scope.dataPage = 1;
 		$scope.dataCount = 0;
@@ -112,6 +112,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			messageHub.postMessage("entitySelected", {
 				entity: entity,
 				selectedMainEntityId: entity.Id,
+				optionsDimension: $scope.optionsDimension,
 			});
 		};
 
@@ -119,13 +120,17 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			$scope.selectedEntity = null;
 			$scope.action = "create";
 
-			messageHub.postMessage("createEntity");
+			messageHub.postMessage("createEntity", {
+				entity: {},
+				optionsDimension: $scope.optionsDimension,
+			});
 		};
 
 		$scope.updateEntity = function () {
 			$scope.action = "update";
 			messageHub.postMessage("updateEntity", {
 				entity: $scope.selectedEntity,
+				optionsDimension: $scope.optionsDimension,
 			});
 		};
 
@@ -162,7 +167,31 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		$scope.openFilter = function (entity) {
 			messageHub.showDialogWindow("UoM-filter", {
 				entity: $scope.filterEntity,
+				optionsDimension: $scope.optionsDimension,
 			});
 		};
+
+		//----------------Dropdowns-----------------//
+		$scope.optionsDimension = [];
+
+
+		$http.get("/services/ts/codbex-uoms/gen/codbex-uoms/api/Dimensions/DimensionService.ts").then(function (response) {
+			$scope.optionsDimension = response.data.map(e => {
+				return {
+					value: e.Id,
+					text: e.Name
+				}
+			});
+		});
+
+		$scope.optionsDimensionValue = function (optionKey) {
+			for (let i = 0; i < $scope.optionsDimension.length; i++) {
+				if ($scope.optionsDimension[i].value === optionKey) {
+					return $scope.optionsDimension[i].text;
+				}
+			}
+			return null;
+		};
+		//----------------Dropdowns-----------------//
 
 	}]);

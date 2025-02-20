@@ -89,18 +89,13 @@
                         	<fd-form-label for="idDimension" dg-colon="true">Dimension</fd-form-label>
                         </div>
                         <div class="fd-col fd-col-md--8">
-	                        <fd-form-input-message-group dg-inactive="{{ forms.details['Dimension'].$valid }}">
-	                            <fd-input id="idDimension"
-	                                name="Dimension"
-	                                state="{{ forms.details['Dimension'].$valid ? '' : 'error' }}"
-	                                ng-model="entity.Dimension"
-	                                ng-minlength="0.0 || 0"
-	                                ng-maxlength="50.0 || -1"
-	                                type="text"
-	                                placeholder="Enter Dimension">
-	                            </fd-input>
-	                            <fd-form-message dg-type="error">Incorrect Input</fd-form-message>
-	                        </fd-form-input-message-group>
+	                        <fd-combobox-input id="idDimension"
+	                            name="Dimension"
+	                            state="{{ forms.details['Dimension'].$valid ? '' : 'error' }}"
+	                            ng-model="entity.Dimension"
+	                            dropdown-items="optionsDimension"
+	                            dg-placeholder="Search Dimension ...">
+	                        </fd-combobox-input>
 	                    </div>
                     </fd-form-item>
                     <fd-form-item class="fd-row">

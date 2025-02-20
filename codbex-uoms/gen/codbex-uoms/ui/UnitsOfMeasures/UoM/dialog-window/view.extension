@@ -1,1 +1,5 @@
-{"module":"codbex-uoms/gen/codbex-uoms/ui/UnitsOfMeasures/UoM/dialog-window/view.js","extensionPoint":"dialog-window","description":"codbex-uoms - Application Dialog Window"}
+{
+    "module": "{{projectName}}/gen/{{genFolderName}}/ui/{{perspectiveName}}/{{name}}/dialog-window/view.js",
+    "extensionPoint": "dialog-window",
+    "description": "{{projectName}} - Application Dialog Window"
+}

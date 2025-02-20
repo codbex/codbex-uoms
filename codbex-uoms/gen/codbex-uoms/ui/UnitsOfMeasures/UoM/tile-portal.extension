@@ -1,1 +1,5 @@
-{"module":"codbex-uoms/gen/codbex-uoms/ui/UnitsOfMeasures/UoM/tile.js","extensionPoint":"portal-tile","description":"codbex-uoms - Application Tile"}
+{
+    "module": "codbex-uoms/gen/codbex-uoms/ui/UnitsOfMeasures/UoM/tile.js",
+    "extensionPoint": "portal-tile",
+    "description": "codbex-uoms - Application Tile"
+}

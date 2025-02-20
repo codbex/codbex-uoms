@@ -1,1 +1,5 @@
-{"module":"codbex-uoms/gen/codbex-uoms/ui/UnitsOfMeasures/perspective.js","extensionPoint":"portal","description":"codbex-uoms - Perspective - UnitsOfMeasures"}
+{
+    "module": "codbex-uoms/gen/codbex-uoms/ui/UnitsOfMeasures/perspective.js",
+    "extensionPoint": "portal",
+    "description": "codbex-uoms - Perspective - UnitsOfMeasures"
+}
