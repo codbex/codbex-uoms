@@ -5,7 +5,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 	.config(["entityApiProvider", function (entityApiProvider) {
 		entityApiProvider.baseUrl = "/services/ts/codbex-uoms/gen/codbex-uoms/api/UnitsOfMeasures/UoMService.ts";
 	}])
-	.controller('PageController', ['$scope',  'Extensions', 'messageHub', 'entityApi', function ($scope,  Extensions, messageHub, entityApi) {
+	.controller('PageController', ['$scope',  '$http', 'Extensions', 'messageHub', 'entityApi', function ($scope,  $http, Extensions, messageHub, entityApi) {
 
 		$scope.entity = {};
 		$scope.forms = {
@@ -40,6 +40,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		messageHub.onDidReceiveMessage("clearDetails", function (msg) {
 			$scope.$apply(function () {
 				$scope.entity = {};
+				$scope.optionsDimension = [];
 				$scope.action = 'select';
 			});
 		});
@@ -47,6 +48,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		messageHub.onDidReceiveMessage("entitySelected", function (msg) {
 			$scope.$apply(function () {
 				$scope.entity = msg.data.entity;
+				$scope.optionsDimension = msg.data.optionsDimension;
 				$scope.action = 'select';
 			});
 		});
@@ -54,6 +56,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		messageHub.onDidReceiveMessage("createEntity", function (msg) {
 			$scope.$apply(function () {
 				$scope.entity = {};
+				$scope.optionsDimension = msg.data.optionsDimension;
 				$scope.action = 'create';
 			});
 		});
@@ -61,11 +64,22 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		messageHub.onDidReceiveMessage("updateEntity", function (msg) {
 			$scope.$apply(function () {
 				$scope.entity = msg.data.entity;
+				$scope.optionsDimension = msg.data.optionsDimension;
 				$scope.action = 'update';
 			});
 		});
 
+		$scope.serviceDimension = "/services/ts/codbex-uoms/gen/codbex-uoms/api/Dimensions/DimensionService.ts";
 
+
+		$scope.$watch('entity.Dimension', function (newValue, oldValue) {
+			if (newValue !== undefined && newValue !== null) {
+				entityApi.$http.get($scope.serviceDimension + '/' + newValue).then(function (response) {
+					let valueFrom = response.data.SAP;
+					$scope.entity.SAP = valueFrom;
+				});
+			}
+		});
 		//-----------------Events-------------------//
 
 		$scope.create = function () {
@@ -98,6 +112,12 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 		
 		//-----------------Dialogs-------------------//
 		
+		$scope.createDimension = function () {
+			messageHub.showDialogWindow("Dimension-details", {
+				action: "create",
+				entity: {},
+			}, null, false);
+		};
 
 		//-----------------Dialogs-------------------//
 
@@ -105,6 +125,17 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 
 		//----------------Dropdowns-----------------//
 
+		$scope.refreshDimension = function () {
+			$scope.optionsDimension = [];
+			$http.get("/services/ts/codbex-uoms/gen/codbex-uoms/api/Dimensions/DimensionService.ts").then(function (response) {
+				$scope.optionsDimension = response.data.map(e => {
+					return {
+						value: e.Id,
+						text: e.Name
+					}
+				});
+			});
+		};
 
 		//----------------Dropdowns-----------------//	
 		

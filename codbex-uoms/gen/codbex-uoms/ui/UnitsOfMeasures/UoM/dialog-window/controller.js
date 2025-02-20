@@ -5,7 +5,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 	.config(["entityApiProvider", function (entityApiProvider) {
 		entityApiProvider.baseUrl = "/services/ts/codbex-uoms/gen/codbex-uoms/api/UnitsOfMeasures/UoMService.ts";
 	}])
-	.controller('PageController', ['$scope',  'messageHub', 'ViewParameters', 'entityApi', function ($scope,  messageHub, ViewParameters, entityApi) {
+	.controller('PageController', ['$scope',  '$http', 'messageHub', 'ViewParameters', 'entityApi', function ($scope,  $http, messageHub, ViewParameters, entityApi) {
 
 		$scope.entity = {};
 		$scope.forms = {
@@ -24,6 +24,7 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			$scope.entity = params.entity;
 			$scope.selectedMainEntityKey = params.selectedMainEntityKey;
 			$scope.selectedMainEntityId = params.selectedMainEntityId;
+			$scope.optionsDimension = params.optionsDimension;
 		}
 
 		$scope.create = function () {
@@ -55,6 +56,27 @@ angular.module('page', ["ideUI", "ideView", "entityApi"])
 			});
 		};
 
+		$scope.serviceDimension = "/services/ts/codbex-uoms/gen/codbex-uoms/api/Dimensions/DimensionService.ts";
+		
+		$scope.optionsDimension = [];
+		
+		$http.get("/services/ts/codbex-uoms/gen/codbex-uoms/api/Dimensions/DimensionService.ts").then(function (response) {
+			$scope.optionsDimension = response.data.map(e => {
+				return {
+					value: e.Id,
+					text: e.Name
+				}
+			});
+		});
+
+		$scope.$watch('entity.Dimension', function (newValue, oldValue) {
+			if (newValue !== undefined && newValue !== null) {
+				entityApi.$http.get($scope.serviceDimension + '/' + newValue).then(function (response) {
+					let valueFrom = response.data.SAP;
+					$scope.entity.SAP = valueFrom;
+				});
+			}
+		});
 
 		$scope.cancel = function () {
 			$scope.entity = {};

@@ -1,5 +1,5 @@
 {
     "module": "codbex-uoms/gen/codbex-uoms/ui/UnitsOfMeasures/UoM/dialog-filter/view.js",
-    "extensionPoint": "dialog-window",
+    "extensionPoint": "codbex-uoms-dialog-window",
     "description": "codbex-uoms - Application Dialog Window"
 }

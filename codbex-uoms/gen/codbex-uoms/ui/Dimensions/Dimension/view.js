@@ -7,9 +7,9 @@ const viewData = {
     id: "Dimension",
     label: "Dimension",
     factory: "frame",
-    region: "left",
+    region: "center",
     link: "/services/web/codbex-uoms/gen/codbex-uoms/ui/Dimensions/Dimension/index.html",
-    perspectiveName: "Dimensions",
+    perspectiveName: "Dimensions"
 };
 
 if (typeof exports !== 'undefined') {

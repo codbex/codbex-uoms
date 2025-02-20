@@ -14,6 +14,6 @@ exports.getTile = function () {
         icon: "cubes",
         location: "/services/web/codbex-uoms/gen/codbex-uoms/ui/UnitsOfMeasures/index.html",
         order: "100",
-        groupOrder: "980",
+        groupOrder: "980"
     };
-};
+}

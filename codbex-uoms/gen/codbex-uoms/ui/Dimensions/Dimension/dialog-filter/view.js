@@ -7,7 +7,7 @@ const viewData = {
     id: "Dimension-filter",
     label: "Dimension Filter",
     link: "/services/web/codbex-uoms/gen/codbex-uoms/ui/Dimensions/Dimension/dialog-filter/index.html",
-    perspectiveName: "Dimensions",
+    perspectiveName: "Dimensions"
 };
 
 if (typeof exports !== 'undefined') {
