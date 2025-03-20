@@ -36,9 +36,9 @@
         <script type="text/javascript">
             angular.module('app', ['ngResource', 'ideLayout', 'ideUI'])
                 .constant('branding', {
-                    name: 'Units of Measures Management Module',
+                    name: 'UoM Management Application',
                     brand: 'codbex',
-                    brandUrl: 'https://codbex.com',
+                    brandUrl: 'https://www.codbex.com/',
                     icons: {
                         faviconIco: '/services/web/ide-branding/images/favicon.ico',
                         favicon32: '/services/web/ide-branding/images/favicon-32x32.png',
@@ -49,7 +49,7 @@
                 .constant('extensionPoint', {
                     perspectives: "codbex-uoms",
                     views: "codbex-uoms-view",
-                    dialogWindows: "codbex-uoms-dialog-window"
+                    dialogWindows: "dialog-window"
                 })
                 .config(["messageHubProvider", function (messageHubProvider) {
                     messageHubProvider.eventIdPrefix = 'codbex-uoms.launchpad.Home';

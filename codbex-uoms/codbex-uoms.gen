@@ -1,17 +1,16 @@
 {
   "tablePrefix": "CODBEX_",
   "brand": "codbex",
-  "brandUrl": "https://codbex.com",
-  "title": "Units of Measures Management Module",
-  "description": "Managing units of measures data",
-  "dataSource": "DefaultDB",
-  "fileName": "codbex-uoms",
-  "genFolderName": "codbex-uoms",
-  "roles": [],
+  "brandUrl": "https://www.codbex.com/",
+  "title": "UoM Management Application",
+  "description": "Managing UoMs data",
   "projectName": "codbex-uoms",
   "workspaceName": "workspace",
   "filePath": "codbex-uoms.model",
   "templateId": "template-application-angular/template/template.js",
+  "fileName": "codbex-uoms",
+  "genFolderName": "codbex-uoms",
+  "dataSource": "DefaultDB",
   "perspectives": {
     "Dimensions": {
       "views": [
@@ -57,6 +56,18 @@
       "role": ""
     }
   },
+  "roles": [
+    {
+      "entityName": "Dimension",
+      "roleRead": "codbex-uoms.Dimensions.DimensionReadOnly",
+      "roleWrite": "codbex-uoms.Dimensions.DimensionFullAccess"
+    },
+    {
+      "entityName": "UoM",
+      "roleRead": "codbex-uoms.UnitsOfMeasures.UoMReadOnly",
+      "roleWrite": "codbex-uoms.UnitsOfMeasures.UoMFullAccess"
+    }
+  ],
   "models": [
     {
       "properties": [
@@ -141,7 +152,7 @@
       "dataName": "DIMENSION",
       "dataQuery": "",
       "description": "Manage entity Dimension",
-      "generateDefaultRoles": "false",
+      "generateDefaultRoles": "true",
       "generateReport": "false",
       "icon": "cube",
       "layoutType": "MANAGE",
@@ -155,6 +166,8 @@
       "perspectiveName": "Dimensions",
       "perspectiveOrder": "990",
       "perspectiveRole": "",
+      "roleRead": "codbex-uoms.Dimensions.DimensionReadOnly",
+      "roleWrite": "codbex-uoms.Dimensions.DimensionFullAccess",
       "title": "Dimension",
       "tooltip": "Dimension",
       "type": "SETTING",
@@ -399,7 +412,7 @@
       "dataName": "UOM",
       "dataQuery": "",
       "description": "Manage entity UoM",
-      "generateDefaultRoles": "false",
+      "generateDefaultRoles": "true",
       "generateReport": "false",
       "icon": "cubes",
       "layoutType": "MANAGE_MASTER",
@@ -413,6 +426,8 @@
       "perspectiveName": "UnitsOfMeasures",
       "perspectiveOrder": "980",
       "perspectiveRole": "",
+      "roleRead": "codbex-uoms.UnitsOfMeasures.UoMReadOnly",
+      "roleWrite": "codbex-uoms.UnitsOfMeasures.UoMFullAccess",
       "title": "Unit of Measures",
       "tooltip": "Unit of Measures",
       "type": "SETTING",
