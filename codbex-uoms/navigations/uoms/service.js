@@ -2,7 +2,7 @@ const navigationData = {
     id: 'uoms-navigation',
     label: "Units of Mesurements",
     group: "reference data",
-    order: 100,
+    order: 200,
     link: "/services/web/codbex-uoms/gen/codbex-uoms/ui/UnitsOfMeasures/index.html?embedded"
 };
 

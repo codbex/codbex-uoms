@@ -1,2 +1,18 @@
 [
+    {
+        "name": "codbex-uoms.Dimensions.DimensionReadOnly",
+        "description": "A role that grants read only permission for Dimension."
+    },
+    {
+        "name": "codbex-uoms.Dimensions.DimensionFullAccess",
+        "description": "A role that grants full access for Dimension."
+    },
+    {
+        "name": "codbex-uoms.UnitsOfMeasures.UoMReadOnly",
+        "description": "A role that grants read only permission for UoM."
+    },
+    {
+        "name": "codbex-uoms.UnitsOfMeasures.UoMFullAccess",
+        "description": "A role that grants full access for UoM."
+    }
 ]

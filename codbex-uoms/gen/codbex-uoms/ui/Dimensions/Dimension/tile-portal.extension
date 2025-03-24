@@ -1,5 +1,6 @@
 {
     "module": "codbex-uoms/gen/codbex-uoms/ui/Dimensions/Dimension/tile.js",
     "extensionPoint": "portal-tile",
-    "description": "codbex-uoms - Application Tile"
+    "description": "codbex-uoms - Application Tile",
+    "role": "codbex-uoms.Dimensions.DimensionReadOnly,codbex-uoms.Dimensions.DimensionFullAccess"
 }

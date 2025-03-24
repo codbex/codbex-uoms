@@ -1,8 +1,8 @@
 openapi: 3.0.3
 info:
-  title: Units of Measures Management Module - OpenAPI 3.0
+  title: UoM Management Application - OpenAPI 3.0
   version: 1.0.0
-  description: Managing units of measures data
+  description: Managing UoMs data
 externalDocs:
   description: Find out more about Eclipse Dirigible
   url: https://dirigible.io

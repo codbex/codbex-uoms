@@ -2,7 +2,7 @@ const navigationData = {
     id: 'dimensions-navigation',
     label: "Dimensions",
     group: "reference data",
-    order: 300,
+    order: 400,
     link: "/services/web/codbex-uoms/gen/codbex-uoms/ui/Dimensions/index.html?embedded"
 };
 

@@ -7,8 +7,8 @@ const perspectiveData = {
 	id: 'Dimensions',
 	name: 'Dimensions',
 	link: '/services/web/codbex-uoms/gen/codbex-uoms/ui/Dimensions/index.html',
-	order: 990,
-	icon: '/services/web/resources/unicons/align-center-h.svg',
+	order: '990',
+	icon: '/services/web/resources/unicons/align-center-h.svg'
 };
 
 if (typeof exports !== 'undefined') {

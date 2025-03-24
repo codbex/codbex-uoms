@@ -8,6 +8,9 @@ const viewData = {
     label: "UoM",
     link: "/services/web/codbex-uoms/gen/codbex-uoms/ui/UnitsOfMeasures/UoM/dialog-window/index.html",
     perspectiveName: "UnitsOfMeasures",
+    roles: [
+        "codbex-uoms.UnitsOfMeasures.UoMReadOnly",
+    ]
 };
 
 if (typeof exports !== 'undefined') {
