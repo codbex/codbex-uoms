@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="page" ng-controller="PageController">
+
+    <head>
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" sizes="any" href="data:;base64,iVBORw0KGgo=">
+        <title config-title></title>
+        <script type="text/javascript" src="view.js"></script>
+        <script type="text/javascript" src="/services/js/platform-core/services/loader.js?id=view-js"></script>
+		<script type="text/javascript" src="/services/web/dashboard/services/entity.js"></script>
+        <link type="text/css" rel="stylesheet" href="/services/js/platform-core/services/loader.js?id=view-css" />
+        <script type="text/javascript" src="controller.js"></script>
+    </head>
+
+    <body class="bk-vbox">
+        <bk-scrollbar class="bk-full-height">
+            <bk-message-strip class="fd-margin--md" ng-show="errorMessage" glyph="sap-icon--message-error" state="error" on-dismiss="clearErrorMessage()">{{ errorMessage }}</bk-message-strip>
+
+            <bk-fieldset class="fd-padding-begin-end--sm" ng-form="forms.details">
+                <bk-form-group label="{{formHeaders[action]}}" name="entityForm" transclude-classes="fd-container fd-form-layout-grid-container">
+                    <bk-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<bk-form-label for="idName" ng-required="false" colon="true">Name</bk-form-label>
+                        </div>
+                        <div class="fd-col fd-col-md--4 fd-col--6">
+							<bk-form-input-message state="{{ forms.details['Name'].$valid ? '' : 'error' }}" message="'The value doesn\'t match the required pattern: '">
+								<bk-input id="idName"
+	                                name="Name"
+	                                state="{{ forms.details['Name'].$valid ? '' : 'error' }}"
+									ng-required="false"
+	                                ng-model="entity.Name"
+	                                ng-readonly="action === 'select'"
+									ng-maxlength="100.0"
+	                                input-rules="{ patterns: [''] }"
+	                                type="text"
+	                                placeholder="Enter Name">
+	                            </bk-input>
+							</bk-form-input-message>
+	                    </div>
+                    </bk-form-item>
+                    <bk-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<bk-form-label for="idISO" ng-required="false" colon="true">ISO</bk-form-label>
+                        </div>
+                        <div class="fd-col  fd-col-md--8 ">
+							<bk-form-input-message state="{{ forms.details['ISO'].$valid ? '' : 'error' }}" message="'The value doesn\'t match the required pattern: '">
+								<bk-input id="idISO"
+	                                name="ISO"
+	                                state="{{ forms.details['ISO'].$valid ? '' : 'error' }}"
+									ng-required="false"
+	                                ng-model="entity.ISO"
+	                                ng-readonly="action === 'select'"
+									ng-maxlength="20.0"
+	                                input-rules="{ patterns: [''] }"
+	                                type="text"
+	                                placeholder="Enter ISO">
+	                            </bk-input>
+							</bk-form-input-message>
+	                    </div>
+                    </bk-form-item>
+                    <bk-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<bk-form-label for="idDimension" ng-required="false" colon="true">Dimension</bk-form-label>
+                        </div>
+                        <div class="fd-col  fd-col-md--8 ">
+	                        <bk-combobox-input input-id="idDimension"
+	                            name="Dimension"
+	                            state="{{ forms.details['Dimension'].$valid ? '' : 'error' }}"
+	                            ng-required="false"
+	                            ng-model="entity.Dimension"
+	                            is-readonly="action === 'select'"
+	                            dropdown-items="optionsDimension"
+	                            placeholder="Search Dimension ..."
+								btn-aria-label="show/hide Dimension options" list-aria-label="Dimension options">
+	                        </bk-combobox-input>
+	                    </div>
+                    </bk-form-item>
+                    <bk-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<bk-form-label for="idSAP" ng-required="false" colon="true">SAP</bk-form-label>
+                        </div>
+                        <div class="fd-col  fd-col-md--8 ">
+							<bk-form-input-message state="{{ forms.details['SAP'].$valid ? '' : 'error' }}" message="'The value doesn\'t match the required pattern: '">
+								<bk-input id="idSAP"
+	                                name="SAP"
+	                                state="{{ forms.details['SAP'].$valid ? '' : 'error' }}"
+									ng-required="false"
+	                                ng-model="entity.SAP"
+	                                ng-readonly="action === 'select'"
+									ng-maxlength="20.0"
+	                                input-rules="{ patterns: [''] }"
+	                                type="text"
+	                                placeholder="Enter SAP">
+	                            </bk-input>
+							</bk-form-input-message>
+	                    </div>
+                    </bk-form-item>
+                    <bk-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<bk-form-label for="idNumerator" ng-required="false" colon="true">Numerator</bk-form-label>
+                        </div>
+                        <div class="fd-col fd-col-md--4 fd-col--6">
+	                        <bk-step-input input-id="idNumerator"
+								name="Numerator"
+								state="{{ forms.details['Numerator'].$valid ? '' : 'error' }}"
+								ng-required="false"
+								ng-model="entity.Numerator"
+								is-readonly="action === 'select'"
+								placeholder="Enter Numerator">
+							</bk-step-input>
+	                    </div>
+                    </bk-form-item>
+                    <bk-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<bk-form-label for="idDenominator" ng-required="false" colon="true">Denominator</bk-form-label>
+                        </div>
+                        <div class="fd-col fd-col-md--4 fd-col--6">
+	                        <bk-step-input input-id="idDenominator"
+								name="Denominator"
+								state="{{ forms.details['Denominator'].$valid ? '' : 'error' }}"
+								ng-required="false"
+								ng-model="entity.Denominator"
+								is-readonly="action === 'select'"
+								placeholder="Enter Denominator">
+							</bk-step-input>
+	                    </div>
+                    </bk-form-item>
+                    <bk-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<bk-form-label for="idRounding" ng-required="false" colon="true">Rounding</bk-form-label>
+                        </div>
+                        <div class="fd-col fd-col-md--2 fd-col--3">
+	                        <bk-step-input input-id="idRounding"
+								name="Rounding"
+								state="{{ forms.details['Rounding'].$valid ? '' : 'error' }}"
+								ng-required="false"
+								ng-model="entity.Rounding"
+								is-readonly="action === 'select'"
+								placeholder="Enter Rounding">
+							</bk-step-input>
+	                    </div>
+                    </bk-form-item>
+                    <bk-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2"></div>
+	                    <div class="fd-col fd-col-md--2 fd-col--3">
+	                        <bk-checkbox id="idBase"
+	                            compact="false"
+	                            ng-required="false"
+	                            ng-readonly="action === 'select'"
+	                            ng-model="entity.Base">
+	                        </bk-checkbox>
+                        	<bk-checkbox-label for="idBase" ng-required="false">Base</bk-checkbox-label>
+                        </div>
+                    </bk-form-item>
+                </bk-form-group>
+            </bk-fieldset>
+        </bk-scrollbar>
+
+		<bk-bar bar-design="footer" compact="true" ng-show="action !== 'select'">
+			<bk-bar-right>
+				<bk-bar-element>
+					<bk-button label="{{action === 'create' ? 'Create' : 'Update'}}" state="emphasized" ng-click="action === 'create' ? create() : update()" ng-disabled="!forms.details.$valid"></bk-button>
+				</bk-bar-element>
+				<bk-bar-element>
+					<bk-button label="Cancel" ng-click="cancel()"></bk-button>
+				</bk-bar-element>
+			</bk-bar-right>
+		</bk-bar>
+		<theme></theme>
+    </body>
+
+</html>

@@ -1,5 +1,0 @@
-{
-    "module": "codbex-uoms/gen/codbex-uoms/ui/Dimensions/perspective.js",
-    "extensionPoint": "codbex-uoms",
-    "description": "codbex-uoms - Perspective - Dimensions"
-}

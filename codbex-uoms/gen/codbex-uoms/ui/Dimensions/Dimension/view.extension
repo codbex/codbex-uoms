@@ -1,6 +1,0 @@
-{
-    "module": "codbex-uoms/gen/codbex-uoms/ui/Dimensions/Dimension/view.js",
-    "extensionPoint": "codbex-uoms-view",
-    "description": "codbex-uoms - Application View",
-    "role": "codbex-uoms.Dimensions.DimensionReadOnly,codbex-uoms.Dimensions.DimensionFullAccess"
-}

@@ -1,6 +1,0 @@
-{
-    "module": "codbex-uoms/gen/codbex-uoms/ui/Dimensions/Dimension/dialog-filter/view.js",
-    "extensionPoint": "dialog-window",
-    "description": "codbex-uoms - Application Dialog Window",
-    "role": "codbex-uoms.Dimensions.DimensionReadOnly,codbex-uoms.Dimensions.DimensionFullAccess"
-}

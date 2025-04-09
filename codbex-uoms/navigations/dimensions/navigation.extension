@@ -1,6 +1,0 @@
-{
-    "extensionPoint": "dashboard-navigations",
-    "module": "codbex-uoms/navigations/dimensions/service.js",
-    "description": "Dimensions Navigation",
-    "role": "codbex-uoms.Dimensions.DimensionReadOnly,codbex-uoms.Dimensions.DimensionFullAccess"
-}
