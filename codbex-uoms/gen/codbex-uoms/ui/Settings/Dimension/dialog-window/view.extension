@@ -1,0 +1,6 @@
+{
+    "module": "codbex-uoms/gen/codbex-uoms/ui/Settings/Dimension/dialog-window/view.js",
+    "extensionPoint": "application-windows",
+    "description": "codbex-uoms - Application Dialog Window",
+    "role": "codbex-uoms.Dimensions.DimensionReadOnly,codbex-uoms.Dimensions.DimensionFullAccess"
+}

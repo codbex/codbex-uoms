@@ -1,6 +1,0 @@
-{
-    "extensionPoint": "dashboard-navigations",
-    "module": "codbex-uoms/navigations/uoms/service.js",
-    "description": "Units Of Mesurments Navigation",
-    "role": "codbex-uoms.UnitsOfMeasures.UoMReadOnly,codbex-uoms.UnitsOfMeasures.UoMFullAccess"
-}
