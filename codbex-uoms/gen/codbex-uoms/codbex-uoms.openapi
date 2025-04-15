@@ -9,10 +9,10 @@ externalDocs:
 servers:
   - url: /services/ts
 tags:
-  - name: Dimensions
-  - name: UnitsOfMeasures
+  - name: Settings
+  - name: Settings
 paths:
-  /codbex-uoms/gen/codbex-uoms/api/Dimensions/DimensionService.ts:
+  /codbex-uoms/gen/codbex-uoms/api/Settings/DimensionService.ts:
     get:
       summary: List Dimension
       parameters:
@@ -33,7 +33,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - Dimensions
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -64,7 +64,7 @@ paths:
     post:
       summary: Create Dimension
       tags:
-        - Dimensions
+        - Settings
       requestBody:
         content:
           application/json:
@@ -96,7 +96,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-uoms/gen/codbex-uoms/api/Dimensions/DimensionService.ts/{id}:
+  /codbex-uoms/gen/codbex-uoms/api/Settings/DimensionService.ts/{id}:
     get:
       summary: Get Dimension by Id
       parameters:
@@ -107,7 +107,7 @@ paths:
           schema:
             type: string
       tags:
-        - Dimensions
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -145,7 +145,7 @@ paths:
           schema:
             type: string
       tags:
-        - Dimensions
+        - Settings
       requestBody:
         content:
           application/json:
@@ -193,7 +193,7 @@ paths:
           schema:
             type: string
       tags:
-        - Dimensions
+        - Settings
       responses:
         204:
           description: Successful Request
@@ -215,11 +215,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-uoms/gen/codbex-uoms/api/Dimensions/DimensionService.ts/count:
+  /codbex-uoms/gen/codbex-uoms/api/Settings/DimensionService.ts/count:
     get:
       summary: Count the number of Dimension
       tags:
-        - Dimensions
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -243,7 +243,7 @@ paths:
     post:
       summary: Count the number of Dimension by DimensionFilterOptions
       tags:
-        - Dimensions
+        - Settings
       requestBody:
         content:
           application/json:
@@ -327,11 +327,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-uoms/gen/codbex-uoms/api/Dimensions/DimensionService.ts/search:
+  /codbex-uoms/gen/codbex-uoms/api/Settings/DimensionService.ts/search:
     post:
       summary: Search Dimension by DimensionFilterOptions
       tags:
-        - Dimensions
+        - Settings
       requestBody:
         content:
           application/json:
@@ -416,7 +416,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-uoms/gen/codbex-uoms/api/UnitsOfMeasures/UoMService.ts:
+  /codbex-uoms/gen/codbex-uoms/api/Settings/UoMService.ts:
     get:
       summary: List UoM
       parameters:
@@ -437,7 +437,7 @@ paths:
             type: integer
             allowEmptyValue: true
       tags:
-        - UnitsOfMeasures
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -468,7 +468,7 @@ paths:
     post:
       summary: Create UoM
       tags:
-        - UnitsOfMeasures
+        - Settings
       requestBody:
         content:
           application/json:
@@ -500,7 +500,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-uoms/gen/codbex-uoms/api/UnitsOfMeasures/UoMService.ts/{id}:
+  /codbex-uoms/gen/codbex-uoms/api/Settings/UoMService.ts/{id}:
     get:
       summary: Get UoM by Id
       parameters:
@@ -511,7 +511,7 @@ paths:
           schema:
             type: string
       tags:
-        - UnitsOfMeasures
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -549,7 +549,7 @@ paths:
           schema:
             type: string
       tags:
-        - UnitsOfMeasures
+        - Settings
       requestBody:
         content:
           application/json:
@@ -597,7 +597,7 @@ paths:
           schema:
             type: string
       tags:
-        - UnitsOfMeasures
+        - Settings
       responses:
         204:
           description: Successful Request
@@ -619,11 +619,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-uoms/gen/codbex-uoms/api/UnitsOfMeasures/UoMService.ts/count:
+  /codbex-uoms/gen/codbex-uoms/api/Settings/UoMService.ts/count:
     get:
       summary: Count the number of UoM
       tags:
-        - UnitsOfMeasures
+        - Settings
       responses:
         200:
           description: Successful Request
@@ -647,7 +647,7 @@ paths:
     post:
       summary: Count the number of UoM by UoMFilterOptions
       tags:
-        - UnitsOfMeasures
+        - Settings
       requestBody:
         content:
           application/json:
@@ -733,11 +733,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /codbex-uoms/gen/codbex-uoms/api/UnitsOfMeasures/UoMService.ts/search:
+  /codbex-uoms/gen/codbex-uoms/api/Settings/UoMService.ts/search:
     post:
       summary: Search UoM by UoMFilterOptions
       tags:
-        - UnitsOfMeasures
+        - Settings
       requestBody:
         content:
           application/json:

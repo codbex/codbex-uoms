@@ -1,6 +1,0 @@
-{
-    "module": "codbex-uoms/gen/codbex-uoms/ui/UnitsOfMeasures/UoM/view.js",
-    "extensionPoint": "codbex-uoms-view",
-    "description": "codbex-uoms - Application View",
-    "role": "codbex-uoms.UnitsOfMeasures.UoMReadOnly,codbex-uoms.UnitsOfMeasures.UoMFullAccess"
-}

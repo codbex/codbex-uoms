@@ -50,6 +50,8 @@
                 "dataName": "DIMENSION",
                 "dataQuery": "",
                 "description": "Manage entity Dimension",
+                "feedPassword": "YWRtaW4=",
+                "feedUsername": "YWRtaW4=",
                 "generateDefaultRoles": "true",
                 "generateReport": "false",
                 "icon": "cube",
@@ -58,11 +60,12 @@
                 "menuKey": "dimension",
                 "menuLabel": "Dimension",
                 "name": "Dimension",
-                "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/align-center-h.svg",
-                "perspectiveLabel": "Dimensions",
-                "perspectiveName": "Dimensions",
-                "perspectiveOrder": "990",
+                "perspectiveHeader": "",
+                "perspectiveIcon": "cubes",
+                "perspectiveLabel": "Entities",
+                "perspectiveName": "Settings",
+                "perspectiveNavId": "",
+                "perspectiveOrder": "970",
                 "perspectiveRole": "",
                 "roleRead": "codbex-uoms.Dimensions.DimensionReadOnly",
                 "roleWrite": "codbex-uoms.Dimensions.DimensionFullAccess",
@@ -127,7 +130,7 @@
                         "widgetType": "DROPDOWN",
                         "relationshipName": "UoM_Dimension",
                         "relationshipEntityName": "Dimension",
-                        "relationshipEntityPerspectiveName": "Dimensions",
+                        "relationshipEntityPerspectiveName": "Settings",
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
@@ -201,19 +204,22 @@
                 "dataName": "UOM",
                 "dataQuery": "",
                 "description": "Manage entity UoM",
+                "feedPassword": "YWRtaW4=",
+                "feedUsername": "YWRtaW4=",
                 "generateDefaultRoles": "true",
                 "generateReport": "false",
                 "icon": "cubes",
-                "layoutType": "MANAGE_MASTER",
+                "layoutType": "",
                 "menuIndex": "100",
                 "menuKey": "uom",
                 "menuLabel": "UoM",
                 "name": "UoM",
-                "navigationPath": "/Home",
-                "perspectiveIcon": "/services/web/resources/unicons/arrows-resize-v.svg",
-                "perspectiveLabel": "Units of Measures",
-                "perspectiveName": "UnitsOfMeasures",
-                "perspectiveOrder": "980",
+                "perspectiveHeader": "",
+                "perspectiveIcon": "cubes",
+                "perspectiveLabel": "",
+                "perspectiveName": "Settings",
+                "perspectiveNavId": "",
+                "perspectiveOrder": "970",
                 "perspectiveRole": "",
                 "roleRead": "codbex-uoms.UnitsOfMeasures.UoMReadOnly",
                 "roleWrite": "codbex-uoms.UnitsOfMeasures.UoMFullAccess",
@@ -222,22 +228,7 @@
                 "type": "SETTING"
             }
         ],
-        "perspectives": [
-            {
-                "name": "UnitsOfMeasures",
-                "label": "Units of Measures",
-                "icon": "/services/web/resources/unicons/arrows-resize-v.svg",
-                "order": "980",
-                "role": {}
-            },
-            {
-                "name": "Dimensions",
-                "label": "Dimensions",
-                "icon": "/services/web/resources/unicons/align-center-h.svg",
-                "order": "990",
-                "role": {}
-            }
-        ],
+        "perspectives": [],
         "navigations": []
     }
 }
