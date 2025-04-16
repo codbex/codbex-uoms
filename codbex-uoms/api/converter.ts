@@ -1,5 +1,5 @@
 import { Controller, Get } from "sdk/http"
-import { UoMRepository } from "../gen/codbex-uoms/dao/UnitsOfMeasures/UoMRepository";
+import { UoMRepository } from "../gen/codbex-uoms/dao/Settings/UoMRepository";
 import { HttpUtils } from "../gen/codbex-uoms/api/utils/HttpUtils";
 
 /**
