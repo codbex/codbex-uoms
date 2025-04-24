@@ -114,9 +114,9 @@ angular.module('page', ['blimpKit', 'platformView', 'EntityService'])
 			});
 		};
 
-		$scope.openFilter = (entity) => {
+		$scope.openFilter = () => {
 			Dialogs.showWindow({
-				id: 'Dimension-details',
+				id: 'Dimension-filter',
 				params: {
 					entity: $scope.filterEntity,
 				},

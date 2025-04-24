@@ -58,7 +58,7 @@ export interface DimensionEntityOptions {
     },
     $select?: (keyof DimensionEntity)[],
     $sort?: string | (keyof DimensionEntity)[],
-    $order?: 'asc' | 'desc',
+    $order?: 'ASC' | 'DESC',
     $offset?: number,
     $limit?: number,
 }
@@ -107,10 +107,10 @@ export class DimensionRepository {
     private readonly dao;
 
     constructor(dataSource = "DefaultDB") {
-        this.dao = daoApi.create(DimensionRepository.DEFINITION, null, dataSource);
+        this.dao = daoApi.create(DimensionRepository.DEFINITION, undefined, dataSource);
     }
 
-    public findAll(options?: DimensionEntityOptions): DimensionEntity[] {
+    public findAll(options: DimensionEntityOptions = {}): DimensionEntity[] {
         return this.dao.list(options);
     }
 
