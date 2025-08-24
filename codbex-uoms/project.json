@@ -1,13 +1,6 @@
 {
     "guid": "codbex-uoms",
-    "dependencies": [
-        {
-            "guid": "codbex-navigation-groups",
-            "type": "git",
-            "url": "https://github.com/codbex/codbex-navigation-groups",
-            "branch": "main"
-        }
-    ],
+    "dependencies": [],
     "actions": [
         {
             "name": "Build TypeScript",
