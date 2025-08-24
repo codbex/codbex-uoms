@@ -38,6 +38,7 @@
       "role": ""
     }
   },
+  "tprefix": "codbex-uoms-model",
   "models": [
     {
       "properties": [
@@ -65,32 +66,6 @@
           "inputRule": ""
         },
         {
-          "dataLength": "20",
-          "dataName": "DIMENSION_SAP",
-          "dataNullable": true,
-          "dataType": "VARCHAR",
-          "description": "",
-          "name": "SAP",
-          "tooltip": "",
-          "widgetIsMajor": true,
-          "widgetLength": "20",
-          "widgetSize": "fd-col-md--4 fd-col--6",
-          "widgetType": "TEXTBOX",
-          "dataNotNull": false,
-          "dataAutoIncrement": false,
-          "dataPrimaryKey": false,
-          "dataUnique": false,
-          "isRequiredProperty": false,
-          "isCalculatedProperty": false,
-          "widgetLabel": "SAP",
-          "widgetDropdownUrl": "",
-          "dataTypeJava": "string",
-          "dataTypeTypescript": "string",
-          "minLength": 0,
-          "maxLength": 20,
-          "inputRule": ""
-        },
-        {
           "dataLength": "100",
           "dataName": "DIMENSION_NAME",
           "dataNullable": false,
@@ -114,6 +89,32 @@
           "dataTypeTypescript": "string",
           "minLength": 0,
           "maxLength": 100,
+          "inputRule": ""
+        },
+        {
+          "dataLength": "20",
+          "dataName": "DIMENSION_SAP",
+          "dataNullable": true,
+          "dataType": "VARCHAR",
+          "description": "",
+          "name": "SAP",
+          "tooltip": "",
+          "widgetIsMajor": true,
+          "widgetLength": "20",
+          "widgetSize": "fd-col-md--4 fd-col--6",
+          "widgetType": "TEXTBOX",
+          "dataNotNull": false,
+          "dataAutoIncrement": false,
+          "dataPrimaryKey": false,
+          "dataUnique": false,
+          "isRequiredProperty": false,
+          "isCalculatedProperty": false,
+          "widgetLabel": "SAP",
+          "widgetDropdownUrl": "",
+          "dataTypeJava": "string",
+          "dataTypeTypescript": "string",
+          "minLength": 0,
+          "maxLength": 20,
           "inputRule": ""
         }
       ],

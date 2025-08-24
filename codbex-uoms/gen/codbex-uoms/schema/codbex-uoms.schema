@@ -14,14 +14,14 @@
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 20,
-                        "nullable": true,
-                        "name": "DIMENSION_SAP"
+                        "length": 100,
+                        "name": "DIMENSION_NAME"
                     },
                     {
                         "type": "VARCHAR",
-                        "length": 100,
-                        "name": "DIMENSION_NAME"
+                        "length": 20,
+                        "nullable": true,
+                        "name": "DIMENSION_SAP"
                     }
                 ]
             },

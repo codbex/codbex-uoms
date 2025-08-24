@@ -17,37 +17,37 @@
             <bk-message-strip class="fd-margin--md" ng-show="errorMessage" glyph="sap-icon--message-error" state="error" on-dismiss="clearErrorMessage()">{{ errorMessage }}</bk-message-strip>
 
             <bk-fieldset class="fd-padding-begin-end--sm" ng-form="forms.details">
-                <bk-form-group label="Dimension Filter" name="entityForm" transclude-classes="fd-container fd-form-layout-grid-container">
+                <bk-form-group label="{{ 'codbex-uoms:codbex-uoms-model.defaults.formGrpFilter' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.DIMENSION)'} }}" name="entityForm" transclude-classes="fd-container fd-form-layout-grid-container">
                     <bk-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<bk-form-label for="idSAP" colon="true">SAP</bk-form-label>
+                        	<bk-form-label for="idName" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.DIMENSION_NAME' | t }}</bk-form-label>
                         </div>
                         <div class="fd-col fd-col-md--8">
-							<bk-form-input-message state="{{ forms.details['SAP'].$valid ? '' : 'error' }}" message="'Incorrect Input'">
-								<bk-input id="idSAP"
-	                                name="SAP"
-	                                state="{{ forms.details['SAP'].$valid ? '' : 'error' }}"
-	                                ng-model="entity.SAP"
-									ng-maxlength="20.0"
-	                                type="text"
-	                                placeholder="Enter SAP">
-	                            </bk-input>
-							</bk-form-input-message>
-	                    </div>
-                    </bk-form-item>
-                    <bk-form-item class="fd-row">
-                    	<div class="fd-col fd-col-md--2">
-                        	<bk-form-label for="idName" colon="true">Name</bk-form-label>
-                        </div>
-                        <div class="fd-col fd-col-md--8">
-							<bk-form-input-message state="{{ forms.details['Name'].$valid ? '' : 'error' }}" message="'Incorrect Input'">
+							<bk-form-input-message state="{{ forms.details['Name'].$valid ? '' : 'error' }}" text="{{'codbex-uoms:codbex-uoms-model.messages.error.incorrectInput' | t}}">
 								<bk-input id="idName"
 	                                name="Name"
 	                                state="{{ forms.details['Name'].$valid ? '' : 'error' }}"
 	                                ng-model="entity.Name"
 									ng-maxlength="100.0"
 	                                type="text"
-	                                placeholder="Enter Name">
+	                                placeholder="{{ 'codbex-uoms:codbex-uoms-model.messages.inputEnter' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.DIMENSION_NAME)'} }}">
+	                            </bk-input>
+							</bk-form-input-message>
+	                    </div>
+                    </bk-form-item>
+                    <bk-form-item class="fd-row">
+                    	<div class="fd-col fd-col-md--2">
+                        	<bk-form-label for="idSAP" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.DIMENSION_SAP' | t }}</bk-form-label>
+                        </div>
+                        <div class="fd-col fd-col-md--8">
+							<bk-form-input-message state="{{ forms.details['SAP'].$valid ? '' : 'error' }}" text="{{'codbex-uoms:codbex-uoms-model.messages.error.incorrectInput' | t}}">
+								<bk-input id="idSAP"
+	                                name="SAP"
+	                                state="{{ forms.details['SAP'].$valid ? '' : 'error' }}"
+	                                ng-model="entity.SAP"
+									ng-maxlength="20.0"
+	                                type="text"
+	                                placeholder="{{ 'codbex-uoms:codbex-uoms-model.messages.inputEnter' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.DIMENSION_SAP)'} }}">
 	                            </bk-input>
 							</bk-form-input-message>
 	                    </div>
@@ -59,13 +59,13 @@
 		<bk-bar bar-design="footer" compact="true" ng-show="action !== 'select'">
 			<bk-bar-right>
 				<bk-bar-element>
-					<bk-button label="Filter" state="emphasized" ng-click="filter()"></bk-button>
+					<bk-button label="{{ 'codbex-uoms:codbex-uoms-model.defaults.filter' | t }}" state="emphasized" ng-click="filter()"></bk-button>
 				</bk-bar-element>
 				<bk-bar-element>
-					<bk-button label="Reset" ng-click="resetFilter()"></bk-button>
+					<bk-button label="{{ 'codbex-uoms:codbex-uoms-model.defaults.reset' | t }}" ng-click="resetFilter()"></bk-button>
 				</bk-bar-element>
 				<bk-bar-element>
-					<bk-button label="Cancel" ng-click="cancel()"></bk-button>
+					<bk-button label="{{ 'codbex-uoms:codbex-uoms-model.defaults.cancel' | t }}" ng-click="cancel()"></bk-button>
 				</bk-bar-element>
 			</bk-bar-right>
 		</bk-bar>

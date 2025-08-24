@@ -18,19 +18,6 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
-                        "dataLength": "20",
-                        "dataName": "DIMENSION_SAP",
-                        "dataNullable": "true",
-                        "dataType": "VARCHAR",
-                        "description": "",
-                        "name": "SAP",
-                        "tooltip": "",
-                        "widgetIsMajor": "true",
-                        "widgetLength": "20",
-                        "widgetSize": "fd-col-md--4 fd-col--6",
-                        "widgetType": "TEXTBOX"
-                    },
-                    {
                         "dataLength": "100",
                         "dataName": "DIMENSION_NAME",
                         "dataNullable": "false",
@@ -41,6 +28,19 @@
                         "tooltip": "",
                         "widgetIsMajor": "true",
                         "widgetLength": "100",
+                        "widgetSize": "fd-col-md--4 fd-col--6",
+                        "widgetType": "TEXTBOX"
+                    },
+                    {
+                        "dataLength": "20",
+                        "dataName": "DIMENSION_SAP",
+                        "dataNullable": "true",
+                        "dataType": "VARCHAR",
+                        "description": "",
+                        "name": "SAP",
+                        "tooltip": "",
+                        "widgetIsMajor": "true",
+                        "widgetLength": "20",
                         "widgetSize": "fd-col-md--4 fd-col--6",
                         "widgetType": "TEXTBOX"
                     }

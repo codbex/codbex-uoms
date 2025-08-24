@@ -6,6 +6,9 @@
 const viewData = {
     id: 'UoM-details',
     label: 'UoM',
+    translation: {
+        key: 'codbex-uoms:codbex-uoms-model.t.UOM',
+    },
     path: '/services/web/codbex-uoms/gen/codbex-uoms/ui/Settings/UoM/dialog-window/index.html',
     perspectiveName: 'Settings'
 };

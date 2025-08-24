@@ -5,13 +5,13 @@ import { dao as daoApi } from "sdk/db";
 
 export interface DimensionEntity {
     readonly Id: number;
-    SAP?: string;
     Name: string;
+    SAP?: string;
 }
 
 export interface DimensionCreateEntity {
-    readonly SAP?: string;
     readonly Name: string;
+    readonly SAP?: string;
 }
 
 export interface DimensionUpdateEntity extends DimensionCreateEntity {
@@ -22,38 +22,38 @@ export interface DimensionEntityOptions {
     $filter?: {
         equals?: {
             Id?: number | number[];
-            SAP?: string | string[];
             Name?: string | string[];
+            SAP?: string | string[];
         };
         notEquals?: {
             Id?: number | number[];
-            SAP?: string | string[];
             Name?: string | string[];
+            SAP?: string | string[];
         };
         contains?: {
             Id?: number;
-            SAP?: string;
             Name?: string;
+            SAP?: string;
         };
         greaterThan?: {
             Id?: number;
-            SAP?: string;
             Name?: string;
+            SAP?: string;
         };
         greaterThanOrEqual?: {
             Id?: number;
-            SAP?: string;
             Name?: string;
+            SAP?: string;
         };
         lessThan?: {
             Id?: number;
-            SAP?: string;
             Name?: string;
+            SAP?: string;
         };
         lessThanOrEqual?: {
             Id?: number;
-            SAP?: string;
             Name?: string;
+            SAP?: string;
         };
     },
     $select?: (keyof DimensionEntity)[],
@@ -63,7 +63,7 @@ export interface DimensionEntityOptions {
     $limit?: number,
 }
 
-interface DimensionEntityEvent {
+export interface DimensionEntityEvent {
     readonly operation: 'create' | 'update' | 'delete';
     readonly table: string;
     readonly entity: Partial<DimensionEntity>;
@@ -74,7 +74,7 @@ interface DimensionEntityEvent {
     }
 }
 
-interface DimensionUpdateEntityEvent extends DimensionEntityEvent {
+export interface DimensionUpdateEntityEvent extends DimensionEntityEvent {
     readonly previousEntity: DimensionEntity;
 }
 
@@ -91,15 +91,15 @@ export class DimensionRepository {
                 autoIncrement: true,
             },
             {
-                name: "SAP",
-                column: "DIMENSION_SAP",
-                type: "VARCHAR",
-            },
-            {
                 name: "Name",
                 column: "DIMENSION_NAME",
                 type: "VARCHAR",
                 required: true
+            },
+            {
+                name: "SAP",
+                column: "DIMENSION_SAP",
+                type: "VARCHAR",
             }
         ]
     };

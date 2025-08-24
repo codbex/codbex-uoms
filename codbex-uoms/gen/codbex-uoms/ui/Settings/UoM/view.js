@@ -6,6 +6,9 @@
 const viewData = {
     id: 'UoM',
     label: 'UoM',
+    translation: {
+        key: 'codbex-uoms:codbex-uoms-model.t.UOM',
+    },
     region: 'center',
     lazyLoad: true,
 	autoFocusTab: false,

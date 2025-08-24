@@ -6,6 +6,9 @@
 const viewData = {
     id: 'Dimension',
     label: 'Dimension',
+    translation: {
+        key: 'codbex-uoms:codbex-uoms-model.t.DIMENSION',
+    },
     region: 'center',
     lazyLoad: true,
 	autoFocusTab: false,

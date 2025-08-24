@@ -17,44 +17,44 @@
             <bk-message-strip class="fd-margin--md" ng-show="errorMessage" glyph="sap-icon--message-error" state="error" on-dismiss="clearErrorMessage()">{{ errorMessage }}</bk-message-strip>
 
             <bk-fieldset class="fd-padding-begin-end--sm" ng-form="forms.details">
-                <bk-form-group label="UoM Filter" name="entityForm" transclude-classes="fd-container fd-form-layout-grid-container">
+                <bk-form-group label="{{ 'codbex-uoms:codbex-uoms-model.defaults.formGrpFilter' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.UOM)'} }}" name="entityForm" transclude-classes="fd-container fd-form-layout-grid-container">
                     <bk-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<bk-form-label for="idName" colon="true">Name</bk-form-label>
+                        	<bk-form-label for="idName" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_NAME' | t }}</bk-form-label>
                         </div>
                         <div class="fd-col fd-col-md--8">
-							<bk-form-input-message state="{{ forms.details['Name'].$valid ? '' : 'error' }}" message="'Incorrect Input'">
+							<bk-form-input-message state="{{ forms.details['Name'].$valid ? '' : 'error' }}" text="{{'codbex-uoms:codbex-uoms-model.messages.error.incorrectInput' | t}}">
 								<bk-input id="idName"
 	                                name="Name"
 	                                state="{{ forms.details['Name'].$valid ? '' : 'error' }}"
 	                                ng-model="entity.Name"
 									ng-maxlength="100.0"
 	                                type="text"
-	                                placeholder="Enter Name">
+	                                placeholder="{{ 'codbex-uoms:codbex-uoms-model.messages.inputEnter' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.UOM_NAME)'} }}">
 	                            </bk-input>
 							</bk-form-input-message>
 	                    </div>
                     </bk-form-item>
                     <bk-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<bk-form-label for="idISO" colon="true">ISO</bk-form-label>
+                        	<bk-form-label for="idISO" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_ISO' | t }}</bk-form-label>
                         </div>
                         <div class="fd-col fd-col-md--8">
-							<bk-form-input-message state="{{ forms.details['ISO'].$valid ? '' : 'error' }}" message="'Incorrect Input'">
+							<bk-form-input-message state="{{ forms.details['ISO'].$valid ? '' : 'error' }}" text="{{'codbex-uoms:codbex-uoms-model.messages.error.incorrectInput' | t}}">
 								<bk-input id="idISO"
 	                                name="ISO"
 	                                state="{{ forms.details['ISO'].$valid ? '' : 'error' }}"
 	                                ng-model="entity.ISO"
 									ng-maxlength="20.0"
 	                                type="text"
-	                                placeholder="Enter ISO">
+	                                placeholder="{{ 'codbex-uoms:codbex-uoms-model.messages.inputEnter' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.UOM_ISO)'} }}">
 	                            </bk-input>
 							</bk-form-input-message>
 	                    </div>
                     </bk-form-item>
                     <bk-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<bk-form-label for="idDimension" colon="true">Dimension</bk-form-label>
+                        	<bk-form-label for="idDimension" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_DIMENSION' | t }}</bk-form-label>
                         </div>
                         <div class="fd-col fd-col-md--8">
 	                        <bk-combobox-input input-id="idDimension"
@@ -62,64 +62,64 @@
 	                            state="{{ forms.details['Dimension'].$valid ? '' : 'error' }}"
 	                            ng-model="entity.Dimension"
 	                            dropdown-items="optionsDimension"
-	                            placeholder="Search Dimension ..."
-								btn-aria-label="show/hide Dimension options" list-aria-label="Dimension options">
+	                            placeholder="{{ 'codbex-uoms:codbex-uoms-model.messages.inputSearch' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.UOM_DIMENSION)'} }}"
+								btn-aria-label="{{ 'codbex-uoms:codbex-uoms-model.aria.showHide' | t:{'name':'Dimension'} }}" list-aria-label="{{ 'codbex-uoms:codbex-uoms-model.aria.options' | t:{'name':'Dimension'} }}">
 	                        </bk-combobox-input>
 	                    </div>
                     </bk-form-item>
                     <bk-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<bk-form-label for="idSAP" colon="true">SAP</bk-form-label>
+                        	<bk-form-label for="idSAP" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_SAP' | t }}</bk-form-label>
                         </div>
                         <div class="fd-col fd-col-md--8">
-							<bk-form-input-message state="{{ forms.details['SAP'].$valid ? '' : 'error' }}" message="'Incorrect Input'">
+							<bk-form-input-message state="{{ forms.details['SAP'].$valid ? '' : 'error' }}" text="{{'codbex-uoms:codbex-uoms-model.messages.error.incorrectInput' | t}}">
 								<bk-input id="idSAP"
 	                                name="SAP"
 	                                state="{{ forms.details['SAP'].$valid ? '' : 'error' }}"
 	                                ng-model="entity.SAP"
 									ng-maxlength="20.0"
 	                                type="text"
-	                                placeholder="Enter SAP">
+	                                placeholder="{{ 'codbex-uoms:codbex-uoms-model.messages.inputEnter' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.UOM_SAP)'} }}">
 	                            </bk-input>
 							</bk-form-input-message>
 	                    </div>
                     </bk-form-item>
                     <bk-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<bk-form-label for="idNumerator" colon="true">Numerator</bk-form-label>
+                        	<bk-form-label for="idNumerator" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_NUMERATOR' | t }}</bk-form-label>
                         </div>
                         <div class="fd-col fd-col-md--4">
 	                        <bk-step-input input-id="idNumerator"
 								name="Numerator"
 								state="{{ forms.details['Numerator'].$valid ? '' : 'error' }}"
 								ng-model="entity.Numerator"
-								placeholder="Enter Numerator">
+								placeholder="{{ 'codbex-uoms:codbex-uoms-model.messages.inputEnter' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.UOM_NUMERATOR)'} }}">
 							</bk-step-input>
 	                    </div>
                     </bk-form-item>
                     <bk-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<bk-form-label for="idDenominator" colon="true">Denominator</bk-form-label>
+                        	<bk-form-label for="idDenominator" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_DENOMINATOR' | t }}</bk-form-label>
                         </div>
                         <div class="fd-col fd-col-md--4">
 	                        <bk-step-input input-id="idDenominator"
 								name="Denominator"
 								state="{{ forms.details['Denominator'].$valid ? '' : 'error' }}"
 								ng-model="entity.Denominator"
-								placeholder="Enter Denominator">
+								placeholder="{{ 'codbex-uoms:codbex-uoms-model.messages.inputEnter' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.UOM_DENOMINATOR)'} }}">
 							</bk-step-input>
 	                    </div>
                     </bk-form-item>
                     <bk-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<bk-form-label for="idRounding" colon="true">Rounding</bk-form-label>
+                        	<bk-form-label for="idRounding" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_ROUNDING' | t }}</bk-form-label>
                         </div>
                         <div class="fd-col fd-col-md--4">
 	                        <bk-step-input input-id="idRounding"
 								name="Rounding"
 								state="{{ forms.details['Rounding'].$valid ? '' : 'error' }}"
 								ng-model="entity.Rounding"
-								placeholder="Enter Rounding">
+								placeholder="{{ 'codbex-uoms:codbex-uoms-model.messages.inputEnter' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.UOM_ROUNDING)'} }}">
 							</bk-step-input>
 	                    </div>
                     </bk-form-item>
@@ -133,7 +133,7 @@
 								indeterminate="entity.isBaseIndeterminate"
 								ng-click="entity.isBaseIndeterminate=false">
 	                        </bk-checkbox>
-                        	<bk-checkbox-label for="idBase">Base</bk-checkbox-label>
+                        	<bk-checkbox-label for="idBase">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_BASE' | t }}</bk-checkbox-label>
                         </div>
                     </bk-form-item>
                 </bk-form-group>
@@ -143,13 +143,13 @@
 		<bk-bar bar-design="footer" compact="true" ng-show="action !== 'select'">
 			<bk-bar-right>
 				<bk-bar-element>
-					<bk-button label="Filter" state="emphasized" ng-click="filter()"></bk-button>
+					<bk-button label="{{ 'codbex-uoms:codbex-uoms-model.defaults.filter' | t }}" state="emphasized" ng-click="filter()"></bk-button>
 				</bk-bar-element>
 				<bk-bar-element>
-					<bk-button label="Reset" ng-click="resetFilter()"></bk-button>
+					<bk-button label="{{ 'codbex-uoms:codbex-uoms-model.defaults.reset' | t }}" ng-click="resetFilter()"></bk-button>
 				</bk-bar-element>
 				<bk-bar-element>
-					<bk-button label="Cancel" ng-click="cancel()"></bk-button>
+					<bk-button label="{{ 'codbex-uoms:codbex-uoms-model.defaults.cancel' | t }}" ng-click="cancel()"></bk-button>
 				</bk-bar-element>
 			</bk-bar-right>
 		</bk-bar>

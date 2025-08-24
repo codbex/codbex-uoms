@@ -257,8 +257,8 @@ paths:
                     notEquals:
                       Id: 33
                     contains:
-                      SAP: "abcd"
                       Name: "abcd"
+                      SAP: "abcd"
                     greaterThan:
                       Id: 0
                     lessThanOrEqual:
@@ -280,8 +280,8 @@ paths:
                 value:
                   $filter:
                     contains:
-                      SAP: "abcd"
                       Name: "abcd"
+                      SAP: "abcd"
               countWithGreaterThan:
                 summary: Count with Greater Than
                 value:
@@ -345,8 +345,8 @@ paths:
                     notEquals:
                       Id: 33
                     contains:
-                      SAP: "abcd"
                       Name: "abcd"
+                      SAP: "abcd"
                     greaterThan:
                       Id: 0
                     lessThanOrEqual:
@@ -368,8 +368,8 @@ paths:
                 value:
                   $filter:
                     contains:
-                      SAP: "abcd"
                       Name: "abcd"
+                      SAP: "abcd"
               searchWithGreaterThan:
                 summary: Search with Greater Than
                 value:
@@ -834,14 +834,14 @@ components:
         Id:
           type: integer
           format: int32
-        SAP:
-          type: string
-          minLength: 0
-          maxLength: 20
         Name:
           type: string
           minLength: 0
           maxLength: 100
+        SAP:
+          type: string
+          minLength: 0
+          maxLength: 20
     DimensionFilterOptions:
       type: object
       properties:
@@ -859,17 +859,6 @@ components:
                       items:
                         type: integer
                         format: int32
-                SAP:
-                  oneOf:
-                    - type: string
-                      minLength: 0
-                      maxLength: 20
-                    - type: array
-                      items:
-                        type: string
-                        format: double
-                        minLength: 0
-                        maxLength: 20
                 Name:
                   oneOf:
                     - type: string
@@ -881,6 +870,17 @@ components:
                         format: double
                         minLength: 0
                         maxLength: 100
+                SAP:
+                  oneOf:
+                    - type: string
+                      minLength: 0
+                      maxLength: 20
+                    - type: array
+                      items:
+                        type: string
+                        format: double
+                        minLength: 0
+                        maxLength: 20
             notEquals:
               type: object
               properties:
@@ -892,17 +892,6 @@ components:
                       items:
                         type: integer
                         format: int32
-                SAP:
-                  oneOf:
-                    - type: string
-                      minLength: 0
-                      maxLength: 20
-                    - type: array
-                      items:
-                        type: string
-                        format: double
-                        minLength: 0
-                        maxLength: 20
                 Name:
                   oneOf:
                     - type: string
@@ -914,82 +903,93 @@ components:
                         format: double
                         minLength: 0
                         maxLength: 100
+                SAP:
+                  oneOf:
+                    - type: string
+                      minLength: 0
+                      maxLength: 20
+                    - type: array
+                      items:
+                        type: string
+                        format: double
+                        minLength: 0
+                        maxLength: 20
             contains:
               type: object
               properties:
                 Id:
-                SAP:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
                 Name:
                   type: string
                   minLength: 0
                   maxLength: 100
+                SAP:
+                  type: string
+                  minLength: 0
+                  maxLength: 20
             greaterThan:
               type: object
               properties:
                 Id:
                   type: integer
                   format: int32
-                SAP:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
                 Name:
                   type: string
                   minLength: 0
                   maxLength: 100
+                SAP:
+                  type: string
+                  minLength: 0
+                  maxLength: 20
             greaterThanOrEqual:
               type: object
               properties:
                 Id:
                   type: integer
                   format: int32
-                SAP:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
                 Name:
                   type: string
                   minLength: 0
                   maxLength: 100
+                SAP:
+                  type: string
+                  minLength: 0
+                  maxLength: 20
             lessThan:
               type: object
               properties:
                 Id:
                   type: integer
                   format: int32
-                SAP:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
                 Name:
                   type: string
                   minLength: 0
                   maxLength: 100
+                SAP:
+                  type: string
+                  minLength: 0
+                  maxLength: 20
             lessThanOrEqual:
               type: object
               properties:
                 Id:
                   type: integer
                   format: int32
-                SAP:
-                  type: string
-                  minLength: 0
-                  maxLength: 20
                 Name:
                   type: string
                   minLength: 0
                   maxLength: 100
+                SAP:
+                  type: string
+                  minLength: 0
+                  maxLength: 20
         $select:
           type: array
-          example: ["Id", "SAP", "Name"]
+          example: ["Id", "Name", "SAP"]
           items:
             type: string
         $sort:
           - type: string
-            example: "Id,SAP,Name"
+            example: "Id,Name,SAP"
         $order:
           type: string
           enum: ["asc", "desc"]

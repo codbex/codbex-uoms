@@ -6,6 +6,9 @@
 const viewData = {
     id: 'Dimension-details',
     label: 'Dimension',
+    translation: {
+        key: 'codbex-uoms:codbex-uoms-model.t.DIMENSION',
+    },
     path: '/services/web/codbex-uoms/gen/codbex-uoms/ui/Settings/Dimension/dialog-window/index.html',
     perspectiveName: 'Settings'
 };

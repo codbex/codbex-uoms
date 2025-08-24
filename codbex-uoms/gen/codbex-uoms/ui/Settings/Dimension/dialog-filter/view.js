@@ -6,6 +6,12 @@
 const viewData = {
     id: 'Dimension-filter',
     label: 'Dimension Filter',
+    translation: {
+        key: 'codbex-uoms:codbex-uoms-model.extName',
+        options: {
+            content: '$t(codbex-uoms:codbex-uoms-model.t.DIMENSION) $t(codbex-uoms:codbex-uoms-model.defaults.filter)',
+        }
+    },
     path: '/services/web/codbex-uoms/gen/codbex-uoms/ui/Settings/Dimension/dialog-filter/index.html',
     perspectiveName: 'Settings'
 };

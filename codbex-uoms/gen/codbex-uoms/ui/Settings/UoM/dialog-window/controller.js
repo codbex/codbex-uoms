@@ -1,9 +1,14 @@
-angular.module('page', ['blimpKit', 'platformView', 'EntityService'])
+angular.module('page', ['blimpKit', 'platformView', 'platformLocale', 'EntityService'])
 	.config(['EntityServiceProvider', (EntityServiceProvider) => {
 		EntityServiceProvider.baseUrl = '/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/UoMService.ts';
 	}])
-	.controller('PageController', ($scope, $http, ViewParameters, EntityService) => {
+	.controller('PageController', ($scope, $http, ViewParameters, LocaleService, EntityService) => {
 		const Dialogs = new DialogHub();
+		const Notifications = new NotificationHub();
+		let description = 'Description';
+		let propertySuccessfullyCreated = 'UoM successfully created';
+		let propertySuccessfullyUpdated = 'UoM successfully updated';
+
 		$scope.entity = {};
 		$scope.forms = {
 			details: {},
@@ -14,6 +19,15 @@ angular.module('page', ['blimpKit', 'platformView', 'EntityService'])
 			update: 'Update UoM'
 		};
 		$scope.action = 'select';
+
+		LocaleService.onInit(() => {
+			description = LocaleService.t('codbex-uoms:codbex-uoms-model.defaults.description');
+			$scope.formHeaders.select = LocaleService.t('codbex-uoms:codbex-uoms-model.defaults.formHeadSelect', { name: '$t(codbex-uoms:codbex-uoms-model.t.UOM)' });
+			$scope.formHeaders.create = LocaleService.t('codbex-uoms:codbex-uoms-model.defaults.formHeadCreate', { name: '$t(codbex-uoms:codbex-uoms-model.t.UOM)' });
+			$scope.formHeaders.update = LocaleService.t('codbex-uoms:codbex-uoms-model.defaults.formHeadUpdate', { name: '$t(codbex-uoms:codbex-uoms-model.t.UOM)' });
+			propertySuccessfullyCreated = LocaleService.t('codbex-uoms:codbex-uoms-model.messages.propertySuccessfullyCreated', { name: '$t(codbex-uoms:codbex-uoms-model.t.UOM)' });
+			propertySuccessfullyUpdated = LocaleService.t('codbex-uoms:codbex-uoms-model.messages.propertySuccessfullyUpdated', { name: '$t(codbex-uoms:codbex-uoms-model.t.UOM)' });
+		});
 
 		let params = ViewParameters.get();
 		if (Object.keys(params).length) {
@@ -29,16 +43,16 @@ angular.module('page', ['blimpKit', 'platformView', 'EntityService'])
 			entity[$scope.selectedMainEntityKey] = $scope.selectedMainEntityId;
 			EntityService.create(entity).then((response) => {
 				Dialogs.postMessage({ topic: 'codbex-uoms.Settings.UoM.entityCreated', data: response.data });
-				Dialogs.showAlert({
-					title: 'UoM',
-					message: 'UoM successfully created',
-					type: AlertTypes.Success
+				Notifications.show({
+					title: LocaleService.t('codbex-uoms:codbex-uoms-model.t.UOM'),
+					description: propertySuccessfullyCreated,
+					type: 'positive'
 				});
 				$scope.cancel();
 			}, (error) => {
 				const message = error.data ? error.data.message : '';
 				$scope.$evalAsync(() => {
-					$scope.errorMessage = `Unable to create UoM: '${message}'`;
+					$scope.errorMessage = LocaleService.t('codbex-uoms:codbex-uoms-model.messages.error.unableToCreate', { name: '$t(codbex-uoms:codbex-uoms-model.t.UOM)', message: message });
 				});
 				console.error('EntityService:', error);
 			});
@@ -50,16 +64,16 @@ angular.module('page', ['blimpKit', 'platformView', 'EntityService'])
 			entity[$scope.selectedMainEntityKey] = $scope.selectedMainEntityId;
 			EntityService.update(id, entity).then((response) => {
 				Dialogs.postMessage({ topic: 'codbex-uoms.Settings.UoM.entityUpdated', data: response.data });
-				Dialogs.showAlert({
-					title: 'UoM',
-					message: 'UoM successfully updated',
-					type: AlertTypes.Success
+				Notifications.show({
+					title: LocaleService.t('codbex-uoms:codbex-uoms-model.t.UOM'),
+					description: propertySuccessfullyUpdated,
+					type: 'positive'
 				});
 				$scope.cancel();
 			}, (error) => {
 				const message = error.data ? error.data.message : '';
 				$scope.$evalAsync(() => {
-					$scope.errorMessage = `Unable to update UoM: '${message}'`;
+					$scope.errorMessage = LocaleService.t('codbex-uoms:codbex-uoms-model.messages.error.unableToUpdate', { name: '$t(codbex-uoms:codbex-uoms-model.t.UOM)', message: message });
 				});
 				console.error('EntityService:', error);
 			});
@@ -70,18 +84,16 @@ angular.module('page', ['blimpKit', 'platformView', 'EntityService'])
 		$scope.optionsDimension = [];
 		
 		$http.get('/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionService.ts').then((response) => {
-			$scope.optionsDimension = response.data.map(e => {
-				return {
-					value: e.Id,
-					text: e.Name
-				}
-			});
+			$scope.optionsDimension = response.data.map(e => ({
+				value: e.Id,
+				text: e.Name
+			}));
 		}, (error) => {
 			console.error(error);
 			const message = error.data ? error.data.message : '';
 			Dialogs.showAlert({
 				title: 'Dimension',
-				message: `Unable to load data: '${message}'`,
+				message: LocaleService.t('codbex-uoms:codbex-uoms-model.messages.error.unableToLoad', { message: message }),
 				type: AlertTypes.Error
 			});
 		});
@@ -99,7 +111,7 @@ angular.module('page', ['blimpKit', 'platformView', 'EntityService'])
 
 		$scope.alert = (message) => {
 			if (message) Dialogs.showAlert({
-				title: 'Description',
+				title: description,
 				message: message,
 				type: AlertTypes.Information,
 				preformatted: true,

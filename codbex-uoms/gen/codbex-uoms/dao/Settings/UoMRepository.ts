@@ -118,7 +118,7 @@ export interface UoMEntityOptions {
     $limit?: number,
 }
 
-interface UoMEntityEvent {
+export interface UoMEntityEvent {
     readonly operation: 'create' | 'update' | 'delete';
     readonly table: string;
     readonly entity: Partial<UoMEntity>;
@@ -129,7 +129,7 @@ interface UoMEntityEvent {
     }
 }
 
-interface UoMUpdateEntityEvent extends UoMEntityEvent {
+export interface UoMUpdateEntityEvent extends UoMEntityEvent {
     readonly previousEntity: UoMEntity;
 }
 
