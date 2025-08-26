@@ -1,4 +1,4 @@
-import { query } from "sdk/db";
+import { sql, query } from "sdk/db";
 import { producer } from "sdk/messaging";
 import { extensions } from "sdk/extensions";
 import { dao as daoApi } from "sdk/db";
@@ -116,6 +116,7 @@ export interface UoMEntityOptions {
     $order?: 'ASC' | 'DESC',
     $offset?: number,
     $limit?: number,
+    $language?: string
 }
 
 export interface UoMEntityEvent {
@@ -195,13 +196,40 @@ export class UoMRepository {
     }
 
     public findAll(options: UoMEntityOptions = {}): UoMEntity[] {
-        return this.dao.list(options).map((e: UoMEntity) => {
+        let list = this.dao.list(options).map((e: UoMEntity) => {
             EntityUtils.setBoolean(e, "Base");
             return e;
         });
+        try {
+            let script = sql.getDialect().select().column("*").from('"' + UoMRepository.DEFINITION.table + '_LANG"').where('Language = ?').build();
+            const resultSet = query.execute(script, [options.$language]);
+            if (resultSet !== null && resultSet[0] !== null) {
+                let translatedProperties = Object.getOwnPropertyNames(resultSet[0]);
+                let maps = [];
+                for (let i = 0; i < translatedProperties.length - 2; i++) {
+                    maps[i] = {};
+                }
+                resultSet.forEach((r) => {
+                    for (let i = 0; i < translatedProperties.length - 2; i++) {
+                        maps[i][r[translatedProperties[0]]] = r[translatedProperties[i + 1]];
+                    }
+                });
+                list.forEach((r) => {
+                    for (let i = 0; i < translatedProperties.length - 2; i++) {
+                        if (maps[i][r[translatedProperties[0]]]) {
+                            r[translatedProperties[i + 1]] = maps[i][r[translatedProperties[0]]];
+                        }
+                    }
+
+                });
+            }
+        } catch (Error) {
+            console.error("Entity is marked as language dependent, but no language table present: " + UoMRepository.DEFINITION.table);
+        }
+        return list;
     }
 
-    public findById(id: number): UoMEntity | undefined {
+    public findById(id: number, options: UoMEntityOptions = {}): UoMEntity | undefined {
         const entity = this.dao.find(id);
         EntityUtils.setBoolean(entity, "Base");
         return entity ?? undefined;

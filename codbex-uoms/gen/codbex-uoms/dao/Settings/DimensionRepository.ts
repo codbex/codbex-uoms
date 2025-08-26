@@ -1,4 +1,4 @@
-import { query } from "sdk/db";
+import { sql, query } from "sdk/db";
 import { producer } from "sdk/messaging";
 import { extensions } from "sdk/extensions";
 import { dao as daoApi } from "sdk/db";
@@ -61,6 +61,7 @@ export interface DimensionEntityOptions {
     $order?: 'ASC' | 'DESC',
     $offset?: number,
     $limit?: number,
+    $language?: string
 }
 
 export interface DimensionEntityEvent {
@@ -111,11 +112,61 @@ export class DimensionRepository {
     }
 
     public findAll(options: DimensionEntityOptions = {}): DimensionEntity[] {
-        return this.dao.list(options);
+        let list = this.dao.list(options);
+        try {
+            let script = sql.getDialect().select().column("*").from('"' + DimensionRepository.DEFINITION.table + '_LANG"').where('Language = ?').build();
+            const resultSet = query.execute(script, [options.$language]);
+            if (resultSet !== null && resultSet[0] !== null) {
+                let translatedProperties = Object.getOwnPropertyNames(resultSet[0]);
+                let maps = [];
+                for (let i = 0; i < translatedProperties.length - 2; i++) {
+                    maps[i] = {};
+                }
+                resultSet.forEach((r) => {
+                    for (let i = 0; i < translatedProperties.length - 2; i++) {
+                        maps[i][r[translatedProperties[0]]] = r[translatedProperties[i + 1]];
+                    }
+                });
+                list.forEach((r) => {
+                    for (let i = 0; i < translatedProperties.length - 2; i++) {
+                        if (maps[i][r[translatedProperties[0]]]) {
+                            r[translatedProperties[i + 1]] = maps[i][r[translatedProperties[0]]];
+                        }
+                    }
+
+                });
+            }
+        } catch (Error) {
+            console.error("Entity is marked as language dependent, but no language table present: " + DimensionRepository.DEFINITION.table);
+        }
+        return list;
     }
 
-    public findById(id: number): DimensionEntity | undefined {
+    public findById(id: number, options: DimensionEntityOptions = {}): DimensionEntity | undefined {
         const entity = this.dao.find(id);
+        if (entity) {
+            try {
+                let script = sql.getDialect().select().column("*").from('"' + DimensionRepository.DEFINITION.table + '_LANG"').where('Language = ?').where('Id = ?').build();
+                const resultSet = query.execute(script, [options.$language, id]);
+                let translatedProperties = Object.getOwnPropertyNames(resultSet[0]);
+                let maps = [];
+                for (let i = 0; i < translatedProperties.length - 2; i++) {
+                    maps[i] = {};
+                }
+                resultSet.forEach((r) => {
+                    for (let i = 0; i < translatedProperties.length - 2; i++) {
+                        maps[i][r[translatedProperties[0]]] = r[translatedProperties[i + 1]];
+                    }
+                });
+                for (let i = 0; i < translatedProperties.length - 2; i++) {
+                    if (maps[i][entity[translatedProperties[0]]]) {
+                        entity[translatedProperties[i + 1]] = maps[i][entity[translatedProperties[0]]];
+                    }
+                }
+            } catch (Error) {
+                console.error("Entity is marked as language dependent, but no language table present: " + DimensionRepository.DEFINITION.table);
+            }
+        }
         return entity ?? undefined;
     }
 

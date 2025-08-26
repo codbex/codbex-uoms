@@ -19,6 +19,7 @@
       "roleWrite": "codbex-uoms.UnitsOfMeasures.UoMFullAccess"
     }
   ],
+  "tprefix": "codbex-uoms-model",
   "projectName": "codbex-uoms",
   "workspaceName": "workspace",
   "filePath": "codbex-uoms.model",
@@ -38,7 +39,6 @@
       "role": ""
     }
   },
-  "tprefix": "codbex-uoms-model",
   "models": [
     {
       "properties": [
@@ -131,6 +131,7 @@
       "menuIndex": "100",
       "menuKey": "dimension",
       "menuLabel": "Dimension",
+      "multilingual": "true",
       "name": "Dimension",
       "perspectiveHeader": "",
       "perspectiveIcon": "cubes",
@@ -243,7 +244,7 @@
           "relationshipName": "UoM_Dimension",
           "relationshipEntityName": "Dimension",
           "relationshipEntityPerspectiveName": "Settings",
-          "relationshipEntityPerspectiveLabel": "Entities",
+          "relationshipEntityPerspectiveLabel": "",
           "dataNotNull": false,
           "dataAutoIncrement": false,
           "dataPrimaryKey": false,
@@ -392,6 +393,7 @@
       "menuIndex": "100",
       "menuKey": "uom",
       "menuLabel": "UoM",
+      "multilingual": "true",
       "name": "UoM",
       "perspectiveHeader": "",
       "perspectiveIcon": "cubes",
