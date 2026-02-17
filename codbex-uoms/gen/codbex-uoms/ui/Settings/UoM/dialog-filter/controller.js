@@ -22,48 +22,47 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale']).controlle
 		let entity = $scope.entity;
 		const filter = {
 			$filter: {
-				equals: {
-				},
-				notEquals: {
-				},
-				contains: {
-				},
-				greaterThan: {
-				},
-				greaterThanOrEqual: {
-				},
-				lessThan: {
-				},
-				lessThanOrEqual: {
-				}
-			},
+				conditions: [],
+				sorts: [],
+				limit: 20,
+				offset: 0
+			}
 		};
 		if (entity.Id !== undefined) {
-			filter.$filter.equals.Id = entity.Id;
+			const condition = { propertyName: 'Id', operator: 'EQ', value: entity.Id };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.Name) {
-			filter.$filter.contains.Name = entity.Name;
+			const condition = { propertyName: 'Name', operator: 'LIKE', value: `%${entity.Name}%` };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.ISO) {
-			filter.$filter.contains.ISO = entity.ISO;
+			const condition = { propertyName: 'ISO', operator: 'LIKE', value: `%${entity.ISO}%` };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.Dimension !== undefined) {
-			filter.$filter.equals.Dimension = entity.Dimension;
+			const condition = { propertyName: 'Dimension', operator: 'EQ', value: entity.Dimension };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.SAP) {
-			filter.$filter.contains.SAP = entity.SAP;
+			const condition = { propertyName: 'SAP', operator: 'LIKE', value: `%${entity.SAP}%` };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.Numerator !== undefined) {
-			filter.$filter.equals.Numerator = entity.Numerator;
+			const condition = { propertyName: 'Numerator', operator: 'EQ', value: entity.Numerator };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.Denominator !== undefined) {
-			filter.$filter.equals.Denominator = entity.Denominator;
+			const condition = { propertyName: 'Denominator', operator: 'EQ', value: entity.Denominator };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.Rounding !== undefined) {
-			filter.$filter.equals.Rounding = entity.Rounding;
+			const condition = { propertyName: 'Rounding', operator: 'EQ', value: entity.Rounding };
+			filter.$filter.conditions.push(condition);
 		}
 		if (entity.Base !== undefined && entity.isBaseIndeterminate === false) {
-			filter.$filter.equals.Base = entity.Base;
+			const condition = { propertyName: 'Base', operator: 'EQ', value: entity.Base };
+			filter.$filter.conditions.push(condition);
 		}
 		Dialogs.postMessage({ topic: 'codbex-uoms.Settings.UoM.entitySearch', data: {
 			entity: entity,
