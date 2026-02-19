@@ -2,28 +2,15 @@
   "tablePrefix": "CODBEX_",
   "brand": "codbex",
   "brandUrl": "https://www.codbex.com/",
-  "title": "UoM Management Application",
-  "description": "Managing UoMs data",
-  "fileName": "codbex-uoms",
-  "genFolderName": "codbex-uoms",
-  "dataSource": "DefaultDB",
-  "roles": [
-    {
-      "entityName": "Dimension",
-      "roleRead": "codbex-uoms.Dimensions.DimensionReadOnly",
-      "roleWrite": "codbex-uoms.Dimensions.DimensionFullAccess"
-    },
-    {
-      "entityName": "UoM",
-      "roleRead": "codbex-uoms.UnitsOfMeasures.UoMReadOnly",
-      "roleWrite": "codbex-uoms.UnitsOfMeasures.UoMFullAccess"
-    }
-  ],
-  "tprefix": "codbex-uoms-model",
+  "title": "UOMs Management Module",
+  "description": "Managing UOMs Data",
   "projectName": "codbex-uoms",
   "workspaceName": "workspace",
   "filePath": "codbex-uoms.model",
-  "templateId": "template-application-angular/template/template.js",
+  "templateId": "template-application-angular-v2/template/template.js",
+  "fileName": "codbex-uoms",
+  "genFolderName": "codbex-uoms",
+  "dataSource": "DefaultDB",
   "perspectives": {
     "Settings": {
       "views": [
@@ -39,6 +26,19 @@
       "role": ""
     }
   },
+  "roles": [
+    {
+      "entityName": "Dimension",
+      "roleRead": "codbex-uoms.Dimensions.DimensionReadOnly",
+      "roleWrite": "codbex-uoms.Dimensions.DimensionFullAccess"
+    },
+    {
+      "entityName": "UoM",
+      "roleRead": "codbex-uoms.UnitsOfMeasures.UoMReadOnly",
+      "roleWrite": "codbex-uoms.UnitsOfMeasures.UoMFullAccess"
+    }
+  ],
+  "tprefix": "codbex-uoms-model",
   "models": [
     {
       "properties": [
@@ -61,6 +61,7 @@
           "isCalculatedProperty": false,
           "widgetLabel": "Id",
           "widgetDropdownUrl": "",
+          "widgetDropdownControllerUrl": "",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -85,6 +86,7 @@
           "isCalculatedProperty": false,
           "widgetLabel": "Name",
           "widgetDropdownUrl": "",
+          "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
           "minLength": 0,
@@ -111,6 +113,7 @@
           "isCalculatedProperty": false,
           "widgetLabel": "SAP",
           "widgetDropdownUrl": "",
+          "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
           "minLength": 0,
@@ -172,6 +175,7 @@
           "isCalculatedProperty": false,
           "widgetLabel": "Id",
           "widgetDropdownUrl": "",
+          "widgetDropdownControllerUrl": "",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -196,6 +200,7 @@
           "isCalculatedProperty": false,
           "widgetLabel": "Name",
           "widgetDropdownUrl": "",
+          "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
           "minLength": 0,
@@ -222,6 +227,7 @@
           "isCalculatedProperty": false,
           "widgetLabel": "ISO",
           "widgetDropdownUrl": "",
+          "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
           "minLength": 0,
@@ -253,6 +259,7 @@
           "isCalculatedProperty": false,
           "widgetLabel": "Dimension",
           "widgetDropdownUrl": "/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionService.ts",
+          "widgetDropdownControllerUrl": "/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionController.ts",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -281,6 +288,7 @@
           "isCalculatedProperty": false,
           "widgetLabel": "SAP",
           "widgetDropdownUrl": "",
+          "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
           "minLength": 0,
@@ -306,6 +314,7 @@
           "isCalculatedProperty": false,
           "widgetLabel": "Numerator",
           "widgetDropdownUrl": "",
+          "widgetDropdownControllerUrl": "",
           "dataTypeJava": "long",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -329,6 +338,7 @@
           "isCalculatedProperty": false,
           "widgetLabel": "Denominator",
           "widgetDropdownUrl": "",
+          "widgetDropdownControllerUrl": "",
           "dataTypeJava": "long",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -352,6 +362,7 @@
           "isCalculatedProperty": false,
           "widgetLabel": "Rounding",
           "widgetDropdownUrl": "",
+          "widgetDropdownControllerUrl": "",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
           "inputRule": ""
@@ -375,6 +386,7 @@
           "isCalculatedProperty": false,
           "widgetLabel": "Base",
           "widgetDropdownUrl": "",
+          "widgetDropdownControllerUrl": "",
           "dataTypeJava": "boolean",
           "dataTypeTypescript": "boolean",
           "inputRule": ""

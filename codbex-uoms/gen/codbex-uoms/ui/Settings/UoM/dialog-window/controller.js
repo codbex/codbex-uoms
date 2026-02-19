@@ -1,6 +1,6 @@
 angular.module('page', ['blimpKit', 'platformView', 'platformLocale', 'EntityService'])
 	.config(['EntityServiceProvider', (EntityServiceProvider) => {
-		EntityServiceProvider.baseUrl = '/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/UoMService.ts';
+		EntityServiceProvider.baseUrl = '/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/UoMController.ts';
 	}])
 	.controller('PageController', ($scope, $http, ViewParameters, LocaleService, EntityService) => {
 		const Dialogs = new DialogHub();
@@ -79,11 +79,11 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale', 'EntitySer
 			});
 		};
 
-		$scope.serviceDimension = '/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionService.ts';
+		$scope.serviceDimension = '/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionController.ts';
 		
 		$scope.optionsDimension = [];
 		
-		$http.get('/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionService.ts').then((response) => {
+		$http.get('/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionController.ts').then((response) => {
 			$scope.optionsDimension = response.data.map(e => ({
 				value: e.Id,
 				text: e.Name
