@@ -1,6 +1,8 @@
 # codbex-uoms
 UoMs Management Module
 
+- Data module: [codbex-uoms-data](https://github.com/codbex/codbex-uoms-data)
+
 ### Model
 
 ![model](images/uoms-model.png)
