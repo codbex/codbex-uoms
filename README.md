@@ -22,4 +22,7 @@ UoMs Management Module
 
 #### Converter
 
-	http://host:port/services/ts/codbex-uoms/api/converter.ts/CMT/DMT/50
+	http://host:port/services/ts/codbex-uoms/api/ConverterController.ts/<UOM_ISO>/<UOM_ISO>/50
+
+	http://host:port/services/ts/codbex-uoms/api/ConverterController.ts/CMT/DMT/50
+	
