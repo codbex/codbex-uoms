@@ -20,14 +20,14 @@
                 <bk-form-group label="{{formHeaders[action]}}" name="entityForm" transclude-classes="fd-container fd-form-layout-grid-container">
                     <bk-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<bk-form-label for="idName" ng-required="false" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_NAME' | t }}</bk-form-label>
+                        	<bk-form-label for="idName" ng-required="true" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_NAME' | t }}</bk-form-label>
                         </div>
                         <div class="fd-col fd-col-md--4 fd-col--6">
 							<bk-form-input-message state="{{ forms.details['Name'].$valid ? '' : 'error' }}" text="{{ 'codbex-uoms:codbex-uoms-model.messages.error.pattern' | t:{'rule':''} }}">
 								<bk-input id="idName"
 	                                name="Name"
 	                                state="{{ forms.details['Name'].$valid ? '' : 'error' }}"
-									ng-required="false"
+									ng-required="true"
 	                                ng-model="entity.Name"
 	                                ng-readonly="action === 'select'"
 									ng-maxlength="100.0"
@@ -40,14 +40,14 @@
                     </bk-form-item>
                     <bk-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<bk-form-label for="idISO" ng-required="false" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_ISO' | t }}</bk-form-label>
+                        	<bk-form-label for="idISO" ng-required="true" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_ISO' | t }}</bk-form-label>
                         </div>
                         <div class="fd-col  fd-col-md--8 ">
 							<bk-form-input-message state="{{ forms.details['ISO'].$valid ? '' : 'error' }}" text="{{ 'codbex-uoms:codbex-uoms-model.messages.error.pattern' | t:{'rule':''} }}">
 								<bk-input id="idISO"
 	                                name="ISO"
 	                                state="{{ forms.details['ISO'].$valid ? '' : 'error' }}"
-									ng-required="false"
+									ng-required="true"
 	                                ng-model="entity.ISO"
 	                                ng-readonly="action === 'select'"
 									ng-maxlength="20.0"
@@ -60,13 +60,13 @@
                     </bk-form-item>
                     <bk-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<bk-form-label for="idDimension" ng-required="false" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_DIMENSION' | t }}</bk-form-label>
+                        	<bk-form-label for="idDimension" ng-required="true" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_DIMENSION' | t }}</bk-form-label>
                         </div>
                         <div class="fd-col  fd-col-md--8 ">
 	                        <bk-combobox-input input-id="idDimension"
 	                            name="Dimension"
 	                            state="{{ forms.details['Dimension'].$valid ? '' : 'error' }}"
-	                            ng-required="false"
+	                            ng-required="true"
 	                            ng-model="entity.Dimension"
 	                            is-readonly="action === 'select'"
 	                            dropdown-items="optionsDimension"
@@ -97,13 +97,13 @@
                     </bk-form-item>
                     <bk-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<bk-form-label for="idNumerator" ng-required="false" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_NUMERATOR' | t }}</bk-form-label>
+                        	<bk-form-label for="idNumerator" ng-required="true" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_NUMERATOR' | t }}</bk-form-label>
                         </div>
                         <div class="fd-col fd-col-md--4 fd-col--6">
 	                        <bk-step-input input-id="idNumerator"
 								name="Numerator"
 								state="{{ forms.details['Numerator'].$valid ? '' : 'error' }}"
-								ng-required="false"
+								ng-required="true"
 								ng-model="entity.Numerator"
 								is-readonly="action === 'select'"
 								placeholder="{{ 'codbex-uoms:codbex-uoms-model.messages.inputEnter' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.UOM_NUMERATOR)'} }}">
@@ -112,13 +112,13 @@
                     </bk-form-item>
                     <bk-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<bk-form-label for="idDenominator" ng-required="false" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_DENOMINATOR' | t }}</bk-form-label>
+                        	<bk-form-label for="idDenominator" ng-required="true" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_DENOMINATOR' | t }}</bk-form-label>
                         </div>
                         <div class="fd-col fd-col-md--4 fd-col--6">
 	                        <bk-step-input input-id="idDenominator"
 								name="Denominator"
 								state="{{ forms.details['Denominator'].$valid ? '' : 'error' }}"
-								ng-required="false"
+								ng-required="true"
 								ng-model="entity.Denominator"
 								is-readonly="action === 'select'"
 								placeholder="{{ 'codbex-uoms:codbex-uoms-model.messages.inputEnter' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.UOM_DENOMINATOR)'} }}">
@@ -127,13 +127,13 @@
                     </bk-form-item>
                     <bk-form-item class="fd-row">
                     	<div class="fd-col fd-col-md--2">
-                        	<bk-form-label for="idRounding" ng-required="false" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_ROUNDING' | t }}</bk-form-label>
+                        	<bk-form-label for="idRounding" ng-required="true" colon="true">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_ROUNDING' | t }}</bk-form-label>
                         </div>
                         <div class="fd-col fd-col-md--2 fd-col--3">
 	                        <bk-step-input input-id="idRounding"
 								name="Rounding"
 								state="{{ forms.details['Rounding'].$valid ? '' : 'error' }}"
-								ng-required="false"
+								ng-required="true"
 								ng-model="entity.Rounding"
 								is-readonly="action === 'select'"
 								placeholder="{{ 'codbex-uoms:codbex-uoms-model.messages.inputEnter' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.UOM_ROUNDING)'} }}">

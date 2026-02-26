@@ -164,14 +164,32 @@ class UoMController {
     }
 
     private validateEntity(entity: any): void {
+        if (entity.Name === null || entity.Name === undefined) {
+            throw new ValidationError(`The 'Name' property is required, provide a valid value`);
+        }
         if (entity.Name?.length > 100) {
             throw new ValidationError(`The 'Name' exceeds the maximum length of [100] characters`);
+        }
+        if (entity.ISO === null || entity.ISO === undefined) {
+            throw new ValidationError(`The 'ISO' property is required, provide a valid value`);
         }
         if (entity.ISO?.length > 20) {
             throw new ValidationError(`The 'ISO' exceeds the maximum length of [20] characters`);
         }
+        if (entity.Dimension === null || entity.Dimension === undefined) {
+            throw new ValidationError(`The 'Dimension' property is required, provide a valid value`);
+        }
         if (entity.SAP?.length > 20) {
             throw new ValidationError(`The 'SAP' exceeds the maximum length of [20] characters`);
+        }
+        if (entity.Numerator === null || entity.Numerator === undefined) {
+            throw new ValidationError(`The 'Numerator' property is required, provide a valid value`);
+        }
+        if (entity.Denominator === null || entity.Denominator === undefined) {
+            throw new ValidationError(`The 'Denominator' property is required, provide a valid value`);
+        }
+        if (entity.Rounding === null || entity.Rounding === undefined) {
+            throw new ValidationError(`The 'Rounding' property is required, provide a valid value`);
         }
         for (const next of validationModules) {
             next.validate(entity);

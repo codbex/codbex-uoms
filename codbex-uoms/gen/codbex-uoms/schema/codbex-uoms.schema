@@ -15,12 +15,14 @@
                     {
                         "type": "VARCHAR",
                         "length": 100,
+                        "unique": true,
                         "name": "DIMENSION_NAME"
                     },
                     {
                         "type": "VARCHAR",
                         "length": 20,
                         "nullable": true,
+                        "unique": true,
                         "name": "DIMENSION_SAP"
                     }
                 ]
@@ -39,44 +41,42 @@
                     {
                         "type": "VARCHAR",
                         "length": 100,
-                        "nullable": true,
+                        "unique": true,
                         "name": "UOM_NAME"
                     },
                     {
                         "type": "VARCHAR",
                         "length": 20,
-                        "nullable": true,
+                        "unique": true,
                         "name": "UOM_ISO"
                     },
                     {
                         "type": "INTEGER",
-                        "nullable": true,
                         "name": "UOM_DIMENSION"
                     },
                     {
                         "type": "VARCHAR",
                         "length": 20,
                         "nullable": true,
+                        "unique": true,
                         "name": "UOM_SAP"
                     },
                     {
                         "type": "BIGINT",
-                        "nullable": true,
                         "name": "UOM_NUMERATOR"
                     },
                     {
                         "type": "BIGINT",
-                        "nullable": true,
                         "name": "UOM_DENOMINATOR"
                     },
                     {
                         "type": "INTEGER",
-                        "nullable": true,
+                        "defaultValue": "0",
                         "name": "UOM_ROUNDING"
                     },
                     {
                         "type": "BOOLEAN",
-                        "nullable": true,
+                        "defaultValue": "false",
                         "name": "UOM_BASE"
                     }
                 ]

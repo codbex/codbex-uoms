@@ -6,25 +6,25 @@ import { EntityUtils } from "../utils/EntityUtils";
 
 export interface UoMEntity {
     readonly Id: number;
-    Name?: string;
-    ISO?: string;
-    Dimension?: number;
+    Name: string;
+    ISO: string;
+    Dimension: number;
     SAP?: string;
-    Numerator?: number;
-    Denominator?: number;
-    Rounding?: number;
-    Base?: boolean;
+    Numerator: number;
+    Denominator: number;
+    Rounding: number;
+    Base: boolean;
 }
 
 export interface UoMCreateEntity {
-    readonly Name?: string;
-    readonly ISO?: string;
-    readonly Dimension?: number;
+    readonly Name: string;
+    readonly ISO: string;
+    readonly Dimension: number;
     readonly SAP?: string;
-    readonly Numerator?: number;
-    readonly Denominator?: number;
-    readonly Rounding?: number;
-    readonly Base?: boolean;
+    readonly Numerator: number;
+    readonly Denominator: number;
+    readonly Rounding: number;
+    readonly Base: boolean;
 }
 
 export interface UoMUpdateEntity extends UoMCreateEntity {
@@ -150,16 +150,19 @@ export class UoMRepository {
                 name: "Name",
                 column: "UOM_NAME",
                 type: "VARCHAR",
+                required: true
             },
             {
                 name: "ISO",
                 column: "UOM_ISO",
                 type: "VARCHAR",
+                required: true
             },
             {
                 name: "Dimension",
                 column: "UOM_DIMENSION",
                 type: "INTEGER",
+                required: true
             },
             {
                 name: "SAP",
@@ -170,21 +173,25 @@ export class UoMRepository {
                 name: "Numerator",
                 column: "UOM_NUMERATOR",
                 type: "BIGINT",
+                required: true
             },
             {
                 name: "Denominator",
                 column: "UOM_DENOMINATOR",
                 type: "BIGINT",
+                required: true
             },
             {
                 name: "Rounding",
                 column: "UOM_ROUNDING",
                 type: "INTEGER",
+                required: true
             },
             {
                 name: "Base",
                 column: "UOM_BASE",
                 type: "BOOLEAN",
+                required: true
             }
         ]
     };
@@ -237,6 +244,12 @@ export class UoMRepository {
 
     public create(entity: UoMCreateEntity): number {
         EntityUtils.setBoolean(entity, "Base");
+        if (entity.Rounding === undefined || entity.Rounding === null) {
+            (entity as UoMEntity).Rounding = 0;
+        }
+        if (entity.Base === undefined || entity.Base === null) {
+            (entity as UoMEntity).Base = false;
+        }
         const id = this.dao.insert(entity);
         this.triggerEvent({
             operation: "create",
