@@ -29,7 +29,7 @@
 	                                state="{{ forms.details['Name'].$valid ? '' : 'error' }}"
 									ng-required="true"
 	                                ng-model="entity.Name"
-	                                ng-readonly="action === 'select'"
+	                                ng-readonly="true"
 									ng-maxlength="100.0"
 	                                input-rules="{ patterns: [''] }"
 	                                type="text"
@@ -49,7 +49,7 @@
 	                                state="{{ forms.details['ISO'].$valid ? '' : 'error' }}"
 									ng-required="true"
 	                                ng-model="entity.ISO"
-	                                ng-readonly="action === 'select'"
+	                                ng-readonly="true"
 									ng-maxlength="20.0"
 	                                input-rules="{ patterns: [''] }"
 	                                type="text"
@@ -68,7 +68,7 @@
 	                            state="{{ forms.details['Dimension'].$valid ? '' : 'error' }}"
 	                            ng-required="true"
 	                            ng-model="entity.Dimension"
-	                            is-readonly="action === 'select'"
+	                            is-readonly="true"
 	                            dropdown-items="optionsDimension"
 	                            placeholder="{{ 'codbex-uoms:codbex-uoms-model.messages.inputSearch' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.UOM_DIMENSION)'} }}"
 								btn-aria-label="{{ 'codbex-uoms:codbex-uoms-model.aria.showHide' | t:{'name':'Dimension'} }}" list-aria-label="{{ 'codbex-uoms:codbex-uoms-model.aria.options' | t:{'name':'Dimension'} }}">
@@ -86,7 +86,7 @@
 	                                state="{{ forms.details['SAP'].$valid ? '' : 'error' }}"
 									ng-required="false"
 	                                ng-model="entity.SAP"
-	                                ng-readonly="action === 'select'"
+	                                ng-readonly="true"
 									ng-maxlength="20.0"
 	                                input-rules="{ patterns: [''] }"
 	                                type="text"
@@ -105,7 +105,7 @@
 								state="{{ forms.details['Numerator'].$valid ? '' : 'error' }}"
 								ng-required="true"
 								ng-model="entity.Numerator"
-								is-readonly="action === 'select'"
+								is-readonly="true"
 								placeholder="{{ 'codbex-uoms:codbex-uoms-model.messages.inputEnter' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.UOM_NUMERATOR)'} }}">
 							</bk-step-input>
 	                    </div>
@@ -120,7 +120,7 @@
 								state="{{ forms.details['Denominator'].$valid ? '' : 'error' }}"
 								ng-required="true"
 								ng-model="entity.Denominator"
-								is-readonly="action === 'select'"
+								is-readonly="true"
 								placeholder="{{ 'codbex-uoms:codbex-uoms-model.messages.inputEnter' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.UOM_DENOMINATOR)'} }}">
 							</bk-step-input>
 	                    </div>
@@ -135,7 +135,7 @@
 								state="{{ forms.details['Rounding'].$valid ? '' : 'error' }}"
 								ng-required="true"
 								ng-model="entity.Rounding"
-								is-readonly="action === 'select'"
+								is-readonly="true"
 								placeholder="{{ 'codbex-uoms:codbex-uoms-model.messages.inputEnter' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.UOM_ROUNDING)'} }}">
 							</bk-step-input>
 	                    </div>
@@ -146,7 +146,7 @@
 	                        <bk-checkbox id="idBase"
 	                            compact="false"
 	                            ng-required="false"
-	                            ng-readonly="action === 'select'"
+	                            ng-readonly="true"
 	                            ng-model="entity.Base">
 	                        </bk-checkbox>
                         	<bk-checkbox-label for="idBase" ng-required="false">{{ 'codbex-uoms:codbex-uoms-model.t.UOM_BASE' | t }}</bk-checkbox-label>

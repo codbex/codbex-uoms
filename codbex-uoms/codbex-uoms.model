@@ -4,6 +4,7 @@
             {
                 "properties": [
                     {
+                        "auditType": "NONE",
                         "dataAutoIncrement": "true",
                         "dataName": "DIMENSION_ID",
                         "dataNullable": "true",
@@ -18,6 +19,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "100",
                         "dataName": "DIMENSION_NAME",
                         "dataNullable": "false",
@@ -33,6 +35,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "20",
                         "dataName": "DIMENSION_SAP",
                         "dataNullable": "true",
@@ -79,6 +82,7 @@
             {
                 "properties": [
                     {
+                        "auditType": "NONE",
                         "dataAutoIncrement": "true",
                         "dataName": "UOM_ID",
                         "dataNullable": "true",
@@ -93,6 +97,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "100",
                         "dataName": "UOM_NAME",
                         "dataNullable": "false",
@@ -108,6 +113,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "20",
                         "dataName": "UOM_ISO",
                         "dataNullable": "false",
@@ -123,6 +129,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataName": "UOM_DIMENSION",
                         "dataNullable": "false",
                         "dataType": "INTEGER",
@@ -142,6 +149,7 @@
                         "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "20",
                         "dataName": "UOM_SAP",
                         "dataNullable": "true",
@@ -160,6 +168,7 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataName": "UOM_NUMERATOR",
                         "dataNullable": "false",
                         "dataType": "BIGINT",
@@ -173,6 +182,7 @@
                         "widgetType": "NUMBER"
                     },
                     {
+                        "auditType": "NONE",
                         "dataName": "UOM_DENOMINATOR",
                         "dataNullable": "false",
                         "dataType": "BIGINT",
@@ -186,6 +196,7 @@
                         "widgetType": "NUMBER"
                     },
                     {
+                        "auditType": "NONE",
                         "dataDefaultValue": "0",
                         "dataName": "UOM_ROUNDING",
                         "dataNullable": "false",
@@ -200,6 +211,7 @@
                         "widgetType": "NUMBER"
                     },
                     {
+                        "auditType": "NONE",
                         "dataDefaultValue": "false",
                         "dataName": "UOM_BASE",
                         "dataNullable": "false",
