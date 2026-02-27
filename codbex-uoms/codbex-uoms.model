@@ -4,6 +4,7 @@
             {
                 "properties": [
                     {
+                        "auditType": "NONE",
                         "dataAutoIncrement": "true",
                         "dataName": "DIMENSION_ID",
                         "dataNullable": "true",
@@ -18,10 +19,12 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "100",
                         "dataName": "DIMENSION_NAME",
                         "dataNullable": "false",
                         "dataType": "VARCHAR",
+                        "dataUnique": "true",
                         "description": "",
                         "isRequiredProperty": "true",
                         "name": "Name",
@@ -32,10 +35,12 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "20",
                         "dataName": "DIMENSION_SAP",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
+                        "dataUnique": "true",
                         "description": "",
                         "name": "SAP",
                         "tooltip": "",
@@ -55,7 +60,7 @@
                 "generateDefaultRoles": "true",
                 "generateReport": "false",
                 "icon": "cube",
-                "layoutType": "",
+                "layoutType": "MANAGE",
                 "menuIndex": "100",
                 "menuKey": "dimension",
                 "menuLabel": "Dimension",
@@ -63,7 +68,7 @@
                 "name": "Dimension",
                 "perspectiveHeader": "",
                 "perspectiveIcon": "cubes",
-                "perspectiveLabel": "",
+                "perspectiveLabel": "Entities",
                 "perspectiveName": "Settings",
                 "perspectiveNavId": "",
                 "perspectiveOrder": "970",
@@ -77,6 +82,7 @@
             {
                 "properties": [
                     {
+                        "auditType": "NONE",
                         "dataAutoIncrement": "true",
                         "dataName": "UOM_ID",
                         "dataNullable": "true",
@@ -91,11 +97,14 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "100",
                         "dataName": "UOM_NAME",
-                        "dataNullable": "true",
+                        "dataNullable": "false",
                         "dataType": "VARCHAR",
+                        "dataUnique": "true",
                         "description": "",
+                        "isRequiredProperty": "true",
                         "name": "Name",
                         "tooltip": "",
                         "widgetIsMajor": "true",
@@ -104,11 +113,14 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "20",
                         "dataName": "UOM_ISO",
-                        "dataNullable": "true",
+                        "dataNullable": "false",
                         "dataType": "VARCHAR",
+                        "dataUnique": "true",
                         "description": "",
+                        "isRequiredProperty": "true",
                         "name": "ISO",
                         "tooltip": "",
                         "widgetIsMajor": "true",
@@ -117,10 +129,12 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataName": "UOM_DIMENSION",
-                        "dataNullable": "true",
+                        "dataNullable": "false",
                         "dataType": "INTEGER",
                         "description": "",
+                        "isRequiredProperty": "true",
                         "name": "Dimension",
                         "tooltip": "",
                         "widgetDropDownKey": "Id",
@@ -132,13 +146,15 @@
                         "relationshipName": "UoM_Dimension",
                         "relationshipEntityName": "Dimension",
                         "relationshipEntityPerspectiveName": "Settings",
-                        "relationshipEntityPerspectiveLabel": ""
+                        "relationshipEntityPerspectiveLabel": "Entities"
                     },
                     {
+                        "auditType": "NONE",
                         "dataLength": "20",
                         "dataName": "UOM_SAP",
                         "dataNullable": "true",
                         "dataType": "VARCHAR",
+                        "dataUnique": "true",
                         "description": "",
                         "name": "SAP",
                         "tooltip": "",
@@ -152,10 +168,12 @@
                         "widgetType": "TEXTBOX"
                     },
                     {
+                        "auditType": "NONE",
                         "dataName": "UOM_NUMERATOR",
-                        "dataNullable": "true",
+                        "dataNullable": "false",
                         "dataType": "BIGINT",
                         "description": "",
+                        "isRequiredProperty": "true",
                         "name": "Numerator",
                         "tooltip": "",
                         "widgetIsMajor": "true",
@@ -164,10 +182,12 @@
                         "widgetType": "NUMBER"
                     },
                     {
+                        "auditType": "NONE",
                         "dataName": "UOM_DENOMINATOR",
-                        "dataNullable": "true",
+                        "dataNullable": "false",
                         "dataType": "BIGINT",
                         "description": "",
+                        "isRequiredProperty": "true",
                         "name": "Denominator",
                         "tooltip": "",
                         "widgetIsMajor": "true",
@@ -176,10 +196,13 @@
                         "widgetType": "NUMBER"
                     },
                     {
+                        "auditType": "NONE",
+                        "dataDefaultValue": "0",
                         "dataName": "UOM_ROUNDING",
-                        "dataNullable": "true",
+                        "dataNullable": "false",
                         "dataType": "INTEGER",
                         "description": "",
+                        "isRequiredProperty": "true",
                         "name": "Rounding",
                         "tooltip": "",
                         "widgetIsMajor": "true",
@@ -188,8 +211,10 @@
                         "widgetType": "NUMBER"
                     },
                     {
+                        "auditType": "NONE",
+                        "dataDefaultValue": "false",
                         "dataName": "UOM_BASE",
-                        "dataNullable": "true",
+                        "dataNullable": "false",
                         "dataType": "BOOLEAN",
                         "description": "",
                         "name": "Base",
@@ -210,7 +235,7 @@
                 "generateDefaultRoles": "true",
                 "generateReport": "false",
                 "icon": "cubes",
-                "layoutType": "",
+                "layoutType": "MANAGE",
                 "menuIndex": "100",
                 "menuKey": "uom",
                 "menuLabel": "UoM",
@@ -218,7 +243,7 @@
                 "name": "UoM",
                 "perspectiveHeader": "",
                 "perspectiveIcon": "cubes",
-                "perspectiveLabel": "",
+                "perspectiveLabel": "Entities",
                 "perspectiveName": "Settings",
                 "perspectiveNavId": "",
                 "perspectiveOrder": "970",

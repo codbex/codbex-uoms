@@ -1,4 +1,4 @@
-import { Entity, Table, Id, Generated, Column, Documentation } from '@aerokit/sdk/db'
+import { Entity, Table, Id, Generated, Column, Documentation, CreatedAt, CreatedBy, UpdatedAt, UpdatedBy} from '@aerokit/sdk/db'
 
 @Entity('UoMEntity')
 @Table('CODBEX_UOM')
@@ -19,26 +19,23 @@ export class UoMEntity {
         name: 'UOM_NAME',
         type: 'string',
         length: 100,
-        nullable: true,
     })
-    public Name?: string;
+    public Name!: string;
 
     @Documentation('ISO')
     @Column({
         name: 'UOM_ISO',
         type: 'string',
         length: 20,
-        nullable: true,
     })
-    public ISO?: string;
+    public ISO!: string;
 
     @Documentation('Dimension')
     @Column({
         name: 'UOM_DIMENSION',
         type: 'integer',
-        nullable: true,
     })
-    public Dimension?: number;
+    public Dimension!: number;
 
     @Documentation('SAP')
     @Column({
@@ -53,23 +50,21 @@ export class UoMEntity {
     @Column({
         name: 'UOM_NUMERATOR',
         type: 'long',
-        nullable: true,
     })
-    public Numerator?: number;
+    public Numerator!: number;
 
     @Documentation('Denominator')
     @Column({
         name: 'UOM_DENOMINATOR',
         type: 'long',
-        nullable: true,
     })
-    public Denominator?: number;
+    public Denominator!: number;
 
     @Documentation('Rounding')
     @Column({
         name: 'UOM_ROUNDING',
         type: 'integer',
-        nullable: true,
+        defaultValue: `0`,
     })
     public Rounding?: number;
 
@@ -77,7 +72,7 @@ export class UoMEntity {
     @Column({
         name: 'UOM_BASE',
         type: 'boolean',
-        nullable: true,
+        defaultValue: `false`,
     })
     public Base?: boolean;
 
