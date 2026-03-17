@@ -2,28 +2,15 @@
   "tablePrefix": "CODBEX_",
   "brand": "codbex",
   "brandUrl": "https://www.codbex.com/",
-  "title": "UOMs Management Module",
-  "description": "Managing UOMs Data",
-  "fileName": "codbex-uoms",
-  "genFolderName": "codbex-uoms",
-  "dataSource": "DefaultDB",
-  "roles": [
-    {
-      "entityName": "Dimension",
-      "roleRead": "codbex-uoms.Dimensions.DimensionReadOnly",
-      "roleWrite": "codbex-uoms.Dimensions.DimensionFullAccess"
-    },
-    {
-      "entityName": "UoM",
-      "roleRead": "codbex-uoms.UnitsOfMeasures.UoMReadOnly",
-      "roleWrite": "codbex-uoms.UnitsOfMeasures.UoMFullAccess"
-    }
-  ],
-  "tprefix": "codbex-uoms-model",
+  "title": "Uoms Management Module",
+  "description": "Managing Uoms Data",
   "projectName": "codbex-uoms",
   "workspaceName": "workspace",
   "filePath": "codbex-uoms.model",
   "templateId": "template-application-angular-v2/template/template.js",
+  "fileName": "codbex-uoms",
+  "genFolderName": "codbex-uoms",
+  "dataSource": "DefaultDB",
   "perspectives": {
     "Settings": {
       "views": [
@@ -39,10 +26,24 @@
       "role": ""
     }
   },
+  "roles": [
+    {
+      "entityName": "Dimension",
+      "roleRead": "codbex-uoms.Dimensions.DimensionReadOnly",
+      "roleWrite": "codbex-uoms.Dimensions.DimensionFullAccess"
+    },
+    {
+      "entityName": "UoM",
+      "roleRead": "codbex-uoms.UnitsOfMeasures.UoMReadOnly",
+      "roleWrite": "codbex-uoms.UnitsOfMeasures.UoMFullAccess"
+    }
+  ],
+  "tprefix": "codbex-uoms-model",
   "models": [
     {
       "properties": [
         {
+          "auditType": "NONE",
           "dataAutoIncrement": true,
           "dataName": "DIMENSION_ID",
           "dataNullable": true,
@@ -59,6 +60,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetLabel": "Id",
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
@@ -67,6 +69,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataLength": "100",
           "dataName": "DIMENSION_NAME",
           "dataNullable": false,
@@ -84,6 +87,7 @@
           "dataAutoIncrement": false,
           "dataPrimaryKey": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetLabel": "Name",
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
@@ -94,6 +98,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataLength": "20",
           "dataName": "DIMENSION_SAP",
           "dataNullable": true,
@@ -111,6 +116,7 @@
           "dataPrimaryKey": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetLabel": "SAP",
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
@@ -157,6 +163,7 @@
     {
       "properties": [
         {
+          "auditType": "NONE",
           "dataAutoIncrement": true,
           "dataName": "UOM_ID",
           "dataNullable": true,
@@ -173,6 +180,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetLabel": "Id",
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
@@ -181,6 +189,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataLength": "100",
           "dataName": "UOM_NAME",
           "dataNullable": false,
@@ -198,6 +207,7 @@
           "dataAutoIncrement": false,
           "dataPrimaryKey": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetLabel": "Name",
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
@@ -208,6 +218,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataLength": "20",
           "dataName": "UOM_ISO",
           "dataNullable": false,
@@ -225,6 +236,7 @@
           "dataAutoIncrement": false,
           "dataPrimaryKey": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetLabel": "ISO",
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
@@ -235,6 +247,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataName": "UOM_DIMENSION",
           "dataNullable": false,
           "dataType": "INTEGER",
@@ -257,6 +270,7 @@
           "dataPrimaryKey": false,
           "dataUnique": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetLabel": "Dimension",
           "widgetDropdownUrl": "/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionService.ts",
           "widgetDropdownControllerUrl": "/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionController.ts",
@@ -265,6 +279,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataLength": "20",
           "dataName": "UOM_SAP",
           "dataNullable": true,
@@ -286,6 +301,7 @@
           "dataPrimaryKey": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetLabel": "SAP",
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
@@ -296,6 +312,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataName": "UOM_NUMERATOR",
           "dataNullable": false,
           "dataType": "BIGINT",
@@ -312,6 +329,7 @@
           "dataPrimaryKey": false,
           "dataUnique": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetLabel": "Numerator",
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
@@ -320,6 +338,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataName": "UOM_DENOMINATOR",
           "dataNullable": false,
           "dataType": "BIGINT",
@@ -336,6 +355,7 @@
           "dataPrimaryKey": false,
           "dataUnique": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetLabel": "Denominator",
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
@@ -344,6 +364,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataDefaultValue": "0",
           "dataName": "UOM_ROUNDING",
           "dataNullable": false,
@@ -361,6 +382,7 @@
           "dataPrimaryKey": false,
           "dataUnique": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetLabel": "Rounding",
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
@@ -369,6 +391,7 @@
           "inputRule": ""
         },
         {
+          "auditType": "NONE",
           "dataDefaultValue": "false",
           "dataName": "UOM_BASE",
           "dataNullable": false,
@@ -386,6 +409,7 @@
           "dataUnique": false,
           "isRequiredProperty": false,
           "isCalculatedProperty": false,
+          "isReadOnlyProperty": false,
           "widgetLabel": "Base",
           "widgetDropdownUrl": "",
           "widgetDropdownControllerUrl": "",
