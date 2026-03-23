@@ -4,13 +4,26 @@
   "brandUrl": "https://www.codbex.com/",
   "title": "Uoms Management Module",
   "description": "Managing Uoms Data",
+  "fileName": "codbex-uoms",
+  "genFolderName": "codbex-uoms",
+  "dataSource": "DefaultDB",
+  "roles": [
+    {
+      "entityName": "Dimension",
+      "roleRead": "codbex-uoms.Dimensions.DimensionReadOnly",
+      "roleWrite": "codbex-uoms.Dimensions.DimensionFullAccess"
+    },
+    {
+      "entityName": "UoM",
+      "roleRead": "codbex-uoms.UnitsOfMeasures.UoMReadOnly",
+      "roleWrite": "codbex-uoms.UnitsOfMeasures.UoMFullAccess"
+    }
+  ],
+  "tprefix": "codbex-uoms-model",
   "projectName": "codbex-uoms",
   "workspaceName": "workspace",
   "filePath": "codbex-uoms.model",
   "templateId": "template-application-angular-v2/template/template.js",
-  "fileName": "codbex-uoms",
-  "genFolderName": "codbex-uoms",
-  "dataSource": "DefaultDB",
   "perspectives": {
     "Settings": {
       "views": [
@@ -26,19 +39,6 @@
       "role": ""
     }
   },
-  "roles": [
-    {
-      "entityName": "Dimension",
-      "roleRead": "codbex-uoms.Dimensions.DimensionReadOnly",
-      "roleWrite": "codbex-uoms.Dimensions.DimensionFullAccess"
-    },
-    {
-      "entityName": "UoM",
-      "roleRead": "codbex-uoms.UnitsOfMeasures.UoMReadOnly",
-      "roleWrite": "codbex-uoms.UnitsOfMeasures.UoMFullAccess"
-    }
-  ],
-  "tprefix": "codbex-uoms-model",
   "models": [
     {
       "properties": [

@@ -68,7 +68,7 @@
                 "name": "Dimension",
                 "perspectiveHeader": "",
                 "perspectiveIcon": "cubes",
-                "perspectiveLabel": "Entities",
+                "perspectiveLabel": "Settings",
                 "perspectiveName": "Settings",
                 "perspectiveNavId": "",
                 "perspectiveOrder": "970",
@@ -146,7 +146,7 @@
                         "relationshipName": "UoM_Dimension",
                         "relationshipEntityName": "Dimension",
                         "relationshipEntityPerspectiveName": "Settings",
-                        "relationshipEntityPerspectiveLabel": "Entities"
+                        "relationshipEntityPerspectiveLabel": "Settings"
                     },
                     {
                         "auditType": "NONE",
@@ -243,7 +243,7 @@
                 "name": "UoM",
                 "perspectiveHeader": "",
                 "perspectiveIcon": "cubes",
-                "perspectiveLabel": "Entities",
+                "perspectiveLabel": "Settings",
                 "perspectiveName": "Settings",
                 "perspectiveNavId": "",
                 "perspectiveOrder": "970",

@@ -44,7 +44,7 @@ class UoMController {
             this.checkPermissions('write');
             this.validateEntity(entity);
             entity.Id = this.repository.create(entity) as any;
-            response.setHeader('Content-Location', '/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/UoMService.ts/' + entity.Id);
+            response.setHeader('Content-Location', '/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/UoMController.ts/' + entity.Id);
             response.setStatus(response.CREATED);
             return entity;
         } catch (error: any) {
