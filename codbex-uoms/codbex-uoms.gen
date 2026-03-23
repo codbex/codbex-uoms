@@ -264,7 +264,7 @@
           "relationshipName": "UoM_Dimension",
           "relationshipEntityName": "Dimension",
           "relationshipEntityPerspectiveName": "Settings",
-          "relationshipEntityPerspectiveLabel": "Entities",
+          "relationshipEntityPerspectiveLabel": "Settings",
           "dataNotNull": true,
           "dataAutoIncrement": false,
           "dataPrimaryKey": false,
