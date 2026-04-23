@@ -1,28 +1,12 @@
 # folders
+node_modules/
 dist/
-.settings/
-.idea/
-.run/
-target/
-dirigible_local/
-bin/
-.history/
-.vscode/
+build/
+coverage/
 
-#files
-.editorconfig
-.gitattributes
-files
+# files
 .DS_Store
-.project
-.classpath
-*.bak
-*.class
-*.jar
-derby.log
-*.versionsBackup
-*.fpr
-*.iml
-*._trace
+Thumbs.db
+.env
 *.log
 package-lock.json
