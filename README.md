@@ -16,7 +16,7 @@
 
 | Field       | Type     | Details                       | Description                              |
 |-------------| -------- |-------------------------------| ---------------------------------------- |
-| Id          | INTEGER  | PK, Identity, Nullable        | Unique identifier for the unit of measure. |
+| Id          | INTEGER  | PK, Identity       | Unique identifier for the unit of measure. |
 | Name        | VARCHAR  | Length: 100, Unique, Not Null | Name of the unit of measure.             |
 | ISO         | VARCHAR  | Length: 20, Unique, Not Null  | ISO code for the unit of measure.        |
 | Dimension   | INTEGER  | FK, Not Null                  | Foreign key referencing the dimension.   |
@@ -30,7 +30,7 @@
 
 | Field | Type     | Details                       | Description                              |
 |-------| -------- |-------------------------------| ---------------------------------------- |
-| Id    | INTEGER  | PK, Identity, Nullable        | Unique identifier for the dimension.     |
+| Id    | INTEGER  | PK, Identity       | Unique identifier for the dimension.     |
 | Name  | VARCHAR  | Length: 100, Unique, Not Null | Name of the dimension.                   |
 | SAP   | VARCHAR  | Length: 20, Nullable, Unique  | SAP code for the dimension.              |
 
