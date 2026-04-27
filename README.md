@@ -1,32 +1,44 @@
-# codbex-uoms
-UoMs Management Module
+# <img src="https://www.codbex.com/icon.svg" width="32" style="vertical-align: middle;"> codbex-uoms
 
-- Data module: [codbex-uoms-data](https://github.com/codbex/codbex-uoms-data)
+## 📖 Table of Contents
+* [🗺️ Entity Data Model (EDM)](#️-entity-data-model-edm)
+* [🧩 Core Entities](#-core-entities)
+* [🔗 Sample Data Modules](#-sample-data-modules)
+* [🐳 Local Development with Docker](#-local-development-with-docker)
 
-### Model
+## 🗺️ Entity Data Model (EDM)
 
-![model](images/uoms-model.png)
+![model](images/model.png)
 
-### Application
+## 🧩 Core Entities
 
-#### Launchpad
+### Entity: `UoM`
 
-![launchpad](images/uoms-launchpad.png)
+| Field       | Type     | Details                       | Description                              |
+|-------------| -------- |-------------------------------| ---------------------------------------- |
+| Id          | INTEGER  | PK, Identity       | Unique identifier for the unit of measure. |
+| Name        | VARCHAR  | Length: 100, Unique, Not Null | Name of the unit of measure.             |
+| ISO         | VARCHAR  | Length: 20, Unique, Not Null  | ISO code for the unit of measure.        |
+| Dimension   | INTEGER  | FK, Not Null                  | Foreign key referencing the dimension.   |
+| SAP         | VARCHAR  | Length: 20, Nullable, Unique  | SAP code for the unit of measure.        |
+| Numerator   | BIGINT   | Not Null                      | Numerator for unit conversion.           |
+| Denominator | BIGINT   | Not Null                      | Denominator for unit conversion.         |
+| Rounding    | INTEGER  | Default: 0, Not Null          | Rounding value for the unit of measure.  |
+| Base        | BOOLEAN  | Default: false, Not Null              | Indicates if this is the base unit.      |
 
-#### Management
+### Entity: `Dimension`
 
-![management](images/uom-management.png)
+| Field | Type     | Details                       | Description                              |
+|-------| -------- |-------------------------------| ---------------------------------------- |
+| Id    | INTEGER  | PK, Identity       | Unique identifier for the dimension.     |
+| Name  | VARCHAR  | Length: 100, Unique, Not Null | Name of the dimension.                   |
+| SAP   | VARCHAR  | Length: 20, Nullable, Unique  | SAP code for the dimension.              |
 
+## 🔗 Sample Data Modules
 
-![management](images/dimension-management.png)
+- [codbex-uoms-data](https://github.com/codbex/codbex-uoms-data)
 
-#### Converter
-
-	http://host:port/services/ts/codbex-uoms/api/ConverterController.ts/<UOM_ISO>/<UOM_ISO>/50
-
-	http://host:port/services/ts/codbex-uoms/api/ConverterController.ts/CMT/DMT/50
-	
-## Local Development with Docker
+## 🐳 Local Development with Docker
 
 When running this project inside the codbex Atlas Docker image, you must provide authentication for installing dependencies from GitHub Packages.
 1. Create a GitHub Personal Access Token (PAT) with `read:packages` scope.
