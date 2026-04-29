@@ -97,6 +97,29 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale', 'EntitySer
 					request = EntityService.list(offset, limit);
 				}
 				request.then((response) => {
+					if (optionsDimensionHasMore) {
+						const optionsDimensionSearchValues = Array.from(new Set(response.data.map(e => e.Dimension)));
+						if (optionsDimensionSearchValues.length > 0) {
+							$http.post('/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionController.ts/search', {
+								conditions: [
+									{ propertyName: 'Id', operator: 'IN', value: optionsDimensionSearchValues }
+								]
+							}).then((response) => {
+								$scope.optionsDimension.push(...response.data.map(e => ({
+									value: e.Id,
+									text: e.Name
+								})));
+							}, (error) => {
+								console.error(error);
+								const message = error.data ? error.data.message : '';
+								Dialogs.showAlert({
+									title: 'Dimension',
+									message: LocaleService.t('codbex-uoms:codbex-uoms-model.messages.error.unableToLoad', { message: message }),
+									type: AlertTypes.Error
+								});
+							});
+						}
+					}
 					$scope.data = response.data;
 				}, (error) => {
 					const message = error.data ? error.data.message : '';
@@ -206,12 +229,25 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale', 'EntitySer
 		//----------------Dropdowns-----------------//
 		$scope.optionsDimension = [];
 
+		let optionsDimensionHasMore = true;
 
-		$http.get('/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionController.ts').then((response) => {
-			$scope.optionsDimension = response.data.map(e => ({
-				value: e.Id,
-				text: e.Name
-			}));
+		$http.get('/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionController.ts/count').then((response) => {
+			const optionsDimensionCount = response.data.count;
+			$http.get('/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionController.ts').then((response) => {
+				$scope.optionsDimension = response.data.map(e => ({
+					value: e.Id,
+					text: e.Name
+				}));
+				optionsDimensionHasMore = optionsDimensionCount > $scope.optionsDimension.length;
+			}, (error) => {
+				console.error(error);
+				const message = error.data ? error.data.message : '';
+				Dialogs.showAlert({
+					title: 'Dimension',
+					message: LocaleService.t('codbex-uoms:codbex-uoms-model.messages.error.unableToLoad', { message: message }),
+					type: AlertTypes.Error
+				});
+			});
 		}, (error) => {
 			console.error(error);
 			const message = error.data ? error.data.message : '';
