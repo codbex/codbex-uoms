@@ -61,8 +61,14 @@
 	                            state="{{ forms.details['Dimension'].$valid ? '' : 'error' }}"
 	                            ng-model="entity.Dimension"
 	                            dropdown-items="optionsDimension"
+								ng-keyup="onOptionsDimensionChange($event)"
 	                            placeholder="{{ 'codbex-uoms:codbex-uoms-model.messages.inputSearch' | t:{'name':'$t(codbex-uoms:codbex-uoms-model.t.UOM_DIMENSION)'} }}"
 								btn-aria-label="{{ 'codbex-uoms:codbex-uoms-model.aria.showHide' | t:{'name':'Dimension'} }}" list-aria-label="{{ 'codbex-uoms:codbex-uoms-model.aria.options' | t:{'name':'Dimension'} }}">
+								    <bk-list-action-item ng-if="optionsDimensionHasMore" ng-click="loadMoreOptionsDimension()">
+										<bk-busy-indicator ng-if="optionsDimensionLoading" size="m"></bk-busy-indicator>
+										<span ng-if="!optionsDimensionLoading" class="sap-icon sap-icon--navigation-down-arrow" role="presentation"></span>
+										<span ng-if="!optionsDimensionLoading">More Options</span>
+									</bk-list-action-item>
 	                        </bk-combobox-input>
 	                    </div>
                     </bk-form-item>
