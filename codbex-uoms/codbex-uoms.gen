@@ -1,15 +1,17 @@
 {
   "tablePrefix": "CODBEX_",
   "brand": "codbex",
-  "brandUrl": "https://www.codbex.com",
-  "title": "Units of Measurement Mangement Application",
-  "description": "Managing units of measurements data",
+  "brandUrl": "https://www.codbex.com/",
+  "title": "UoMs Management Module",
+  "description": "Managing UoMs Data",
   "projectName": "codbex-uoms",
   "workspaceName": "workspace",
   "filePath": "codbex-uoms.model",
-  "templateId": "template-application-angular-v2/template/template.js",
+  "templateId": "template-application-angular-java/template/template.js",
   "fileName": "codbex-uoms",
   "genFolderName": "codbex-uoms",
+  "javaRuntime": true,
+  "javaGenFolderName": "codbex_uoms",
   "dataSource": "DefaultDB",
   "perspectives": {
     "Settings": {
@@ -66,6 +68,7 @@
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
+          "dataTypeJavaClass": "Integer",
           "inputRule": ""
         },
         {
@@ -93,6 +96,7 @@
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
+          "dataTypeJavaClass": "String",
           "minLength": 0,
           "maxLength": 100,
           "inputRule": ""
@@ -122,6 +126,7 @@
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
+          "dataTypeJavaClass": "String",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
@@ -154,6 +159,7 @@
       "tooltip": "Dimension",
       "type": "SETTING",
       "dataSource": "DefaultDB",
+      "javaPerspectiveName": "settings",
       "referencedProjections": [],
       "primaryKeys": [
         "Id"
@@ -186,6 +192,7 @@
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
+          "dataTypeJavaClass": "Integer",
           "inputRule": ""
         },
         {
@@ -213,6 +220,7 @@
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
+          "dataTypeJavaClass": "String",
           "minLength": 0,
           "maxLength": 100,
           "inputRule": ""
@@ -242,6 +250,7 @@
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
+          "dataTypeJavaClass": "String",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
@@ -272,10 +281,11 @@
           "isCalculatedProperty": false,
           "isReadOnlyProperty": false,
           "widgetLabel": "Dimension",
-          "widgetDropdownUrl": "/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionService.ts",
-          "widgetDropdownControllerUrl": "/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionController.ts",
+          "widgetDropdownUrl": "/services/java/codbex-uoms/gen/codbex_uoms/api/settings/DimensionController",
+          "widgetDropdownControllerUrl": "/services/java/codbex-uoms/gen/codbex_uoms/api/settings/DimensionController",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
+          "dataTypeJavaClass": "Integer",
           "inputRule": ""
         },
         {
@@ -307,6 +317,7 @@
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "string",
           "dataTypeTypescript": "string",
+          "dataTypeJavaClass": "String",
           "minLength": 0,
           "maxLength": 20,
           "inputRule": ""
@@ -335,6 +346,7 @@
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "long",
           "dataTypeTypescript": "number",
+          "dataTypeJavaClass": "Long",
           "inputRule": ""
         },
         {
@@ -361,6 +373,7 @@
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "long",
           "dataTypeTypescript": "number",
+          "dataTypeJavaClass": "Long",
           "inputRule": ""
         },
         {
@@ -388,6 +401,7 @@
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "int",
           "dataTypeTypescript": "number",
+          "dataTypeJavaClass": "Integer",
           "inputRule": ""
         },
         {
@@ -415,6 +429,7 @@
           "widgetDropdownControllerUrl": "",
           "dataTypeJava": "boolean",
           "dataTypeTypescript": "boolean",
+          "dataTypeJavaClass": "Boolean",
           "inputRule": ""
         }
       ],
@@ -445,6 +460,7 @@
       "tooltip": "Unit of Measures",
       "type": "SETTING",
       "dataSource": "DefaultDB",
+      "javaPerspectiveName": "settings",
       "referencedProjections": [],
       "primaryKeys": [
         "Id"

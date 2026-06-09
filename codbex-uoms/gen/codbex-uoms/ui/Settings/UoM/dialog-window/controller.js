@@ -1,6 +1,6 @@
 angular.module('page', ['blimpKit', 'platformView', 'platformLocale', 'EntityService'])
 	.config(['EntityServiceProvider', (EntityServiceProvider) => {
-		EntityServiceProvider.baseUrl = '/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/UoMController.ts';
+		EntityServiceProvider.baseUrl = '/services/java/codbex-uoms/gen/codbex_uoms/api/settings/UoMController';
 	}])
 	.controller('PageController', ($scope, $http, ViewParameters, LocaleService, EntityService) => {
 		const Dialogs = new DialogHub();
@@ -81,11 +81,11 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale', 'EntitySer
 			});
 		};
 
-		$scope.serviceDimension = '/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionController.ts';
+		$scope.serviceDimension = '/services/java/codbex-uoms/gen/codbex_uoms/api/settings/DimensionController';
 		
 		$scope.optionsDimension = [];
 		
-		$http.get('/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionController.ts').then((response) => {
+		$http.get('/services/java/codbex-uoms/gen/codbex_uoms/api/settings/DimensionController').then((response) => {
 			$scope.optionsDimension = response.data.map(e => ({
 				value: e.Id,
 				text: e.Name
@@ -109,7 +109,7 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale', 'EntitySer
 		$scope.loadMoreOptionsDimension = () => {
 			const limit = 20;
 			$scope.optionsDimensionLoading = true;
-			$http.get(`/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionController.ts?$limit=${limit}&$offset=${++loadMoreOptionsDimensionCounter * limit}`)
+			$http.get(`/services/java/codbex-uoms/gen/codbex_uoms/api/settings/DimensionController?$limit=${limit}&$offset=${++loadMoreOptionsDimensionCounter * limit}`)
 			.then((response) => {
 				const optionValues = allValuesDimension.map(e => e.value);
 				const resultValues = response.data.map(e => ({
@@ -159,7 +159,7 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale', 'EntitySer
 					}
 				})
 				if (!cacheHit) {
-					$http.post('/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionController.ts/search', {
+					$http.post('/services/java/codbex-uoms/gen/codbex_uoms/api/settings/DimensionController/search', {
 						conditions: [
 							{ propertyName: 'Name', operator: 'LIKE', value: `${event.originalEvent.target.value}%` }
 						]
