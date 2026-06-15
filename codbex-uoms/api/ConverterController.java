@@ -3,22 +3,20 @@ package api;
 import gen.codbex_uoms.data.settings.UoMEntity;
 import gen.codbex_uoms.data.settings.UoMRepository;
 
-import org.eclipse.dirigible.engine.java.annotations.Documentation;
-import org.eclipse.dirigible.engine.java.annotations.Inject;
-import org.eclipse.dirigible.engine.java.annotations.http.Controller;
-import org.eclipse.dirigible.engine.java.annotations.http.Get;
-import org.eclipse.dirigible.engine.java.annotations.http.PathParam;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.web.server.ResponseStatusException;
+import org.eclipse.dirigible.sdk.platform.Documentation;
+import org.eclipse.dirigible.sdk.component.Inject;
+import org.eclipse.dirigible.sdk.http.Controller;
+import org.eclipse.dirigible.sdk.http.Get;
+import org.eclipse.dirigible.sdk.http.PathParam;
+import org.eclipse.dirigible.sdk.http.Response;
 
 import java.util.List;
 import java.util.Map;
+
 /**
  * Converts Source UoM to Target UoM the given Value
  * Example: http://host:port/services/ts/codbex-uoms/api/ConverterController.ts/KGM/GRM/50
  */
-
 @Controller
 @Documentation("codbex-uoms - Converter Controller")
 public class ConverterController {
@@ -36,34 +34,26 @@ public class ConverterController {
         UoMEntity entitySource = findByISO(source);
         UoMEntity entityTarget = findByISO(target);
 
-        if (entitySource.Dimension == null || entityTarget.Dimension == null) {
-            throw new ResponseStatusException(
-                HttpStatus.BAD_REQUEST,
-                "Invalid unit dimension configuration");
+        if (entitySource.Dimension == null || entitySource.Numerator == null || entitySource.Denominator == null 
+            || entitySource.Numerator == 0 || entitySource.Denominator == 0) {
+            
+            Response.setStatus(400);
+            Response.println("Invalid Source configuration");
+            return null;
         }
-
+        
+        if (entityTarget.Dimension == null || entityTarget.Numerator == null || entityTarget.Denominator == null 
+            || entityTarget.Numerator == 0 || entityTarget.Denominator == 0) {
+            
+            Response.setStatus(400);
+            Response.println("Invalid Target configuration");
+            return null;
+        }
+        
         if (!entitySource.Dimension.equals(entityTarget.Dimension)) {
-            throw new ResponseStatusException(
-                HttpStatus.BAD_REQUEST,
-                "Both Source and Target Unit of Measures should have the same Dimension");
-        }
-
-        if (entitySource.Numerator == null
-            || entitySource.Denominator == null
-            || entityTarget.Numerator == null
-            || entityTarget.Denominator == null) {
-
-            throw new ResponseStatusException(
-                HttpStatus.BAD_REQUEST,
-                "Invalid conversion factors defined");
-        }
-
-        if (entitySource.Denominator == 0
-            || entityTarget.Numerator == 0) {
-
-            throw new ResponseStatusException(
-                HttpStatus.BAD_REQUEST,
-                "Invalid conversion configuration (division by zero)");
+            Response.setStatus(400);
+            Response.println("Dimensions mismatch");
+            return null;
         }
 
         double valueBase =
@@ -79,17 +69,16 @@ public class ConverterController {
 
     private UoMEntity findByISO(String iso) {
 
-        List < UoMEntity > result = repository.query(
+        List<UoMEntity> result = repository.query(
             "from UoMEntity e where e.ISO = :iso",
             Map.of("iso", iso));
 
         if (result.isEmpty()) {
-            throw new ResponseStatusException(
-                HttpStatus.NOT_FOUND,
-                "Unit of Measure not found: [" + iso + "]");
+            Response.setStatus(404);
+            Response.println("Unit of Measure not found: [" + iso + "]");
+            return new UoMEntity(); 
         }
 
         return result.get(0);
     }
 }
-```
