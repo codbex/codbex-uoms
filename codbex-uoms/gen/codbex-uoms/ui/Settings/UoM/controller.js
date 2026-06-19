@@ -1,6 +1,6 @@
 angular.module('page', ['blimpKit', 'platformView', 'platformLocale', 'EntityService'])
 	.config(['EntityServiceProvider', (EntityServiceProvider) => {
-		EntityServiceProvider.baseUrl = '/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/UoMController.ts';
+		EntityServiceProvider.baseUrl = '/services/java/codbex-uoms/gen/codbex_uoms/api/settings/UoMController';
 	}])
 	.controller('PageController', ($scope, $http, EntityService, Extensions, LocaleService, ButtonStates) => {
 		const Dialogs = new DialogHub();
@@ -100,7 +100,7 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale', 'EntitySer
 					if (optionsDimensionHasMore) {
 						const optionsDimensionSearchValues = Array.from(new Set(response.data.map(e => e.Dimension)));
 						if (optionsDimensionSearchValues.length > 0) {
-							$http.post('/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionController.ts/search', {
+							$http.post('/services/java/codbex-uoms/gen/codbex_uoms/api/settings/DimensionController/search', {
 								conditions: [
 									{ propertyName: 'Id', operator: 'IN', value: optionsDimensionSearchValues }
 								]
@@ -231,9 +231,9 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale', 'EntitySer
 
 		let optionsDimensionHasMore = true;
 
-		$http.get('/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionController.ts/count').then((response) => {
+		$http.get('/services/java/codbex-uoms/gen/codbex_uoms/api/settings/DimensionController/count').then((response) => {
 			const optionsDimensionCount = response.data.count;
-			$http.get('/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionController.ts').then((response) => {
+			$http.get('/services/java/codbex-uoms/gen/codbex_uoms/api/settings/DimensionController').then((response) => {
 				$scope.optionsDimension = response.data.map(e => ({
 					value: e.Id,
 					text: e.Name

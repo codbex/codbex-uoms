@@ -106,7 +106,7 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale']).controlle
 	$scope.loadMoreOptionsDimension = () => {
 		const limit = 20;
 		$scope.optionsDimensionLoading = true;
-		$http.get(`/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionController.ts?$limit=${limit}&$offset=${++loadMoreOptionsDimensionCounter * limit}`)
+		$http.get(`/services/java/codbex-uoms/gen/codbex_uoms/api/settings/DimensionController?$limit=${limit}&$offset=${++loadMoreOptionsDimensionCounter * limit}`)
 		.then((response) => {
 			const optionValues = allValuesDimension.map(e => e.value);
 			const resultValues = response.data.map(e => ({
@@ -156,7 +156,7 @@ angular.module('page', ['blimpKit', 'platformView', 'platformLocale']).controlle
 				}
 			})
 			if (!cacheHit) {
-				$http.post('/services/ts/codbex-uoms/gen/codbex-uoms/api/Settings/DimensionController.ts/search', {
+				$http.post('/services/java/codbex-uoms/gen/codbex_uoms/api/settings/DimensionController/search', {
 					conditions: [
 						{ propertyName: 'Name', operator: 'LIKE', value: `${event.originalEvent.target.value}%` }
 					]
