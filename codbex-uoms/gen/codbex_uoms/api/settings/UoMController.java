@@ -5,7 +5,6 @@ import gen.codbex_uoms.data.settings.UoMRepository;
 
 import org.eclipse.dirigible.components.api.security.UserFacade;
 import org.eclipse.dirigible.sdk.platform.Documentation;
-import org.eclipse.dirigible.sdk.component.Inject;
 import org.eclipse.dirigible.sdk.http.Body;
 import org.eclipse.dirigible.sdk.http.Controller;
 import org.eclipse.dirigible.sdk.http.Delete;
@@ -30,8 +29,11 @@ public class UoMController {
 
     private static final Set<String> FILTER_FIELDS = Set.of("Id", "Name", "ISO", "Dimension", "SAP", "Numerator", "Denominator", "Rounding", "Base");
 
-    @Inject
-    private UoMRepository repository;
+    private final UoMRepository repository;
+
+    public UoMController(UoMRepository repository) {
+        this.repository = repository;
+    }
 
     @Get
     @Documentation("List UoM")

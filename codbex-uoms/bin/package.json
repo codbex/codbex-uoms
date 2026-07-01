@@ -1,0 +1,11 @@
+{
+    "name": "@codbex/codbex-uoms",
+    "version": "1.7.0",
+    "repository": {
+        "url": "https://github.com/codbex/codbex-uoms.git",
+        "type": "git"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    }
+}

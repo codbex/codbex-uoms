@@ -1,0 +1,6 @@
+{
+    "module": "codbex-uoms/gen/codbex-uoms/ui/Settings/UoM/dialog-filter/view.js",
+    "extensionPoint": "application-windows",
+    "description": "codbex-uoms - Application Dialog Window",
+    "role": "codbex-uoms.UnitsOfMeasures.UoMReadOnly,codbex-uoms.UnitsOfMeasures.UoMFullAccess"
+}

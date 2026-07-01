@@ -1,0 +1,96 @@
+{
+    "schema": {
+        "structures": [
+            {
+                "name": "CODBEX_DIMENSION",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "DIMENSION_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 100,
+                        "unique": true,
+                        "name": "DIMENSION_NAME"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 20,
+                        "nullable": true,
+                        "unique": true,
+                        "name": "DIMENSION_SAP"
+                    }
+                ]
+            },
+            {
+                "name": "CODBEX_UOM",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "UOM_ID"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 100,
+                        "unique": true,
+                        "name": "UOM_NAME"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 20,
+                        "unique": true,
+                        "name": "UOM_ISO"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "name": "UOM_DIMENSION"
+                    },
+                    {
+                        "type": "VARCHAR",
+                        "length": 20,
+                        "nullable": true,
+                        "unique": true,
+                        "name": "UOM_SAP"
+                    },
+                    {
+                        "type": "BIGINT",
+                        "name": "UOM_NUMERATOR"
+                    },
+                    {
+                        "type": "BIGINT",
+                        "name": "UOM_DENOMINATOR"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "defaultValue": "0",
+                        "name": "UOM_ROUNDING"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "defaultValue": "false",
+                        "name": "UOM_BASE"
+                    }
+                ]
+            },
+            {
+                "name": "UoM_Dimension",
+                "type": "foreignKey",
+                "table": "CODBEX_UOM",
+                "constraintName": "UoM_Dimension",
+                "columns": "UOM_DIMENSION",
+                "referencedTable": "CODBEX_DIMENSION",
+                "referencedColumns": "DIMENSION_ID"
+            }
+        ]
+    },
+    "datasource": "DefaultDB"
+}
